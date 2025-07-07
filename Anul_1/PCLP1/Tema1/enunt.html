@@ -1,0 +1,981 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0065)https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>
+    Tema 1 - The Classics    [CS Open CourseWare]
+  </title>
+
+  <meta name="generator" content="DokuWiki">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2024-11-25T14:34:53+0200">
+<meta name="keywords" content="programare,teme_2024,tema1_2024_cbd">
+<link rel="search" type="application/opensearchdescription+xml" href="https://ocw.cs.pub.ro/courses/lib/exe/opensearch.php" title="CS Open CourseWare">
+<link rel="start" href="https://ocw.cs.pub.ro/courses/">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://ocw.cs.pub.ro/courses/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="https://ocw.cs.pub.ro/courses/feed.php?mode=list&amp;ns=programare:teme_2024">
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://ocw.cs.pub.ro/courses/_export/xhtml/programare/teme_2024/tema1_2024_cbd">
+<link rel="canonical" href="http://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd">
+<link rel="stylesheet" type="text/css" href="./tema1_pclp1_files/css.php">
+<script type="text/javascript">/*<![CDATA[*/var NS='programare:teme_2024';var JSINFO = {"id":"programare:teme_2024:tema1_2024_cbd","namespace":"programare:teme_2024","isadmin":0,"isauth":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="./tema1_pclp1_files/js.php"></script>
+<script type="text/x-mathjax-config;executed=true">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script src="./tema1_pclp1_files/MathJax.js.download" id=""></script>
+<script type="text/javascript">/*<![CDATA[*/
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		  
+/*!]]>*/</script><script src="./tema1_pclp1_files/ga.js.download" type="text/javascript"></script>
+<script type="text/javascript">/*<![CDATA[*/
+var pageTracker = _gat._getTracker("UA-38383934-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+		  
+/*!]]>*/</script>
+
+  <link rel="shortcut icon" href="https://ocw.cs.pub.ro/courses/lib/tpl/arctic/images/favicon.ico">
+
+  
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div id="wrapper" class="show">
+  <div class="dokuwiki">
+
+    
+    <div class="stylehead">
+      <div class="header">
+        <div class="pagename">
+          <a href="https://ocw.cs.pub.ro/courses/programare/"><img height="70" src="./tema1_pclp1_files/sigla_programare.png"> </a>        </div>
+        <div class="logo">
+          <a style="color: #AAA !important;" href="https://ocw.cs.pub.ro/courses/">Open CourseWare</a>        </div>
+      </div>
+    
+       
+      <div class="breadcrumbs">
+              </div>
+      
+            </div>
+
+                  <div class="bar" id="bar__top">
+        <div class="bar-left">
+                  </div>
+        <div class="bar-right">
+          <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd?do=recent" class="action recent" accesskey="r" rel="nofollow" title="Recent changes [R]">Recent changes</a><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd?do=login&amp;sectok=99727c3ccecc3adb7fb8d06294ffcdda" class="action login" rel="nofollow" title="Login">Login</a>        </div>
+    </div>
+        
+    
+    
+    
+              <div class="left_page">
+          
+<h1 class="sectionedit1" id="tema_1_-_the_classics">Tema 1 - The Classics</h1>
+<div class="level1">
+
+</div>
+
+<h3 class="sectionedit2" id="changelog">Changelog:</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> 7.11.2024: pagina creata</div>
+</li>
+<li class="level1"><div class="li"> 8.11.2024: clarificari enunt si mici completari</div>
+</li>
+<li class="level1"><div class="li"> 11.11.2024: adaugat arhiva schelet si linkuri lipsa</div>
+</li>
+<li class="level1"><div class="li"> 13.11.2024: clarificari pentru task 1: indexarea coloanelor</div>
+</li>
+<li class="level1"><div class="li"> 13.11.2024: teste corectate</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit3" id="responsabili">Responsabili:</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="mailto:cr.zlatea@gmail.com" class="mail" title="cr.zlatea@gmail.com">Zlatea Cezar</a></div>
+</li>
+</ul>
+
+<p>
+Termen de predare:
+</p>
+<ul>
+<li class="level1"><div class="li"> 27.11.24 - Soft</div>
+</li>
+<li class="level1"><div class="li"> 29.11.24 - Hard</div>
+</li>
+</ul>
+
+<p>
+Pentru fiecare zi (24 de ore) de întârziere, se vor scădea 10 puncte din nota acordată, până la atingerea deadline-ului hard.
+</p>
+
+</div>
+
+<h3 class="sectionedit4" id="introducere">Introducere</h3>
+<div class="level3">
+<blockquote><div class="no">
+ In cadrul acestei teme ne propunem sa implementam un simulator al unui joc arcade (pacanea), in care o serie de simboluri vor fi amplasate intr-un tablou bidimensional. Va exista un cadran in interiorul caruia simbolurile vor putea forma combinatii valide, predefinite, care vor fi explicate in continuare, iar fiecare combinatie va avea un scor asociat. Scopul jocului este de a calcula scorul la un moment dat, avand in vedere ca fiecare rotire are un cost, iar jucatorul dispune de un anumit buget.<br>
+<br>
+ Se doreste exersarea urmatoarelor concepte:</div></blockquote>
+<ul>
+<li class="level1"><div class="li"> folosirea corecta a functiilor pentru lucrul cu memoria</div>
+</li>
+<li class="level1"><div class="li"> parcurgerea unui tablou bidimensional</div>
+</li>
+<li class="level1"><div class="li"> implementarea unor algoritmi simpli de parcurgere si calcul</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit5" id="intrebari">Întrebări</h3>
+<div class="level3">
+
+<p>
+Dacă aveți nelămuriri, puteți să ne contactați pe forumul dedicat: pe <a href="https://curs.upb.ro/2024/mod/forum/view.php?id=59799" class="urlextern" title="https://curs.upb.ro/2024/mod/forum/view.php?id=59799" rel="nofollow">Mudal</a> sau pe <a href="https://teams.microsoft.com/l/channel/19%3A33535da073304873b9b6649af36009c1%40thread.tacv2/Tema%201?groupId=d8e68d9b-e107-4d94-8c1b-4a6ec49a1bd8&amp;tenantId=2d8cc8ba-8dda-4334-9e5c-fac2092e9bac" class="urlextern" title="https://teams.microsoft.com/l/channel/19%3A33535da073304873b9b6649af36009c1%40thread.tacv2/Tema%201?groupId=d8e68d9b-e107-4d94-8c1b-4a6ec49a1bd8&amp;tenantId=2d8cc8ba-8dda-4334-9e5c-fac2092e9bac" rel="nofollow">Teams</a>.<br>
+
+Nu se acceptă întrebări în ultimele 24 de ore înainte de deadline.
+</p>
+
+<p>
+</p><p></p><div class="notewarning">
+Atenție:
+<p></p>
+<ul>
+<li class="level1"><div class="li"> Citiți cu atenție tot enunțul temei.</div>
+</li>
+<li class="level1"><div class="li"> Respectați întocmai regulile de încarcare a arhivei. Dacă uitați să includeți fișierele sursă sau Makefile-ul în arhivă, veți primi 0 pe temă.</div>
+</li>
+<li class="level1"><div class="li"> Respectați întocmai instrucțiunile de scriere a fișierului <code>Makefile</code>. Checkerul folosește acest fișier pentru a vă rula tema. Dacă el nu este scris corect, veți primi 0 pe temă chiar dacă codul sursă este ok.</div>
+</li>
+<li class="level1"><div class="li"> <strong>La trimiterea arhivei pe Moodle, tema vă este corectată automat, pe loc. Verificați secțiunea “Feedback” pentru a afla punctajul. Dacă vă apar erori și/sau nu apare punctajul obținut (în format numeric e.g. 85/100) înseamnă că tema voastră nu a fost rulată și veți primi 0 pe temă dacă nu rezolvați eroarea.</strong></div>
+</li>
+<li class="level1"><div class="li"> Puteți retrimite tema de oricate ori vreți înainte de expirarea deadline-ului. Se va lua în considerare numai ultima variantă trimisă.</div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h2 class="sectionedit6" id="enunt">Enunt</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit7" id="gigel">Gigel</h3>
+<div class="level3">
+<blockquote><div class="no">
+ Gigel este pasionat de jocuri de noroc si se afla intr-o situatie financiara destul de precara. Gigel ar dori sa stie ce are de facut ca sa castige o suma considerabila. El a auzit ca 99% din jucatori se opresc chiar inainte sa castige, asa ca s-a decis sa nu faca parte din aceasta statistica, venind la voi cu urmatoarea idee: un simulator de pacanele. El a mai mentionat si ca nu are incredere in demo-urile de pe diverse aplicatii ale caselor de pariuri, deoarece acestea ii ofera niste castiguri suspecte.</div></blockquote>
+
+</div>
+
+<h3 class="sectionedit8" id="specificatii">Specificatii</h3>
+<div class="level3">
+<blockquote><div class="no">
+    Vor exista un numar N de linii si respectiv M de coloane, reprezentand toate simbolurile aflate in acest simulator; coloanele se pot misca independent una de cealalta, iar simbolurile de pe o coloana raman intotdeauna in aceeasi pozitie fata de celelalte simboluri de pe aceeasi coloana (adica [1, 2, 3, 4] poate deveni, de exemplu, [3, 4, 1, 2], dar nu si [1, 3, 2, 4]), conform miscarii de rotatie a coloanelor. Vor exista cel mult 10 simboluri distincte, pe care le vom numerota convenabil de la 0 la 9 (practic fiecare cifra este codificarea unui simbol).<br>
+<br>
+    Asa cum a fost mentionat mai sus, nu toate simbolurile din matrice pot forma combinatii castigatoare la un moment dat, ci doar cele aflate in interiorul unui cadran predefinit. Cadranul este un dreptunghi 3 x M (adica se intinde pe toata latimea matricii, si contine cate 3 simboluri din fiecare coloana). Consideram ca acest cadran se afla chiar in “capatul de sus” al matricii, adica continand mereu primele 3 linii ale matricii, si nu poate fi deplasat. Exemplu ilustrativ:</div></blockquote>
+<pre class="code">  N = 8, M = 4;
+  1 2 3 4
+  1 6 2 5
+  3 4 2 2
+  9 0 1 3
+  5 5 5 2
+  1 7 8 8
+  3 3 6 5
+  7 7 7 7</pre>
+<blockquote><div class="no">
+    Cadranul contine primele 3 linii, adica simbolurile [ [1, 2, 3, 4], [1, 6, 2, 5], [3, 4, 2, 2] ]</div></blockquote>
+
+</div>
+
+<h3 class="sectionedit9" id="cerinte">Cerinte</h3>
+<div class="level3">
+<blockquote><div class="no">
+  Gigel are un numar de feature-uri pe care doreste sa le aiba acest simulator, dupa cum urmeaza:</div></blockquote>
+
+</div>
+
+<h4 id="task_1_spin_the_pixels_10p">Task 1. Spin the... pixels? (10p)</h4>
+<div class="level4">
+
+<p>
+Se doreste rotirea unei coloane specificate. De exemplu: daca avem o matrice cu 5 linii si 3 coloane, si dorim sa rotim coloana a doua cu 3 pozitii, operatia dorita inseamna permutarea simbolurilor de pe coloana a doua cu trei pozitii in jos, pastrand prima si ultima coloana neschimbate. Permutarea are loc in sens natural, de sus in jos, iar simbolurile care “ies din matrice” vor fi mutate la inceputul acesteia. Exemplu ilustrativ:
+</p>
+<pre class="code">N = 5, M = 3;
+1 2 3
+4 5 6
+7 8 9
+0 1 2
+3 4 5
+c = 1, r = 3 // indexare de la 0 pentru coloane</pre>
+
+<p>
+Rotirea coloanei a doua cu 3 pozitii inseamna:
+</p>
+<pre class="code">1 8 3
+4 1 6
+7 4 9
+0 2 2
+3 5 5</pre>
+
+</div>
+
+<h4 id="task_2_the_game_might_be_rigged_but_the_gains_are_real_30p">Task 2. The game might be rigged, but the gains are real  (30p)</h4>
+<div class="level4">
+
+<p>
+Data fiind o configuratie a matricii, se doreste gasirea tuturor combinatiilor castigatoare. O combinatie castigatoare este o secventa de simboluri care se afla in interiorul cadranului si care respecta urmatoarele reguli:
+</p>
+<ul>
+<li class="level1"><div class="li"> pe o linie se afla macar 3 simboluri identice; mentiune: pentru o linie in particular, se considera doar cea mai lunga secventa de simboluri identice</div>
+</li>
+<li class="level1"><div class="li"> pe o diagonala se afla 3 simboluri identice (de exemplu, simbolul de pe pozitia (1, 1), (2, 2) si (3, 3) sunt identice, dar nu neaparat incepand de pe coloana 1); se considera atat diagonalele “principale”, cat si cele “secundare”, deci atat cele de forma [(1, i), (2, i + 1), (3, i + 2)], cat si cele de forma [(3, i), (2, i + 1), (1, i + 2)]; </div>
+</li>
+</ul>
+
+<p>
+</p><p></p><div class="noteclassic">
+atentie: daca doua astfel de diagonale formeaza un “X”, adica se intersecteaza in simbolul din mijloc, atunci aceasta intersectie este considerata ca o singura combinatie castigatoare, in loc de doua
+
+</div><p></p>
+<p></p>
+
+<p>
+Cerinta este sa calculati numarul de astfel de combinatii castigatoare.
+</p>
+
+<p>
+Se doreste, de asemenea, calcularea scorului obtinut de Gigel in acea configuratie. Scorul este definit ca fiind suma tuturor valorilor combinatiilor castigatoare unitare regasite in tablou. Acestea sunt valorile aferente:
+</p>
+<ul>
+<li class="level1"><div class="li"> o linie castigatoare de K simboluri identice are valoarea K, unde K este un numar arbitrar mai mare sau egal cu 3</div>
+</li>
+<li class="level1"><div class="li"> o diagonala castigatoare de 3 simboluri identice are valoarea 7</div>
+</li>
+<li class="level1"><div class="li"> un “X” castigator are valoarea 21</div>
+</li>
+</ul>
+
+<p>
+De asemenea, se mai folosesc in calculul scorului si urmatoarele bonusuri:
+</p>
+<ul>
+<li class="level1"><div class="li"> pentru oricare combinatie castigatoare din cele exemplificate mai sus, daca simbolul regasit in aceasta este 7, atunci valoarea combinatiei se dubleaza</div>
+</li>
+<li class="level1"><div class="li"> daca in cadran exista cel mult 4 simboluri distincte, atunci se adauga 15 la scor; daca in cadran exista cel mult 2 simboluri distincte, atunci se adauga 100 la scor, iar aceste doua bonusuri nu se cumuleaza</div>
+</li>
+</ul>
+
+<p>
+Se cere calcularea scorului obtinut de Gigel.
+</p>
+
+<p>
+</p><p></p><div class="notewarning">
+In urma unor teste scurte, Gigel s-a vazut castigator in simulator asa ca a decis sa intre in jocul real. Convenabil, a gasit chiar un aparat identic cu simulatorul sau.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h4 id="task_3_all_in_15p">Task 3. All in. (15p)</h4>
+<div class="level4">
+
+<p>
+</p><p></p><div class="noteclassic">
+mentiune: este preferabil ca primele doua taskuri sa fie implementate inainte de acesta
+
+</div><p></p>
+<p></p>
+
+<p>
+Pus in fata aparatului real, Gigel doreste sa isi noteze “castigurile”, asa incat va roaga pe voi sa il ajutati. Veti primi la inceput dimensiunile matricii, apoi matricea in sine, precum si o serie de operatii sub forma de perechi (coloana, rotatie). La final, veti afisa scorul obtinut de Gigel in configuratia finala a matricii, insumand toate scorurile obtinute in fiecare dintre stagiile intermediare.
+</p>
+
+</div>
+
+<h4 id="task_4_so_close_15p">Task 4. So close! (15p)</h4>
+<div class="level4">
+
+<p>
+Gigel se intreaba, la un moment dat, ce ar putea realiza daca ar putea sa schimbe, la alegere, un simbol din matrice. Va roaga pe voi, programatorii, sa implementati aceasta functionalitate. Mai exact, el doreste sa schimbe un simbol de pe o anumita pozitie cu un alt simbol, si sa obtina scorul maxim posibil in urma acestei operatii.
+</p>
+
+<p>
+Se cere sa se afiseze scorul maxim teoretic pe care l-ar fi putut castiga Gigel in aceste conditii.
+</p>
+
+</div>
+
+<h4 id="task_5_what_if__20p">Task 5. What if? ... (20p)</h4>
+<div class="level4">
+
+<p>
+Dupa ce Gigel a visat cu ochii deschisi la niste castiguri fabuloase, el s-a gandit la o alta posibilitate: deoarece nu poate schimba valorile deja inscrise in aparat, isi imagineaza ca ar putea roti la alegere doua coloane, dupa propria vointa, ca sa obtina un scor maxim. Din acest motiv, va intreaba cum ar putea sa obtina un scor maxim in urma a doua rotiri cu un numar arbitrar de pozitii.
+</p>
+
+<p>
+Se cere sa se calculeze castigul maxim posibil obtinut de Gigel in urma a doua rotiri.
+</p>
+
+<p>
+</p><p></p><div class="noteclassic">
+Consideram ca ambele rotiri se fac in acelasi timp, fiind alese de noi atat coloanele pe care se vor executa, cat si numarul de pozitii rotite pe fiecare dintre ele. Asadar, se va calcula scorul unei <strong>singure</strong> configuratii.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h4 id="task_6_bonus_99_of_gamblers_quit_right_before_they_win_20p">Task 6. (Bonus) 99% of gamblers quit right before they win (20p)</h4>
+<div class="level4">
+
+<p>
+Pe masura ce Gigel halucina niste rotiri spectaculoase, banii din cont i s-au terminat. Cum ultimii lui bani sunt rezervati pentru o <strong>shaorma</strong>, el incepe sa isi imagineze un joc nou, care nu mai necesita pierderi suplimentare.
+</p>
+
+<p>
+Se cere implementarea unui joc nou, dupa urmatoarele reguli:
+</p>
+<ul>
+<li class="level1"><div class="li"> jocul se desfasoara in interiorul cadranului aparatului</div>
+</li>
+<li class="level1"><div class="li"> scopul este de a porni din coltul stanga-sus al cadranului si de a ajunge in coltul dreapta-jos al acestuia, parcurgand drumul cu un cost minim</div>
+</li>
+<li class="level1"><div class="li"> trecerea in fiecare simbol are un cost asociat, iar costul total al drumului este suma costurilor tuturor simbolurilor parcurse</div>
+</li>
+<li class="level1"><div class="li"> o miscare valida inseamna o deplasare in jos, in dreapta, in stanga sau in sus</div>
+</li>
+<li class="level1"><div class="li"> jucatorul nu poate iesi din cadran</div>
+</li>
+<li class="level1"><div class="li"> costul fiecarei treceri este egal cu modulul diferentei dintre <strong>valoarea simbolului respectiv</strong> si <strong>valoarea simbolului initial (adica cel din stanga-sus)</strong></div>
+</li>
+</ul>
+
+<p>
+Se cere calcularea costului minim al drumului. Gigel ar paria ca stie sa gaseasca acest cost mai repede ca voi, doar ca se afla in mici dificultati financiare.
+</p>
+<pre class="code">Exemplu:</pre>
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_detail/programare/teme_2024/t6_1.png?id=programare%3Ateme_2024%3Atema1_2024_cbd" class="media" title="programare:teme_2024:t6_1.png"><img src="./tema1_pclp1_files/t6_1.png" class="media" alt="" width="200"></a> <a href="https://ocw.cs.pub.ro/courses/_detail/programare/teme_2024/drum_exemplu_t6.png?id=programare%3Ateme_2024%3Atema1_2024_cbd" class="media" title="programare:teme_2024:drum_exemplu_t6.png"><img src="./tema1_pclp1_files/drum_exemplu_t6.png" class="media" alt="" width="200"></a>
+</p>
+<pre class="code">Raspunsul este 12. Explicatie: (7 - 5) + (5 - 5) + (7 - 5) + (5 - 1) + (5 - 1)</pre>
+
+</div>
+
+<h3 class="sectionedit10" id="formate_de_intrare">Formate de intrare</h3>
+<div class="level3">
+
+<p>
+Fiecare task va avea datele de intrare citite de la standard input/tastatura, in felul urmator:
+</p>
+<ul>
+<li class="level1"><div class="li"> pe prima linie se afla numarul taskului, sub forma unui numar intreg de la 1 la 5</div>
+</li>
+<li class="level1"><div class="li"> pe a doua linie se afla doua numere naturale N si M, separate printr-un spatiu, reprezentand numarul de linii, respectiv numarul de coloane ale matricii</div>
+</li>
+<li class="level1"><div class="li"> pe urmatoarele N linii se afla cate M numere naturale, separate printr-un spatiu, reprezentand matricea</div>
+</li>
+<li class="level1"><div class="li"> pentru taskul 1, dupa matrice, pe urmatoarea linie se afla 2 numere naturale, reprezentand coloana si numarul de pozitii cu care se va roti</div>
+</li>
+<li class="level1"><div class="li"> pentru taskul 3, dupa matrice, pe urmatoarea linie se afla un numar natural T, reprezentand numarul de operatii de rotire, urmat de T perechi de numere naturale, separate printr-un spatiu, reprezentand coloana si numarul de pozitii cu care se va roti</div>
+</li>
+<li class="level1"><div class="li"> pentru taskurile 2, 4, 5, 6 nu se vor mai citi alte date</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit11" id="formate_de_iesire">Formate de iesire</h3>
+<div class="level3">
+
+<p>
+Fiecare task va cere afisarea unor valori la standard output/consola, astfel:
+</p>
+<ul>
+<li class="level1"><div class="li"> task 1: se va afisa matricea obtinuta in urma rotirii specificare; fiecare linie va avea elementele separate de cate un spatiu, iar liniile vor fi despartite de cate un caracter newline <strong>\n</strong></div>
+</li>
+<li class="level1"><div class="li"> task 2: se vor afisa doua numere, fiecare pe cate un rand: prima valoare reprezinta numarul de combinatii castigatoare regasite in configuratie, iar a doua fiind scorul obtinut de acea configuratie</div>
+</li>
+<li class="level1"><div class="li"> task 3: va fi scris un singur numar, reprezentand suma tuturor scorurilor obtinute in urma fiecarei configuratii</div>
+</li>
+<li class="level1"><div class="li"> task 4: se cere un singur numar, insemnand scorul maxim total in conditiile cerintei</div>
+</li>
+<li class="level1"><div class="li"> task 5: se cere un singur numar, insemnand scorul maxim total in conditiile cerintei</div>
+</li>
+<li class="level1"><div class="li"> task 6: se va afisa costul celui mai scurt drum in jocul descris</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit12" id="constrangeri">Constrangeri</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> 1 ⇐ N ⇐ 1000</div>
+</li>
+<li class="level1"><div class="li"> 1 ⇐ M ⇐ 500</div>
+</li>
+<li class="level1"><div class="li"> 1 ⇐ T ⇐ 1000</div>
+</li>
+<li class="level1"><div class="li"> 0 ⇐ matrice[i][j] ⇐ 9</div>
+</li>
+<li class="level1"><div class="li"> 1 ⇐ c ⇐ M, unde c este coloana rotita</div>
+</li>
+<li class="level1"><div class="li"> <strong>0 ⇐ r ⇐ 2 ^31 - 1</strong>, unde r reprezinta numarul de pozitii cu care se va roti o coloana</div>
+</li>
+</ul>
+
+<p>
+</p><p></p><div class="notewarning">
+Orice vector/matrice va fi alocat dinamic, folosind functiile corespunzatoare, si eliberat ulterior. In caz contrar, se vor aplica depunctari.
+
+</div><p></p>
+<p></p>
+
+<p>
+</p><p></p><div class="noteclassic">
+Pentru taskul 5, testele “mari” au fost eliminate, deoarece solutia naturala ar fi fost prea ineficienta.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h3 class="sectionedit13" id="coding_style">Coding Style</h3>
+<div class="level3">
+
+<p>
+Este foarte important, pentru orice proiect, ca codul sursă să fie ușor de citit.
+Astfel, de-a lungul timpului, comunitatea programatorilor a agreat un set de reguli pe care programatorii trebuie să-l respecte atunci când scriu cod. Acest set de reguli poartă numele de <strong>Coding style</strong> și include directive precum:
+</p>
+<ul>
+<li class="level1"><div class="li"> utilizarea unor nume descriptive / intuitive pentru variabile care să descrie intenția utilizării variabilei - nu folosim <strong>x</strong>, folosim <strong>num_elems</strong></div>
+</li>
+<li class="level1"><div class="li"> nu utilizăm <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)" class="urlextern" title="https://en.wikipedia.org/wiki/Magic_number_(programming)" rel="nofollow">numere magice</a>; le ținem într-o variabilă care are un nume descriptiv</div>
+</li>
+<li class="level1"><div class="li"> indentăm codul</div>
+</li>
+<li class="level1"><div class="li"> etc.</div>
+</li>
+</ul>
+
+<p>
+În funcție de echipa / compania / proiectul la care veți lucra, coding style-ul poate diferi, în funcție de ce a fost agreat anterior, și vă veți adapta acelui stil.<br>
+
+În cadrul cursului de programare vom folosi regulile definite de către <a href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines" class="urlextern" title="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines" rel="nofollow"> Cpp Core Guidelines</a>.
+Acestea sunt verificate în mod automat de către checker.
+</p>
+
+</div>
+
+<h3 class="sectionedit14" id="validare_locala_tema">Validare locală temă</h3>
+<div class="level3">
+
+<p>
+Pentru a vă ajuta în dezvoltarea temei, arhiva <a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/vscode_improvements.zip" class="media mediafile mf_zip" title="programare:teme_2024:vscode_improvements.zip (143.3 KB)">vscode_improvements.zip</a> conține o copie a checkerului.
+Pentru a instala dependențele necesare verificării pentru <strong>coding style</strong> <del>utilizați scriptul <strong>install-linters.sh</strong></del>:
+</p>
+<pre class="code">sudo apt-get update
+sudo apt-get install -y clang clang-tidy python3 python3-pip
+sudo python3 -m pip install -U pip # in caz de eroare de genul "external package manager", puteti adauga --break-system-packages
+sudo python3 -m pip install cpplint</pre>
+
+<p>
+Pentru a rula checkerul local folosiți comanda:
+</p>
+<pre class="code">./local.sh checker # va fi nevoie de docker deja instalat</pre>
+
+<p>
+sau
+</p>
+<pre class="code">./checker/checker.py # doar verificarea output-ului testelor</pre>
+
+<p>
+sau
+</p>
+<pre class="code">cd checker &amp;&amp; ./checker.sh # checker integral, rulat local</pre>
+
+<p>
+</p><p></p><div class="noteclassic">
+Codul sursă este compilat folosind flagurile <strong>-Wall</strong>:
+<p></p>
+<ul>
+<li class="level1"><div class="li"> <strong>-Wall</strong> - compilatorul va avertiza (warn) orice operații care pot genera un comportament nedefinit</div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h3 class="sectionedit15" id="trimitere_tema">Trimitere temă</h3>
+<div class="level3">
+
+<p>
+Tema va fi trimisă folosind pagina de Moodle, cursul <strong>Programarea Calculatoarelor (CB &amp; CD)</strong>, activitatea “Tema 1”. <br>
+
+</p>
+
+<p>
+Toate temele sunt testate în mod automat pe Moodle.
+</p>
+
+<p>
+Arhiva temei se va încărca folosind formularul de submisie (butonul <strong>Add submission</strong>).
+</p>
+
+<p>
+Rezultatele vor fi disponibile în secțiunea <strong>Feedback</strong> - nota apare la linia <strong>Grade</strong>, iar outputul checkerului și erorile apar la sectiunea <strong>Feedback comments</strong>. Dacă apare un buton albastru în formă de plus, trebuie să dați click pe el pentru a afișa întregul output al checkerului.<br>
+
+<strong>Citiți cu atenție</strong> informațiile afișate în <strong>Feedback</strong> pentru a vă asigura că tema a fost rulată cu succes; o eroare comună este dată de faptul că conținutul arhivei nu respectă structura dorită (ex. fișierele sunt într-un alt director).<br>
+
+</p>
+
+<p>
+<strong>Punctajul final al temei</strong> este afișat la linia <strong>Grade</strong> și la finalul outputului din checker.
+</p>
+
+<p>
+Conținutul arhivei trebuie să fie următorul:
+</p>
+<ol>
+<li class="level1"><div class="li"> Fișierele <strong>.c</strong>, <strong>.h</strong> (dacă este cazul) care conțin implementarea temei.</div>
+</li>
+<li class="level1"><div class="li"> Fișierul <strong>Makefile</strong>.</div>
+</li>
+<li class="level1"><div class="li"> Un fișier <a href="https://en.wikipedia.org/wiki/README" class="urlextern" title="https://en.wikipedia.org/wiki/README" rel="nofollow">README</a> în care descrieți rezolvarea temei.</div>
+</li>
+</ol>
+
+<p>
+</p><p></p><div class="notewarning">
+Arhiva trebuie să fie de tipul <strong>zip</strong>.
+
+</div><p></p>
+<p></p>
+
+<p>
+</p><p></p><div class="notewarning">
+Nu includeti fisierele checkerului in arhiva voastra.
+
+</div><p></p>
+<p></p>
+
+<p>
+</p><p></p><div class="notewarning">
+In cazul in care testele va trec local, insa pica pe vmchecker cel mai probabil aveti
+o sursa de “undefined behavior in cod”. Pentru a va asigura ca scapati de aceste probleme,
+compilati cu flagul de compilare `-Wall` si rezolvati toate warning-urile.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h4 id="lista_depunctari">Listă depunctări</h4>
+<div class="level4">
+
+<p>
+Lista nu este exhaustivă.
+</p>
+<ul>
+<li class="level1"><div class="li"> O temă care nu compilează și nu a rulat pe <strong>vmchecker</strong> nu va fi luată în considerare</div>
+</li>
+<li class="level1"><div class="li"> O temă care nu rezolvă cerința și trece testele prin alte mijloace nu va fi luată în considerare</div>
+</li>
+<li class="level1"><div class="li"> <strong>NU acceptăm teme copiate</strong>. În cazul unei teme copiate se scade punctajul aferent temei din punctajul total.</div>
+</li>
+<li class="level1"><div class="li"> [-10.0]: Matricele nu sunt alocate dinamic folosind malloc/calloc</div>
+</li>
+<li class="level1"><div class="li"> [-5.0]: valgrind errors</div>
+</li>
+<li class="level1"><div class="li"> [cel mult -5.0]: README insuficient detaliat</div>
+</li>
+<li class="level1"><div class="li"> [-5.0]: coding style errors</div>
+</li>
+<li class="level1"><div class="li"> [-100.0]: hardcodarea rezultatelor de output folosind rezultatele de referinta</div>
+</li>
+</ul>
+
+</div>
+
+        </div>
+        <div class="right_sidebar">
+          <form action="https://ocw.cs.pub.ro/courses/start" accept-charset="utf-8" class="search" id="dw__search" method="get"><div class="no"><input type="hidden" name="do" value="search"><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]"><input type="submit" value="Search" class="button" title="Search"><div id="qsearch__out" class="ajax_qsearch JSpopup" style="display: none;"></div></div></form>          <div class="namespace_sidebar sidebar_box">
+
+<h2 class="sectionedit1" id="resurse_generale">Resurse generale</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/anunturi-cb-cd" class="wikilink1" title="programare:anunturi-cb-cd">Anunțuri CB/CD</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/regulament-ca" class="wikilink1" title="programare:regulament-ca">Regulament: seria CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/regulament-cb-cd" class="wikilink1" title="programare:regulament-cb-cd">Regulament: seria CB/CD</a> <br>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQu6eiMzWYRiPxhHEDl885S3SZ4-JiyD1yH__ubExG3lF4BiYw6ZZJH-v2LxDsU7Y2TDxLLnEP82e0c/pubhtml?gid=1970433104&amp;single=true" class="urlextern" title="https://docs.google.com/spreadsheets/d/e/2PACX-1vQu6eiMzWYRiPxhHEDl885S3SZ4-JiyD1yH__ubExG3lF4BiYw6ZZJH-v2LxDsU7Y2TDxLLnEP82e0c/pubhtml?gid=1970433104&amp;single=true" rel="nofollow">Catalog 2024-2025 CB/CD</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/calendar" class="wikilink1" title="programare:calendar">Calendar</a> <br>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Resurse generale" [1-438] -->
+<h2 class="sectionedit2" id="tutoriale">Tutoriale</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/good_practices" class="wikilink1" title="programare:tutoriale:good_practices">Good Practices</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/coding-style" class="wikilink1" title="programare:coding-style">Coding style example</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/debugging" class="wikilink1" title="programare:tutoriale:debugging">Debugging</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/read_docs" class="wikilink1" title="programare:tutoriale:read_docs">Read documentation</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/code_understanding" class="wikilink1" title="programare:tutoriale:code_understanding">Code understanding</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/logging" class="wikilink1" title="programare:tutoriale:logging">Logging</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/unittests" class="wikilink1" title="programare:tutoriale:unittests">Unit tests</a> </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Tutoriale" [439-863] -->
+<h2 class="sectionedit3" id="resurse_laborator">Resurse laborator</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/vmchecker_conf" class="wikilink1" title="programare:vmchecker_conf">Setup Linux/VM - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/pc-ca-test-practic" class="wikilink1" title="programare:pc-ca-test-practic">Test practic - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/pc-ca-exercitii-laborator" class="wikilink1" title="programare:pc-ca-exercitii-laborator">Exerciții laborator - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/checker" class="wikilink1" title="programare:checker">Checker laborator CB/CD</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/wsl-setup" class="wikilink1" title="programare:wsl-setup">WSL Setup</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://cppc.hpc.pub.ro/" class="urlextern" title="https://cppc.hpc.pub.ro" rel="nofollow">Culegere de Probleme</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Resurse laborator" [864-1335] -->
+<h2 class="sectionedit4" id="cursuri">Cursuri</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT5 PLUGIN_INCLUDE_START "programare:cursuri" [0-] --><div class="plugin_include_content plugin_include__programare:cursuri">
+<div class="level2">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/programare/cursuri/sylabus" class="wikilink1" title="programare:cursuri:sylabus">Continutul Tematic</a> <br>
+
+</p>
+
+</div>
+<!-- EDIT7 PLUGIN_INCLUDE_EDITBTN "programare:cursuri" [0-] --><!-- EDIT6 PLUGIN_INCLUDE_END "programare:cursuri" [0-] --></div>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Cursuri" [1336-1404] -->
+<h2 class="sectionedit8" id="laboratoare">Laboratoare</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT9 PLUGIN_INCLUDE_START "programare:laboratoare" [0-] --><div class="plugin_include_content plugin_include__programare:laboratoare">
+<div class="level2">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab01" class="wikilink1" title="programare:laboratoare:lab01">01. Unelte de programare</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab02" class="wikilink1" title="programare:laboratoare:lab02">02. Tipuri de date. Operatori.</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab03" class="wikilink1" title="programare:laboratoare:lab03">03. Instrucțiunile limbajului C</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab04" class="wikilink1" title="programare:laboratoare:lab04">04. Funcții</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab05" class="wikilink1" title="programare:laboratoare:lab05">05. Tablouri. Particularizare - vectori</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab06" class="wikilink1" title="programare:laboratoare:lab06">06. Matrice. Operații cu matrice</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab07" class="wikilink1" title="programare:laboratoare:lab07">07. Optimizarea programelor folosind operaţii pe biţi</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab08" class="wikilink1" title="programare:laboratoare:lab08">08. Pointeri. Abordarea lucrului cu tablouri folosind pointeri</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab09" class="wikilink1" title="programare:laboratoare:lab09">09. Alocarea dinamică a memoriei. Aplicaţii folosind tablouri şi matrice</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab10" class="wikilink1" title="programare:laboratoare:lab10">10. Prelucrarea şirurilor de caractere. Funcţii. Aplicaţii</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab11" class="wikilink1" title="programare:laboratoare:lab11">11. Structuri. Uniuni. Aplicație: Matrice rare</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab12" class="wikilink1" title="programare:laboratoare:lab12">12. Operaţii cu fişiere. Aplicaţii folosind fişiere.</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab13" class="wikilink1" title="programare:laboratoare:lab13">13. Parametrii liniei de comandă. Preprocesorul. Funcţii cu număr variabil de parametri</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab14" class="wikilink1" title="programare:laboratoare:lab14">14. Recapitulare</a> <br>
+
+</p>
+
+</div>
+<!-- EDIT11 PLUGIN_INCLUDE_EDITBTN "programare:laboratoare" [0-] --><!-- EDIT10 PLUGIN_INCLUDE_END "programare:laboratoare" [0-] --></div>
+<div class="level2">
+
+</div>
+<!-- EDIT8 SECTION "Laboratoare" [1405-1482] -->
+<h2 class="sectionedit12" id="teme_de_casa_general">Teme de casă (general)</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme/general" class="wikilink1" title="programare:teme:general"> Indicații generale</a> <br>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT12 SECTION "Teme de casă (general)" [1483-1713] -->
+<h2 class="sectionedit13" id="teme_de_casaseria_ca">Teme de casă: seria CA</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT13 SECTION "Teme de casă: seria CA" [1714-3358] -->
+<h2 class="sectionedit14" id="teme_de_casaseria_cbcd">Teme de casă: seria CB/CD</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema0_2024_cbd" class="wikilink1" title="programare:teme_2024:tema0_2024_cbd">Tema 0</a></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd" class="wikilink1" title="programare:teme_2024:tema1_2024_cbd">Tema 1</a></span></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd" class="wikilink1" title="programare:teme_2024:tema2_2024_cbd">Tema 2</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd" class="wikilink1" title="programare:teme_2024:tema3_2024_cbd">Tema 3</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT14 SECTION "Teme de casă: seria CB/CD" [3359-] -->
+</div>
+<div class="toc_sidebar sidebar_box">
+<!-- TOC START -->
+<div id="sb__right__dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#tema_1_-_the_classics">Tema 1 - The Classics</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#changelog">Changelog:</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#responsabili">Responsabili:</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#introducere">Introducere</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#intrebari">Întrebări</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#enunt">Enunt</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#gigel">Gigel</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#specificatii">Specificatii</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#cerinte">Cerinte</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#task_1_spin_the_pixels_10p">Task 1. Spin the... pixels? (10p)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#task_2_the_game_might_be_rigged_but_the_gains_are_real_30p">Task 2. The game might be rigged, but the gains are real  (30p)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#task_3_all_in_15p">Task 3. All in. (15p)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#task_4_so_close_15p">Task 4. So close! (15p)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#task_5_what_if__20p">Task 5. What if? ... (20p)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#task_6_bonus_99_of_gamblers_quit_right_before_they_win_20p">Task 6. (Bonus) 99% of gamblers quit right before they win (20p)</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#formate_de_intrare">Formate de intrare</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#formate_de_iesire">Formate de iesire</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#constrangeri">Constrangeri</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#coding_style">Coding Style</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#validare_locala_tema">Validare locală temă</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#trimitere_tema">Trimitere temă</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#lista_depunctari">Listă depunctări</a></div></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div>
+        </div>
+      
+    
+      <div class="stylefoot">
+        <div class="meta">
+          <div class="user">
+                    </div>
+          <div class="doc">
+          programare/teme_2024/tema1_2024_cbd.txt · Last modified: 2024/11/25 14:34 by cezar.zlatea          </div>
+        </div>
+      </div>
+
+    <div class="clearer"></div>
+
+    
+                <div class="bar" id="bar__bottom">
+      <div class="bar-left">
+        <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd?do=revisions" class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]">Old revisions</a>      </div>
+      <div class="bar-right">
+        <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd?do=media&amp;ns=programare%3Ateme_2024" class="action media" rel="nofollow" title="Media Manager">Media Manager</a><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd#dokuwiki__top" class="action top" accesskey="t" rel="nofollow" title="Back to top [T]">Back to top</a>      </div>
+    </div>
+    <div class="clearer"></div>
+            
+    <div align="center" class="footerinc">
+  <div class="license"><a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="./tema1_pclp1_files/cc-by-sa.png" alt="CC Attribution-Share Alike 3.0 Unported"></a></div>
+  <a target="_blank" href="http://www.chimeric.de/" title="www.chimeric.de"><img src="./tema1_pclp1_files/button-chimeric-de.png" width="80" height="15" alt="www.chimeric.de" border="0"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="./tema1_pclp1_files/button-css.png" width="80" height="15" alt="Valid CSS" border="0"></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="./tema1_pclp1_files/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" border="0"></a>
+
+  <a target="_blank" href="http://www.firefox-browser.de/" title="do yourself a favour and use a real browser - get firefox"><img src="./tema1_pclp1_files/button-firefox.png" width="80" height="15" alt="do yourself a favour and use a real browser - get firefox!!" border="0"></a>
+  
+  <a target="_blank" href="https://ocw.cs.pub.ro/courses/feed.php" title="Recent changes RSS feed"><img src="./tema1_pclp1_files/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" border="0"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="./tema1_pclp1_files/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" border="0"></a>
+</div>
+
+  </div>
+</div>
+
+<div class="no"><img src="./tema1_pclp1_files/indexer.php" width="2" height="1" alt=""></div>
+
+
+</body></html>
