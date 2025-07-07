@@ -1,0 +1,92 @@
+Micu Francesca-Maria 313CB
+Rezolvare tema2 PCLP2
+
+Taskul 1:
+Implementarea functiei remove_numbers.asm.
+Registrele ecx si edx sunt initializate cu 0 pentru a retine indexul elementului curent din vector, respectiv numarul de elemente adaugate in noul vector.
+
+iter_arr: se parcurge vectorul initial. Pentru fiecare element se verifica daca s-a ajuns la finalul vectorului, iar in caz afirmativ se sare la eticheta end. Elementul curent este incarcat in registrul eax si se verifica daca este par prin testarea ultimului bit (verifica daca eax & 1 este 0). Daca elementul este par, se continua procesarea in add_arr, altfel se incrementeaza indexul curent (ecx) si se trece la urmatorul element.
+
+add_arr: se realizeaza verificarea conditiei suplimentare si adaugarea elementului in vectorul destinatie. Mai intai, se salveaza temporar ebx pe stiva. Se verifica daca numarul este putere a lui 2 folosind operatia de testare eax & (eax - 1). Daca rezultatul este zero, inseamna ca numarul este putere a lui 2 si se sare la eticheta is_2_pow. In caz contrar, elementul este adaugat in vectorul destinatie la pozitia edx, se incrementeaza contorul de elemente adaugate, se restaureaza valoarea lui ebx, se incrementeaza indexul curent si se revine la bucla principala.
+
+is_2_pow: se executa cand elementul este par si totodata putere a lui 2. In acest caz, elementul nu este adaugat in vectorul destinatie. Se restaureaza valoarea lui ebx, se incrementeaza indexul curent si se revine la bucla principala.
+
+end: ramane gol deoarece deja se efectueaza resetarile registrelor la final si are ca scop iesirea din eticheta iter_arr.
+
+
+Task 2:
+SUBTASKUL 1
+Implementarea functiei check_events.asm.
+
+iter_arr: se parcurge vectorul de evenimente, iar pentru fiecare eveniment, se calculeaza adresa sa in memorie inmultind indexul cu dimensiunea structurii. Initial, se presupune ca evenimentul este valid, setand validul la 1. Se verifica conditiile pentru o data valida: anul trebuie sa fie intre 1990 si 2030, iar luna intre 1 si 12.
+
+days_of_month: se numarul maxim de zile pentru luna curenta. Implementarea imparte lunile in trei: februarie (luna 2) care are 28 de zile, lunile cu 30 de zile (4, 6, 9, 11), si restul lunilor care au 31 de zile. Rezultatul este stocat in registrul dl si utilizat ulterior pentru a verifica validitatea zilei.
+
+valid_day: dupa ce se determina numarul maxim de zile pentru luna respectiva, se verifica daca ziua este intre 1 si acest maxim. Daca ziua nu este in acest interval, evenimentul este marcat ca invalid.
+
+not_valid: se executata cand o data nu respecta conditiile de validitate. Se reseteaza campul valid al evenimentului la 0, se incrementeaza contorul pentru a trece la urmatorul eveniment si se continua parcurgerea vectorului.
+
+end: ramane gol deoarece deja se efectueaza resetarile registrelor la final si are ca scop iesirea din celalalte label-uri
+
+SUBTASK 2:
+Implementarea functiei sort_events.asm.
+
+iter_arr_1 si iter_arr_2: reprezinta cele doua parcurgeri ale algoritmul de sortare bubble sort. Prima bucla (iter_arr_1) parcurge vectorul de la inceput pana la sfarsit, in timp ce a doua bucla (iter_arr_2) compara fiecare element curent cu toate celelalte pentru a determina pozitia corecta.
+
+verif_date: Aceasta sectiune realizeaza compararea cronologica a evenimentelor. Algoritmul compara mai intai anii evenimentelor, apoi lunile si, in final, zilele. Daca toate aceste sunt egale, sortarea se incearca pe numele evenimentelor.
+
+strcmp: se implementeaza compararea numelor evenimentelor, caracter cu caracter. Bucla continua pana cand se gaseste o diferenta intre cele doua nume sau pana cand se ajunge la finalul unuia dintre ele.
+
+swap_elem: se realizeaza atunci cand se determina ca ordinea lor curenta nu respecta criteriile de sortare si face interschimbarea efectiva a elementelor in vector. Interschimbarea se face byte cu byte (pentru toti 36 de bytes) pentru a asigura interschimbarea corecta a tuturor informatiilor.
+
+
+TASK 3:
+Implementarea functiei base64.asm.
+
+iter_arr: se parcurge vectorul initial, iar pentru fiecare iteratie, functia verifica daca a ajuns la finalul vectorului si proceseaza grupuri de cate 3 bytes. Cei trei bytes consecutivi sunt combinati intr-un singur registru (eax) pentru transformare. Primul byte este deplasat cu 16 biti la stanga, al doilea cu 8 biti, iar al treilea ramane in pozitia sa originala.
+
+transf_base64: pentru fiecare dintre cele 4 caractere (corespunzatoare grupurilor de 6 biti), functia calculeaza offsetul de deplasare folosind formula 18 - (index * 6), deplaseaza valoarea combinata (eax) la dreapta cu numarul de biti corespunzator, pastreaza doar cei 6 biti inferiori prin masca 63, foloseste valoarea rezultata ca index in vectorul alphabet pentru a obtine caracterul necesar, adauga caracterul la vectorul destinatie si incrementeaza lungimea acestuia. Se repeta acestea pentru toate cele 4 grupuri de biti, dupa care se reintoarce la bucla principala pentru a procesa urmatorii 3 bytes.
+
+end: ramane gol deoarece deja se efectueaza resetarile registrelor la final si are ca scop iesirea din eticheta iter_arr.
+
+
+TASK 4:
+Implementarea funciilor check_row, check_column și check_box.
+
+In functia check_row:
+Inițial se seteaza eax la 1, presupunand ca linia este valida. Se calculeaza indexul de start al liniei folosind formula row * 9. Se iniializează contorul de coloane ebx cu 0.
+
+verif_lin: se parcurg elementele liniei si se verifica validitatea lor. Pentru fiecare pozitie, se incarca elementul in registrul al si se verifica daca este o cifră valida (intre 1 si 9). Apoi se verifica faptul ca cifra nu s-a mai repetat pe linie folosind vectorul de frecventa. Dacă cifra a fost deja repetata (frecv[cifra] = 1), se sare la eticheta wrong_lin. Altfel, se marcheaza cifra gasita cu 1 in vectorul de frecventa.
+
+wrong_lin: se executa cand o cifra este invalida sau a mai fost gasita deja pe linie. Se actualizeaza eax la 2, indicand că linia este gresita.
+
+prep_reset_lin și reset_frecv_lin: aceste etichete au ca scop resetarea vectorului de frecventa la 0, pentru urmatoarele utilizari.
+
+
+In functia check_column:
+Asemanator cu check_row, eax este inițializat cu 1. Se folosește ebx ca și contor pentru parcurgerea liniilor.
+
+verif_col: pentru fiecare element din coloană, se calculează indexul după formula lin * 9 + col (unde lin = ebx, col = edx). Se verifică dacă elementul este între 1 și 9 și dacă nu a mai apărut în coloană.
+
+wrong_col: se actualizeaza eax la 2 cand un element din coloana nu respecta conditiile
+
+prep_reset_col si reset_frecv_col: reseteaza vectorul de frecventa pentru utilizari ulterioare.
+
+
+In functia check_box:
+Se calculeaza coordonatele de inceput ale patratului folosind formulele:
+
+linia de start a pătratului = (box / 3) * 3
+coloana de start a pătratului = (box % 3) * 3
+
+verif_box: se parcurg cele 9 celule ale patratului, pornind de la coordonatele calculate. Pentru fiecare celula, se verifica daca contine o cifră validă si dacă aceasta nu a mai aparut in patratul curent.
+
+increm_lin: se sare aici cand o linie din patrat a fost complet parcursa si trebuie trecut la linia urmatoare. Resetează contorul de coloane la valoarea inițială, se incrementează linia si se incrementeaza contorul de elemente total al boxului.
+
+wrong_box: similar cu etichetele wrong din celelalte functii, setează eax la 2 cand elementul nu corespunde criteriilor.
+
+prep_reset_box si reset_frecv_box: reseteaza vectorul de frecvență pentru urmatoarele utilizari.
+
+
+
+

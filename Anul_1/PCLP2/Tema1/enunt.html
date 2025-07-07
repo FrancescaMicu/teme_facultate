@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://gitlab.cs.pub.ro/iocla/tema-1-2025 -->
+<html class="gl-light ui-neutral with-top-bar with-header " lang="en" style="--broadcast-message-height: 0px;"><head prefix="og: http://ogp.me/ns#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<title>IOCLA / tema-1-2025 · GitLab</title>
+<script>
+//<![CDATA[
+window.gon={};gon.api_version="v4";gon.default_avatar_url="https://gitlab.cs.pub.ro/assets/no_avatar-849f9c04a3a0d0cea2424ae97b27447dc64a7dbfae83c036c45b403392f0e8ba.png";gon.max_file_size=10;gon.asset_host=null;gon.webpack_public_path="/assets/webpack/";gon.relative_url_root="";gon.user_color_mode="gl-light";gon.user_color_scheme="white";gon.markdown_surround_selection=null;gon.markdown_automatic_lists=null;gon.math_rendering_limits_enabled=true;gon.recaptcha_api_server_url="https://www.recaptcha.net/recaptcha/api.js";gon.recaptcha_sitekey=null;gon.gitlab_url="https://gitlab.cs.pub.ro";gon.promo_url="https://about.gitlab.com";gon.forum_url="https://forum.gitlab.com";gon.docs_url="https://docs.gitlab.com";gon.revision="946e44702b9";gon.feature_category="groups_and_projects";gon.gitlab_logo="/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png";gon.secure=true;gon.sprite_icons="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg";gon.sprite_file_icons="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg";gon.emoji_sprites_css_path="/assets/emoji_sprites-bd26211944b9d072037ec97cb138f1a52cd03ef185cd38b8d1fcc963245199a1.css";gon.emoji_backend_version=4;gon.gridstack_css_path="/assets/lazy_bundles/gridstack-4cd1da7c8adb8553e78a4f5545a8ab57a46258e091e6ac0382e6de79bca5ea3c.css";gon.test_env=false;gon.disable_animations=false;gon.suggested_label_colors={"#cc338b":"Magenta-pink","#dc143c":"Crimson","#c21e56":"Rose red","#cd5b45":"Dark coral","#ed9121":"Carrot orange","#eee600":"Titanium yellow","#009966":"Green-cyan","#8fbc8f":"Dark sea green","#6699cc":"Blue-gray","#e6e6fa":"Lavender","#9400d3":"Dark violet","#330066":"Deep violet","#36454f":"Charcoal grey","#808080":"Gray"};gon.first_day_of_week=0;gon.time_display_relative=true;gon.time_display_format=0;gon.ee=true;gon.jh=false;gon.dot_com=false;gon.uf_error_prefix="UF";gon.pat_prefix="glpat-";gon.keyboard_shortcuts_enabled=true;gon.diagramsnet_url="https://embed.diagrams.net";gon.features={"vscodeWebIde":true,"uiForOrganizations":false,"organizationSwitching":false,"findAndReplace":false,"removeMonitorMetrics":true,"workItemsViewPreference":true,"workItemViewForIssues":true,"searchButtonTopRight":false,"mergeRequestDashboard":false,"newProjectCreationForm":false,"workItemsClientSideBoards":false,"glqlWorkItems":false,"duoChatDynamicDimension":true,"duoChatMultiThread":true,"advancedContextResolver":true,"vulnerabilityReportTypeScannerFilter":true,"inlineBlame":false,"issueEmailParticipants":true,"editBranchRules":true,"pageSpecificStyles":false,"blobRepositoryVueHeaderApp":false,"blobOverflowMenu":false,"filterBlobPath":false,"directoryCodeDropdownUpdates":false,"ciPipelineStatusRealtime":false,"workItems":true,"workItemsBeta":false,"workItemsAlpha":false};gon.roadmap_epics_limit=1000;gon.licensed_features={"fileLocks":true,"securityOrchestrationPolicies":true,"remoteDevelopment":true};
+//]]>
+</script>
+
+
+<script>
+//<![CDATA[
+var gl = window.gl || {};
+gl.startup_calls = {"/iocla/tema-1-2025/-/refs/master/logs_tree/?format=json\u0026offset=0\u0026ref_type=heads":{},"/iocla/tema-1-2025/-/blob/master/README.md?format=json\u0026viewer=rich":{}};
+gl.startup_graphql_calls = [{"query":"query pathLastCommit($projectPath: ID!, $path: String, $ref: String!, $refType: RefType) {\n  project(fullPath: $projectPath) {\n    __typename\n    id\n    repository {\n      __typename\n      lastCommit(path: $path, ref: $ref, refType: $refType) {\n        __typename\n        id\n        sha\n        title\n        titleHtml\n        descriptionHtml\n        message\n        webPath\n        authoredDate\n        authorName\n        authorGravatar\n        author {\n          __typename\n          id\n          name\n          avatarUrl\n          webPath\n        }\n        signature {\n          __typename\n          ... on GpgSignature {\n            gpgKeyPrimaryKeyid\n            verificationStatus\n          }\n          ... on X509Signature {\n            verificationStatus\n            x509Certificate {\n              id\n              subject\n              subjectKeyIdentifier\n              x509Issuer {\n                id\n                subject\n                subjectKeyIdentifier\n              }\n            }\n          }\n          ... on SshSignature {\n            verificationStatus\n            keyFingerprintSha256\n          }\n        }\n        pipelines(ref: $ref, first: 1) {\n          __typename\n          edges {\n            __typename\n            node {\n              __typename\n              id\n              detailedStatus {\n                __typename\n                id\n                detailsPath\n                icon\n                text\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n","variables":{"projectPath":"iocla/tema-1-2025","ref":"master","path":""}}];
+
+if (gl.startup_calls && window.fetch) {
+  Object.keys(gl.startup_calls).forEach(apiCall => {
+   gl.startup_calls[apiCall] = {
+      fetchCall: fetch(apiCall, {
+        // Emulate XHR for Rails AJAX request checks
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        // fetch won’t send cookies in older browsers, unless you set the credentials init option.
+        // We set to `same-origin` which is default value in modern browsers.
+        // See https://github.com/whatwg/fetch/pull/585 for more information.
+        credentials: 'same-origin'
+      })
+    };
+  });
+}
+if (gl.startup_graphql_calls && window.fetch) {
+  const headers = {"X-CSRF-Token":"NLqLJqKKTdQTFta-TywGOUHbrGQudXyZF2rWcwWHjF2H6UMXDOpSp-kAYDyU_aaRVnx3QGkG1EeYj7YN4wmlhg","x-gitlab-feature-category":"groups_and_projects"};
+  const url = `https://gitlab.cs.pub.ro/api/graphql`
+
+  const opts = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...headers,
+    }
+  };
+
+  gl.startup_graphql_calls = gl.startup_graphql_calls.map(call => ({
+    ...call,
+    fetchCall: fetch(url, {
+      ...opts,
+      credentials: 'same-origin',
+      body: JSON.stringify(call)
+    })
+  }))
+}
+
+
+//]]>
+</script>
+
+
+
+<link rel="stylesheet" href="./enunt_files/application-2d41a6424a07717cdfc59340d1fd3200484026c592edea9a097119441657bb0d.css">
+<link rel="stylesheet" href="./enunt_files/project-c979cd46017105b9bde03f4a30dd8e84ac39a0967c13eeda38a286ed67f1b137.css"><link rel="stylesheet" href="./enunt_files/tree-36265195585af5e9c554d953e140f9c837af2e2eecb061d3f93d2857768eb286.css"><link rel="stylesheet" href="./enunt_files/commit_description-1e2cba4dda3c7b30dd84924809020c569f1308dea51520fe1dd5d4ce31403195.css"><link rel="stylesheet" href="./enunt_files/projects-80846bc4bdd46036586f0a20fdc1d14b080c3cabfcebf1f71b5e1cb019f70b56.css"><link rel="stylesheet" href="./enunt_files/work_items-0bab65ad25644020e75fa90592713316a101e5859001cf80e99afce8d173eba4.css"><link rel="stylesheet" href="./enunt_files/notes_shared-3bb84b0aaad44aa5af4a1dd05713ec998273465ef28436cc7d1d1b97602c6bff.css">
+<link rel="stylesheet" href="./enunt_files/application_utilities-f77f86f78d4146d4c2c821bc481cee77b897df284886ad189d8dcb1234cb9651.css">
+<link rel="stylesheet" href="./enunt_files/tailwind-a2b7f5a7eb0fcc3b021fef8d949abb65ecca2da7d05f7a5a7d0307d389c81f58.css">
+
+
+<link rel="stylesheet" href="./enunt_files/fonts-fae5d3f79948bd85f18b6513a025f863b19636e85b09a1492907eb4b1bb0557b.css">
+<link rel="stylesheet" href="./enunt_files/white-99cce4f4b362f6840d7134d4129668929fde49c4da11d6ebf17f99768adbd868.css">
+
+
+<link rel="preload" href="./enunt_files/application_utilities-f77f86f78d4146d4c2c821bc481cee77b897df284886ad189d8dcb1234cb9651.css" as="style" type="text/css">
+<link rel="preload" href="./enunt_files/application-2d41a6424a07717cdfc59340d1fd3200484026c592edea9a097119441657bb0d.css" as="style" type="text/css">
+<link rel="preload" href="./enunt_files/white-99cce4f4b362f6840d7134d4129668929fde49c4da11d6ebf17f99768adbd868.css" as="style" type="text/css">
+
+
+
+
+<script src="./enunt_files/runtime.fc949c4c.bundle.js.download" defer="defer"></script>
+<script src="./enunt_files/main.eac86cb9.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.groups.analytics.dashboards-pages.groups.harbor.repositories-pages.groups.iteration_ca-8504ae95.98e6f929.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.search.show-super_sidebar.97112c09.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/super_sidebar.7a19429c.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.projects-pages.projects.activity-pages.projects.alert_management.details-pages.project-bc0cba90.2327bf9c.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.groups.packages-pages.groups.registry.repositories-pages.groups.security.policies.edit-429ebfda.bc735140.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/19.ffa5e988.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/69.bc356e68.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/102.97024ca9.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.projects.blob.show-pages.projects.commit.show-pages.projects.merge_requests.rapid_diff-6cfb71d6.efbc0aaf.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/124.2b471f19.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/122.2d207715.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.projects.blob.show-pages.projects.show-pages.projects.snippets.show-pages.projects.tre-c684fcf6.93d9fdf3.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.groups.show-pages.projects.blob.show-pages.projects.show-pages.projects.tree.show.18a9e344.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.projects.blob.show-pages.projects.show-pages.projects.tree.show.50892c09.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/commons-pages.groups.show-pages.projects.home_panel-pages.projects.show.14b767ad.chunk.js.download" defer="defer"></script>
+<script src="./enunt_files/pages.projects.show.85cb3247.chunk.js.download" defer="defer"></script>
+
+<meta content="object" property="og:type">
+<meta content="GitLab" property="og:site_name">
+<meta content="IOCLA / tema-1-2025 · GitLab" property="og:title">
+<meta content="Sign in" property="og:description">
+<meta content="https://gitlab.cs.pub.ro/assets/twitter_card-570ddb06edf56a2312253c5872489847a0f385112ddbcd71ccfa1570febab5d2.jpg" property="og:image">
+<meta content="64" property="og:image:width">
+<meta content="64" property="og:image:height">
+<meta content="https://gitlab.cs.pub.ro/iocla/tema-1-2025" property="og:url">
+<meta content="summary" property="twitter:card">
+<meta content="IOCLA / tema-1-2025 · GitLab" property="twitter:title">
+<meta content="Sign in" property="twitter:description">
+<meta content="https://gitlab.cs.pub.ro/assets/twitter_card-570ddb06edf56a2312253c5872489847a0f385112ddbcd71ccfa1570febab5d2.jpg" property="twitter:image">
+
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="fB98kkXlYkyDl7rnCqcE-O8bpexEqoy2pOg-XkAVL9jPTLSj64V9P3mBDGXRdqRQ-Lx-yAPZJGgrDV4gppsGAw">
+<meta name="csp-nonce">
+<meta name="action-cable-url" content="/-/cable">
+<link href="https://gitlab.cs.pub.ro/-/manifest.json" rel="manifest">
+<link rel="icon" type="image/png" href="https://gitlab.cs.pub.ro/assets/favicon-72a2cad5025aa931d6ea56c3201d1f18e68a8cd39788c7c80d5b2b82aa5143ef.png" id="favicon" data-original-href="/assets/favicon-72a2cad5025aa931d6ea56c3201d1f18e68a8cd39788c7c80d5b2b82aa5143ef.png">
+<link rel="apple-touch-icon" type="image/x-icon" href="https://gitlab.cs.pub.ro/assets/apple-touch-icon-b049d4bc0dd9626f31db825d61880737befc7835982586d015bded10b4435460.png">
+<link href="https://gitlab.cs.pub.ro/search/opensearch.xml" rel="search" title="Search GitLab" type="application/opensearchdescription+xml">
+<link rel="alternate" type="application/atom+xml" title="tema-1-2025 activity" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025.atom">
+
+
+
+
+<meta content="Sign in" name="description">
+<meta content="#ececef" name="theme-color">
+<style>
+svg[data-v-9534917c] {
+  pointer-events: none;
+
+  position: fixed;
+  right: 0;
+}
+svg polygon[data-v-9534917c],
+svg rect[data-v-9534917c] {
+  pointer-events: auto;
+}
+</style><style>
+.fake-input[data-v-26a01bbc] {
+  position: absolute;
+  top: 14px;
+  left: 39px;
+}
+</style><style>
+.input-box-wrapper[data-v-b93028c6] {
+  position: relative;
+}
+.fake-input-wrapper[data-v-b93028c6] {
+  position: absolute;
+}
+</style><script charset="utf-8" src="./enunt_files/shortcutsBundle.9c5591e6.chunk.js.download"></script><style type="text/css">.resizable-component[data-v-3de5149f]{position:relative}.resizable-component>.resizable-r[data-v-3de5149f]{z-index:90;cursor:e-resize;top:0;height:100%}.resizable-component>.resizable-r[data-v-3de5149f],.resizable-component>.resizable-rb[data-v-3de5149f]{display:block;position:absolute;touch-action:none;user-select:none;-moz-user-select:none;-webkit-user-select:none;width:12px;right:-6px}.resizable-component>.resizable-rb[data-v-3de5149f]{cursor:se-resize;height:12px;bottom:-6px;z-index:91}.resizable-component>.resizable-b[data-v-3de5149f]{z-index:90;cursor:s-resize;width:100%;left:0}.resizable-component>.resizable-b[data-v-3de5149f],.resizable-component>.resizable-lb[data-v-3de5149f]{display:block;position:absolute;touch-action:none;user-select:none;-moz-user-select:none;-webkit-user-select:none;height:12px;bottom:-6px}.resizable-component>.resizable-lb[data-v-3de5149f]{cursor:sw-resize;width:12px;left:-6px;z-index:91}.resizable-component>.resizable-l[data-v-3de5149f]{z-index:90;cursor:w-resize;height:100%;top:0}.resizable-component>.resizable-l[data-v-3de5149f],.resizable-component>.resizable-lt[data-v-3de5149f]{display:block;position:absolute;touch-action:none;user-select:none;-moz-user-select:none;-webkit-user-select:none;width:12px;left:-6px}.resizable-component>.resizable-lt[data-v-3de5149f]{cursor:nw-resize;height:12px;top:-6px;z-index:91}.resizable-component>.resizable-t[data-v-3de5149f]{z-index:90;cursor:n-resize;width:100%;left:0}.resizable-component>.resizable-rt[data-v-3de5149f],.resizable-component>.resizable-t[data-v-3de5149f]{display:block;position:absolute;touch-action:none;user-select:none;-moz-user-select:none;-webkit-user-select:none;height:12px;top:-6px}.resizable-component>.resizable-rt[data-v-3de5149f]{cursor:ne-resize;width:12px;right:-6px;z-index:91}</style><style>
+.input-copy-show-disc {
+  -webkit-text-security: disc;
+}
+/*
+  Bootstrap's invalid feedback displays based on a sibling selector which is incompatible with form-input-group.
+  So we must manually force the feedback to display when the input is invalid. See: https://github.com/bootstrap-vue/bootstrap-vue/issues/1251
+ */
+.input-copy-toggle-visibility-is-invalid .invalid-feedback {
+  display: block;
+}
+</style><script charset="utf-8" src="./enunt_files/hello.f4e8ba48.chunk.js.download"></script><style>
+/* This is to override a margin caused by bootstrap */
+.non-gfm-markdown-block {
+p {
+    margin-bottom: 0;
+}
+}
+</style><style>
+/* Temporary override until we have
+   * widths available in GlDisclosureDropdown
+   * https://gitlab.com/gitlab-org/gitlab-ui/-/issues/2501
+   */
+.code-dropdown .gl-new-dropdown-panel {
+  width: 100%;
+  max-width: 348px;
+}
+</style><style>
+/* Temporary override until we have
+   * widths available in GlDisclosureDropdown
+   * https://gitlab.com/gitlab-org/gitlab-ui/-/issues/2501
+   */
+.code-dropdown .gl-new-dropdown-panel {
+  width: 100%;
+  max-width: 348px;
+}
+</style><script charset="utf-8" src="./enunt_files/commons-pages.projects.blob.show-pages.projects.tree.show-treeList.8fb7e9fc.chunk.js.download"></script><script charset="utf-8" src="./enunt_files/treeList.63f8fbb0.chunk.js.download"></script><script charset="utf-8" src="./enunt_files/initInviteMembersTrigger.d762c099.chunk.js.download"></script></head>
+
+<body class="tab-width-8 gl-browser-chrome gl-platform-windows page-initialised" data-group="iocla" data-group-full-path="iocla" data-namespace-id="4210" data-page="projects:show" data-page-type-id="tema-1-2025" data-project="tema-1-2025" data-project-full-path="iocla/tema-1-2025" data-project-id="12423">
+<div id="js-tooltips-container"></div>
+
+<script>
+//<![CDATA[
+gl = window.gl || {};
+gl.client = {"isChrome":true,"isWindows":true};
+
+
+//]]>
+</script>
+
+
+<header class="header-logged-out" data-testid="navbar">
+<a class="gl-sr-only gl-accessibility" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#content-body">Skip to content</a>
+<div class="container-fluid">
+<nav aria-label="Explore GitLab" class="header-logged-out-nav gl-flex gl-gap-3 gl-justify-between">
+<div class="gl-flex gl-items-center gl-gap-1">
+<span class="gl-sr-only">GitLab</span>
+<a title="Homepage" id="logo" class="header-logged-out-logo has-tooltip" aria-label="Homepage" href="https://gitlab.cs.pub.ro/"><svg aria-hidden="true" role="img" class="tanuki-logo" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="tanuki-shape tanuki" d="m24.507 9.5-.034-.09L21.082.562a.896.896 0 0 0-1.694.091l-2.29 7.01H7.825L5.535.653a.898.898 0 0 0-1.694-.09L.451 9.411.416 9.5a6.297 6.297 0 0 0 2.09 7.278l.012.01.03.022 5.16 3.867 2.56 1.935 1.554 1.176a1.051 1.051 0 0 0 1.268 0l1.555-1.176 2.56-1.935 5.197-3.89.014-.01A6.297 6.297 0 0 0 24.507 9.5Z" fill="#E24329"></path>
+  <path class="tanuki-shape right-cheek" d="m24.507 9.5-.034-.09a11.44 11.44 0 0 0-4.56 2.051l-7.447 5.632 4.742 3.584 5.197-3.89.014-.01A6.297 6.297 0 0 0 24.507 9.5Z" fill="#FC6D26"></path>
+  <path class="tanuki-shape chin" d="m7.707 20.677 2.56 1.935 1.555 1.176a1.051 1.051 0 0 0 1.268 0l1.555-1.176 2.56-1.935-4.743-3.584-4.755 3.584Z" fill="#FCA326"></path>
+  <path class="tanuki-shape left-cheek" d="M5.01 11.461a11.43 11.43 0 0 0-4.56-2.05L.416 9.5a6.297 6.297 0 0 0 2.09 7.278l.012.01.03.022 5.16 3.867 4.745-3.584-7.444-5.632Z" fill="#FC6D26"></path>
+</svg>
+
+</a></div>
+<ul class="gl-list-none gl-p-0 gl-m-0 gl-flex gl-gap-3 gl-items-center gl-grow">
+<li class="header-logged-out-nav-item">
+<a class="" href="https://gitlab.cs.pub.ro/explore">Explore</a>
+</li>
+</ul>
+<ul class="gl-list-none gl-p-0 gl-m-0 gl-flex gl-gap-3 gl-items-center gl-justify-end">
+<li class="header-logged-out-nav-item">
+<a href="https://gitlab.cs.pub.ro/users/sign_in?redirect_to_referer=yes">Sign in</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="layout-page page-with-super-sidebar">
+<div><div class="super-sidebar-overlay"></div> <!----> <nav id="super-sidebar" aria-labelledby="super-sidebar-heading" data-testid="super-sidebar" class="super-sidebar"><h2 id="super-sidebar-heading" class="gl-sr-only">
+      Primary navigation
+    </h2> <div class="user-bar gl-flex gl-gap-1 gl-p-3"><div class="gl-flex gl-items-center gl-gap-1"><!----> <button aria-controls="super-sidebar" aria-expanded="true" aria-label="Primary navigation sidebar" type="button" class="btn btn-default btn-md gl-button btn-default-tertiary btn-icon js-super-sidebar-toggle-collapse" data-testid="super-sidebar-collapse-button" fdprocessedid="8p9t62"><!----> <svg data-testid="sidebar-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#sidebar"></use></svg>  <!----></button> <!----> <!----> <!----></div> <!----> <!----> <div class="gl-grow"><button id="super-sidebar-search" data-testid="super-sidebar-search-button" type="button" class="btn user-bar-button gl-border-none btn-default btn-md btn-block gl-button" fdprocessedid="onojfg"><!----> <!---->  <span class="gl-button-text"><svg data-testid="search-icon" role="img" aria-hidden="true" class="gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#search"></use></svg>
+      Search or go to…
+    </span></button> <!----></div></div> <div class="contextual-nav gl-flex gl-grow gl-flex-col gl-overflow-hidden"><div id="super-sidebar-context-header" class="super-sidebar-context-header gl-m-0 gl-px-4 gl-py-3 gl-font-bold gl-leading-reset">
+        Project
+      </div> <div class="gl-scroll-scrim gl-overflow-auto gl-grow" data-testid="nav-container"><div class="top-scrim-wrapper"><div class="top-scrim"></div></div> <div></div> <div class="gl-relative gl-p-2"><!----> <!----> <!----> <ul aria-labelledby="super-sidebar-context-header" data-testid="non-static-items-section" class="gl-mb-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025" aria-current="page" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus super-sidebar-nav-item-current gl-px-3 gl-rounded-base shortcuts-project" data-testid="nav-item-link" aria-label="tema-1-2025" data-track-action="click_menu_item" data-track-label="project_overview" data-track-property="nav_panel_project" data-qa-submenu-item="project-overview"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-10" style="width: 3px; border-radius: 3px; margin-right: 1px; transform: translateX(-1px);"></div> <div class="gl-flex gl-w-6 gl-shrink-0 gl-self-start"><div class="gl-avatar gl-avatar-identicon gl-avatar-s24 gl-avatar-identicon-bg6">
+  T
+</div></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      tema-1-2025
+      <!----></div>  <!----></a> <!----></li><li><!----> <button id="menu-section-button-manage" data-testid="menu-section-button" data-qa-section-name="Manage" aria-controls="manage" aria-expanded="false" data-qa-menu-item="Manage" class="super-sidebar-nav-item gl-relative gl-mb-2 gl-flex gl-min-h-7 gl-w-full gl-appearance-none gl-items-center gl-gap-3 gl-rounded-base gl-border-0 gl-bg-transparent gl-px-3 gl-py-2 gl-text-left !gl-text-default !gl-no-underline focus:gl-focus" fdprocessedid="key89j"><span aria-hidden="true" class="gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-bg-transparent" style="width: 3px; border-radius: 3px; margin-right: 1px;"></span> <span class="gl-flex gl-w-6 gl-shrink-0"><svg data-testid="users-icon" role="img" aria-hidden="true" class="super-sidebar-nav-item-icon gl-m-auto gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#users"></use></svg></span> <span class="gl-truncate-end gl-grow gl-text-default">
+      Manage
+    </span> <span class="gl-text-right gl-text-subtle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="gl-animated-icon gl-animated-icon-off gl-animated-icon-current"><path d="M6.75 4.75L10 8L6.75 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gl-animated-chevron-right-down-arrow"></path></svg></span></button> <!----> <div class="gl-m-0 gl-list-none gl-p-0 gl-duration-medium gl-ease-ease collapse" id="manage" data-testid="menu-section" data-qa-section-name="Manage" style="display: none;"><ul aria-label="Manage" class="gl-m-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/activity" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-project-activity" data-testid="nav-item-link" aria-label="Activity" data-track-action="click_menu_item" data-track-label="activity" data-track-property="nav_panel_project" data-qa-submenu-item="Activity"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Activity
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/project_members" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Members" data-track-action="click_menu_item" data-track-label="members" data-track-property="nav_panel_project" data-qa-submenu-item="Members"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Members
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/labels" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Labels" data-track-action="click_menu_item" data-track-label="labels" data-track-property="nav_panel_project" data-qa-submenu-item="Labels"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Labels
+      <!----></div>  <!----></a> <!----></li></ul></div></li><li><!----> <button id="menu-section-button-plan" data-testid="menu-section-button" data-qa-section-name="Plan" aria-controls="plan" aria-expanded="false" data-qa-menu-item="Plan" class="super-sidebar-nav-item gl-relative gl-mb-2 gl-flex gl-min-h-7 gl-w-full gl-appearance-none gl-items-center gl-gap-3 gl-rounded-base gl-border-0 gl-bg-transparent gl-px-3 gl-py-2 gl-text-left !gl-text-default !gl-no-underline focus:gl-focus" fdprocessedid="gez0ll"><span aria-hidden="true" class="gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-bg-transparent" style="width: 3px; border-radius: 3px; margin-right: 1px;"></span> <span class="gl-flex gl-w-6 gl-shrink-0"><svg data-testid="planning-icon" role="img" aria-hidden="true" class="super-sidebar-nav-item-icon gl-m-auto gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#planning"></use></svg></span> <span class="gl-truncate-end gl-grow gl-text-default">
+      Plan
+    </span> <span class="gl-text-right gl-text-subtle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="gl-animated-icon gl-animated-icon-off gl-animated-icon-current"><path d="M6.75 4.75L10 8L6.75 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gl-animated-chevron-right-down-arrow"></path></svg></span></button> <!----> <div class="gl-m-0 gl-list-none gl-p-0 gl-duration-medium gl-ease-ease collapse" id="plan" data-testid="menu-section" data-qa-section-name="Plan" style="display: none;"><ul aria-label="Plan" class="gl-m-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/issues" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-issues has-sub-items" data-testid="nav-item-link" aria-label="Issues" data-track-action="click_menu_item" data-track-label="project_issue_list" data-track-property="nav_panel_project" data-qa-submenu-item="Issues"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Issues
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/boards" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-issue-boards" data-testid="nav-item-link" aria-label="Issue boards" data-track-action="click_menu_item" data-track-label="boards" data-track-property="nav_panel_project" data-qa-submenu-item="Issue boards"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Issue boards
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/milestones" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Milestones" data-track-action="click_menu_item" data-track-label="milestones" data-track-property="nav_panel_project" data-qa-submenu-item="Milestones"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Milestones
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/cadences" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Iterations" data-track-action="click_menu_item" data-track-label="iterations" data-track-property="nav_panel_project" data-qa-submenu-item="Iterations"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Iterations
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/wikis/home" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-wiki" data-testid="nav-item-link" aria-label="Wiki" data-track-action="click_menu_item" data-track-label="project_wiki" data-track-property="nav_panel_project" data-qa-submenu-item="Wiki"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Wiki
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/requirements_management/requirements" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Requirements" data-track-action="click_menu_item" data-track-label="requirements" data-track-property="nav_panel_project" data-qa-submenu-item="Requirements"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Requirements
+      <!----></div>  <!----></a> <!----></li></ul></div></li><li><!----> <button id="menu-section-button-code" data-testid="menu-section-button" data-qa-section-name="Code" aria-controls="code" aria-expanded="false" data-qa-menu-item="Code" class="super-sidebar-nav-item gl-relative gl-mb-2 gl-flex gl-min-h-7 gl-w-full gl-appearance-none gl-items-center gl-gap-3 gl-rounded-base gl-border-0 gl-bg-transparent gl-px-3 gl-py-2 gl-text-left !gl-text-default !gl-no-underline focus:gl-focus" fdprocessedid="r1igu"><span aria-hidden="true" class="gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-bg-transparent" style="width: 3px; border-radius: 3px; margin-right: 1px;"></span> <span class="gl-flex gl-w-6 gl-shrink-0"><svg data-testid="code-icon" role="img" aria-hidden="true" class="super-sidebar-nav-item-icon gl-m-auto gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#code"></use></svg></span> <span class="gl-truncate-end gl-grow gl-text-default">
+      Code
+    </span> <span class="gl-text-right gl-text-subtle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="gl-animated-icon gl-animated-icon-off gl-animated-icon-current"><path d="M6.75 4.75L10 8L6.75 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gl-animated-chevron-right-down-arrow"></path></svg></span></button> <!----> <div class="gl-m-0 gl-list-none gl-p-0 gl-duration-medium gl-ease-ease collapse" id="code" data-testid="menu-section" data-qa-section-name="Code" style="display: none;"><ul aria-label="Code" class="gl-m-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/merge_requests" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-merge_requests" data-testid="nav-item-link" aria-label="Merge requests" data-track-action="click_menu_item" data-track-label="project_merge_request_list" data-track-property="nav_panel_project" data-qa-submenu-item="Merge requests"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Merge requests
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/tree/master" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-tree" data-testid="nav-item-link" aria-label="Repository" data-track-action="click_menu_item" data-track-label="files" data-track-property="nav_panel_project" data-qa-submenu-item="Repository"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Repository
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/branches" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Branches" data-track-action="click_menu_item" data-track-label="branches" data-track-property="nav_panel_project" data-qa-submenu-item="Branches"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Branches
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commits/master?ref_type=heads" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-commits" data-testid="nav-item-link" aria-label="Commits" data-track-action="click_menu_item" data-track-label="commits" data-track-property="nav_panel_project" data-qa-submenu-item="Commits"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Commits
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/tags" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Tags" data-track-action="click_menu_item" data-track-label="tags" data-track-property="nav_panel_project" data-qa-submenu-item="Tags"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Tags
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/network/master?ref_type=heads" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-network" data-testid="nav-item-link" aria-label="Repository graph" data-track-action="click_menu_item" data-track-label="graphs" data-track-property="nav_panel_project" data-qa-submenu-item="Repository graph"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Repository graph
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/compare?from=master&amp;to=master" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Compare revisions" data-track-action="click_menu_item" data-track-label="compare" data-track-property="nav_panel_project" data-qa-submenu-item="Compare revisions"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Compare revisions
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/snippets" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-snippets" data-testid="nav-item-link" aria-label="Snippets" data-track-action="click_menu_item" data-track-label="project_snippets" data-track-property="nav_panel_project" data-qa-submenu-item="Snippets"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Snippets
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/path_locks" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Locked files" data-track-action="click_menu_item" data-track-label="file_locks" data-track-property="nav_panel_project" data-qa-submenu-item="Locked files"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Locked files
+      <!----></div>  <!----></a> <!----></li></ul></div></li><li><!----> <button id="menu-section-button-build" data-testid="menu-section-button" data-qa-section-name="Build" aria-controls="build" aria-expanded="false" data-qa-menu-item="Build" class="super-sidebar-nav-item gl-relative gl-mb-2 gl-flex gl-min-h-7 gl-w-full gl-appearance-none gl-items-center gl-gap-3 gl-rounded-base gl-border-0 gl-bg-transparent gl-px-3 gl-py-2 gl-text-left !gl-text-default !gl-no-underline focus:gl-focus" fdprocessedid="oulcqu"><span aria-hidden="true" class="gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-bg-transparent" style="width: 3px; border-radius: 3px; margin-right: 1px;"></span> <span class="gl-flex gl-w-6 gl-shrink-0"><svg data-testid="rocket-icon" role="img" aria-hidden="true" class="super-sidebar-nav-item-icon gl-m-auto gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#rocket"></use></svg></span> <span class="gl-truncate-end gl-grow gl-text-default">
+      Build
+    </span> <span class="gl-text-right gl-text-subtle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="gl-animated-icon gl-animated-icon-off gl-animated-icon-current"><path d="M6.75 4.75L10 8L6.75 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gl-animated-chevron-right-down-arrow"></path></svg></span></button> <!----> <div class="gl-m-0 gl-list-none gl-p-0 gl-duration-medium gl-ease-ease collapse" id="build" data-testid="menu-section" data-qa-section-name="Build" style="display: none;"><ul aria-label="Build" class="gl-m-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/pipelines" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-pipelines" data-testid="nav-item-link" aria-label="Pipelines" data-track-action="click_menu_item" data-track-label="pipelines" data-track-property="nav_panel_project" data-qa-submenu-item="Pipelines"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Pipelines
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/jobs" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-builds" data-testid="nav-item-link" aria-label="Jobs" data-track-action="click_menu_item" data-track-label="jobs" data-track-property="nav_panel_project" data-qa-submenu-item="Jobs"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Jobs
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/pipeline_schedules" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-builds" data-testid="nav-item-link" aria-label="Pipeline schedules" data-track-action="click_menu_item" data-track-label="pipeline_schedules" data-track-property="nav_panel_project" data-qa-submenu-item="Pipeline schedules"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Pipeline schedules
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/quality/test_cases" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-test-cases" data-testid="nav-item-link" aria-label="Test cases" data-track-action="click_menu_item" data-track-label="test_cases" data-track-property="nav_panel_project" data-qa-submenu-item="Test cases"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Test cases
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/artifacts" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-builds" data-testid="nav-item-link" aria-label="Artifacts" data-track-action="click_menu_item" data-track-label="artifacts" data-track-property="nav_panel_project" data-qa-submenu-item="Artifacts"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Artifacts
+      <!----></div>  <!----></a> <!----></li></ul></div></li><li><!----> <button id="menu-section-button-deploy" data-testid="menu-section-button" data-qa-section-name="Deploy" aria-controls="deploy" aria-expanded="false" data-qa-menu-item="Deploy" class="super-sidebar-nav-item gl-relative gl-mb-2 gl-flex gl-min-h-7 gl-w-full gl-appearance-none gl-items-center gl-gap-3 gl-rounded-base gl-border-0 gl-bg-transparent gl-px-3 gl-py-2 gl-text-left !gl-text-default !gl-no-underline focus:gl-focus" fdprocessedid="5t83c8"><span aria-hidden="true" class="gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-bg-transparent" style="width: 3px; border-radius: 3px; margin-right: 1px;"></span> <span class="gl-flex gl-w-6 gl-shrink-0"><svg data-testid="deployments-icon" role="img" aria-hidden="true" class="super-sidebar-nav-item-icon gl-m-auto gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#deployments"></use></svg></span> <span class="gl-truncate-end gl-grow gl-text-default">
+      Deploy
+    </span> <span class="gl-text-right gl-text-subtle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="gl-animated-icon gl-animated-icon-off gl-animated-icon-current"><path d="M6.75 4.75L10 8L6.75 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gl-animated-chevron-right-down-arrow"></path></svg></span></button> <!----> <div class="gl-m-0 gl-list-none gl-p-0 gl-duration-medium gl-ease-ease collapse" id="deploy" data-testid="menu-section" data-qa-section-name="Deploy" style="display: none;"><ul aria-label="Deploy" class="gl-m-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/releases" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-deployments-releases" data-testid="nav-item-link" aria-label="Releases" data-track-action="click_menu_item" data-track-label="releases" data-track-property="nav_panel_project" data-qa-submenu-item="Releases"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Releases
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/packages" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-container-registry" data-testid="nav-item-link" aria-label="Package registry" data-track-action="click_menu_item" data-track-label="packages_registry" data-track-property="nav_panel_project" data-qa-submenu-item="Package registry"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Package registry
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/container_registry" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Container registry" data-track-action="click_menu_item" data-track-label="container_registry" data-track-property="nav_panel_project" data-qa-submenu-item="Container registry"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Container registry
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/ml/models" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Model registry" data-track-action="click_menu_item" data-track-label="model_registry" data-track-property="nav_panel_project" data-qa-submenu-item="Model registry"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Model registry
+      <!----></div>  <!----></a> <!----></li></ul></div></li><li><!----> <button id="menu-section-button-operate" data-testid="menu-section-button" data-qa-section-name="Operate" aria-controls="operate" aria-expanded="false" data-qa-menu-item="Operate" class="super-sidebar-nav-item gl-relative gl-mb-2 gl-flex gl-min-h-7 gl-w-full gl-appearance-none gl-items-center gl-gap-3 gl-rounded-base gl-border-0 gl-bg-transparent gl-px-3 gl-py-2 gl-text-left !gl-text-default !gl-no-underline focus:gl-focus" fdprocessedid="twgh2q"><span aria-hidden="true" class="gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-bg-transparent" style="width: 3px; border-radius: 3px; margin-right: 1px;"></span> <span class="gl-flex gl-w-6 gl-shrink-0"><svg data-testid="cloud-pod-icon" role="img" aria-hidden="true" class="super-sidebar-nav-item-icon gl-m-auto gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#cloud-pod"></use></svg></span> <span class="gl-truncate-end gl-grow gl-text-default">
+      Operate
+    </span> <span class="gl-text-right gl-text-subtle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="gl-animated-icon gl-animated-icon-off gl-animated-icon-current"><path d="M6.75 4.75L10 8L6.75 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gl-animated-chevron-right-down-arrow"></path></svg></span></button> <!----> <div class="gl-m-0 gl-list-none gl-p-0 gl-duration-medium gl-ease-ease collapse" id="operate" data-testid="menu-section" data-qa-section-name="Operate" style="display: none;"><ul aria-label="Operate" class="gl-m-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/environments" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-environments" data-testid="nav-item-link" aria-label="Environments" data-track-action="click_menu_item" data-track-label="environments" data-track-property="nav_panel_project" data-qa-submenu-item="Environments"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Environments
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/terraform_module_registry" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Terraform modules" data-track-action="click_menu_item" data-track-label="infrastructure_registry" data-track-property="nav_panel_project" data-qa-submenu-item="Terraform modules"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Terraform modules
+      <!----></div>  <!----></a> <!----></li></ul></div></li><li><!----> <button id="menu-section-button-monitor" data-testid="menu-section-button" data-qa-section-name="Monitor" aria-controls="monitor" aria-expanded="false" data-qa-menu-item="Monitor" class="super-sidebar-nav-item gl-relative gl-mb-2 gl-flex gl-min-h-7 gl-w-full gl-appearance-none gl-items-center gl-gap-3 gl-rounded-base gl-border-0 gl-bg-transparent gl-px-3 gl-py-2 gl-text-left !gl-text-default !gl-no-underline focus:gl-focus" fdprocessedid="13tzoe"><span aria-hidden="true" class="gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-bg-transparent" style="width: 3px; border-radius: 3px; margin-right: 1px;"></span> <span class="gl-flex gl-w-6 gl-shrink-0"><svg data-testid="monitor-icon" role="img" aria-hidden="true" class="super-sidebar-nav-item-icon gl-m-auto gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#monitor"></use></svg></span> <span class="gl-truncate-end gl-grow gl-text-default">
+      Monitor
+    </span> <span class="gl-text-right gl-text-subtle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="gl-animated-icon gl-animated-icon-off gl-animated-icon-current"><path d="M6.75 4.75L10 8L6.75 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gl-animated-chevron-right-down-arrow"></path></svg></span></button> <!----> <div class="gl-m-0 gl-list-none gl-p-0 gl-duration-medium gl-ease-ease collapse" id="monitor" data-testid="menu-section" data-qa-section-name="Monitor" style="display: none;"><ul aria-label="Monitor" class="gl-m-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/incidents" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Incidents" data-track-action="click_menu_item" data-track-label="incidents" data-track-property="nav_panel_project" data-qa-submenu-item="Incidents"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Incidents
+      <!----></div>  <!----></a> <!----></li></ul></div></li><li><!----> <button id="menu-section-button-analyze" data-testid="menu-section-button" data-qa-section-name="Analyze" aria-controls="analyze" aria-expanded="false" data-qa-menu-item="Analyze" class="super-sidebar-nav-item gl-relative gl-mb-2 gl-flex gl-min-h-7 gl-w-full gl-appearance-none gl-items-center gl-gap-3 gl-rounded-base gl-border-0 gl-bg-transparent gl-px-3 gl-py-2 gl-text-left !gl-text-default !gl-no-underline focus:gl-focus" fdprocessedid="k1ug38"><span aria-hidden="true" class="gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-bg-transparent" style="width: 3px; border-radius: 3px; margin-right: 1px;"></span> <span class="gl-flex gl-w-6 gl-shrink-0"><svg data-testid="chart-icon" role="img" aria-hidden="true" class="super-sidebar-nav-item-icon gl-m-auto gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#chart"></use></svg></span> <span class="gl-truncate-end gl-grow gl-text-default">
+      Analyze
+    </span> <span class="gl-text-right gl-text-subtle"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="gl-animated-icon gl-animated-icon-off gl-animated-icon-current"><path d="M6.75 4.75L10 8L6.75 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="gl-animated-chevron-right-down-arrow"></path></svg></span></button> <!----> <div class="gl-m-0 gl-list-none gl-p-0 gl-duration-medium gl-ease-ease collapse" id="analyze" data-testid="menu-section" data-qa-section-name="Analyze" style="display: none;"><ul aria-label="Analyze" class="gl-m-0 gl-list-none gl-p-0"><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/value_stream_analytics" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-project-cycle-analytics" data-testid="nav-item-link" aria-label="Value stream analytics" data-track-action="click_menu_item" data-track-label="cycle_analytics" data-track-property="nav_panel_project" data-qa-submenu-item="Value stream analytics"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Value stream analytics
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/graphs/master?ref_type=heads" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Contributor analytics" data-track-action="click_menu_item" data-track-label="contributors" data-track-property="nav_panel_project" data-qa-submenu-item="Contributor analytics"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Contributor analytics
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/pipelines/charts" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="CI/CD analytics" data-track-action="click_menu_item" data-track-label="ci_cd_analytics" data-track-property="nav_panel_project" data-qa-submenu-item="CI/CD analytics"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      CI/CD analytics
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/graphs/master/charts" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-repository-charts" data-testid="nav-item-link" aria-label="Repository analytics" data-track-action="click_menu_item" data-track-label="repository_analytics" data-track-property="nav_panel_project" data-qa-submenu-item="Repository analytics"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Repository analytics
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/analytics/code_reviews" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Code review analytics" data-track-action="click_menu_item" data-track-label="code_review" data-track-property="nav_panel_project" data-qa-submenu-item="Code review analytics"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Code review analytics
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/analytics/issues_analytics" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Issue analytics" data-track-action="click_menu_item" data-track-label="issues" data-track-property="nav_panel_project" data-qa-submenu-item="Issue analytics"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Issue analytics
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/insights/" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base shortcuts-project-insights" data-testid="nav-item-link" aria-label="Insights" data-track-action="click_menu_item" data-track-label="insights" data-track-property="nav_panel_project" data-qa-submenu-item="Insights"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Insights
+      <!----></div>  <!----></a> <!----></li><li data-testid="nav-item" class="show-on-focus-or-hover--context hide-on-focus-or-hover--context transition-opacity-on-hover--context gl-relative"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/ml/experiments" class="super-sidebar-nav-item show-on-focus-or-hover--control hide-on-focus-or-hover--control gl-relative gl-mb-1 gl-flex gl-min-h-7 gl-items-center gl-gap-3 gl-py-2 !gl-text-default !gl-no-underline focus:gl-focus gl-px-3 gl-rounded-base" data-testid="nav-item-link" aria-label="Model experiments" data-track-action="click_menu_item" data-track-label="model_experiments" data-track-property="nav_panel_project" data-qa-submenu-item="Model experiments"><div aria-hidden="true" data-testid="active-indicator" class="active-indicator gl-absolute gl-bottom-2 gl-left-2 gl-top-2 gl-transition-all gl-duration-slow gl-opacity-0" style="width: 3px; border-radius: 3px; margin-right: 1px;"></div> <div class="gl-flex gl-w-6 gl-shrink-0"><!----></div> <div data-testid="nav-item-link-label" class="gl-grow gl-text-default gl-break-anywhere">
+      Model experiments
+      <!----></div>  <!----></a> <!----></li></ul></div></li></ul></div> <div id="sidebar-portal-mount"></div> <div></div> <div class="bottom-scrim-wrapper"><div class="bottom-scrim"></div></div></div> <!----> <div class="gl-p-2"><div class="gl-disclosure-dropdown gl-new-dropdown"><div id="dropdown-toggle-btn-1" data-testid="base-dropdown-toggle" class="gl-new-dropdown-custom-toggle"><button data-testid="sidebar-help-button" type="button" class="btn super-sidebar-help-center-toggle btn-with-notification btn-default btn-md gl-button btn-default-tertiary" fdprocessedid="3jn32d"><!----> <svg data-testid="question-o-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#question-o"></use></svg>  <span class="gl-button-text"><!---->
+      Help
+    </span></button></div> <div id="base-dropdown-3" data-testid="base-dropdown-menu" class="gl-new-dropdown-panel !gl-w-31"><div class="gl-new-dropdown-arrow"></div> <div class="gl-new-dropdown-inner">  <ul id="disclosure-2" aria-labelledby="dropdown-toggle-btn-1" data-testid="disclosure-content" tabindex="-1" class="gl-new-dropdown-contents"> <!----> <li><!----> <ul class="gl-mb-0 gl-list-none gl-pl-0"><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" data-track-property="nav_help_menu" data-track-action="click_link" data-track-label="help" href="https://gitlab.cs.pub.ro/help" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Help
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" data-track-property="nav_help_menu" data-track-action="click_link" data-track-label="support" href="https://about.gitlab.com/get-help/" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Support
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" data-track-property="nav_help_menu" data-track-action="click_link" data-track-label="gitlab_documentation" href="https://gitlab.cs.pub.ro/help/docs" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          GitLab documentation
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" data-track-property="nav_help_menu" data-track-action="click_link" data-track-label="compare_gitlab_plans" href="https://about.gitlab.com/pricing" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Compare GitLab plans
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" data-track-property="nav_help_menu" data-track-action="click_link" data-track-label="community_forum" href="https://forum.gitlab.com/" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Community forum
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" data-track-property="nav_help_menu" data-track-action="click_link" data-track-label="contribute_to_gitlab" href="https://gitlab.cs.pub.ro/help/_index.md#contribute-to-gitlab" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Contribute to GitLab
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" data-track-property="nav_help_menu" data-track-action="click_link" data-track-label="submit_feedback" href="https://about.gitlab.com/submit-feedback" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Provide feedback
+        </span></a></li></ul></li> <li class="gl-border-t gl-border-t-dropdown-divider gl-pt-2 gl-mt-2"><!----> <ul class="gl-mb-0 gl-list-none gl-pl-0"><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><button tabindex="-1" data-track-action="click_button" data-track-label="keyboard_shortcuts_help" data-track-property="nav_help_menu" type="button" class="gl-new-dropdown-item-content js-shortcuts-modal-trigger"><span class="gl-new-dropdown-item-text-wrapper"><span class="-gl-my-1 gl-flex gl-items-center gl-justify-between">
+        Keyboard shortcuts
+        <kbd aria-hidden="true" class="flat">?</kbd></span></span></button></li></ul></li></ul> </div></div></div> <!----> <div></div></div></div></nav> <a href="https://gitlab.cs.pub.ro/explore/snippets" class="gl-hidden dashboard-shortcuts-snippets">
+    Snippets
+  </a><a href="https://gitlab.cs.pub.ro/explore/groups" class="gl-hidden dashboard-shortcuts-groups">
+    Groups
+  </a><a href="https://gitlab.cs.pub.ro/explore/projects/starred" class="gl-hidden dashboard-shortcuts-projects">
+    Projects
+  </a> <!----> <!----></div>
+
+<div class="content-wrapper">
+<div class="broadcast-wrapper">
+
+
+
+
+</div>
+<div class="alert-wrapper alert-wrapper-top-space gl-flex gl-flex-col gl-gap-3 container-fluid container-limited">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="top-bar-fixed container-fluid" data-testid="top-bar">
+<div class="top-bar-container gl-flex gl-items-center gl-gap-2">
+<div class="gl-grow gl-basis-0 gl-flex gl-items-center gl-justify-start gl-gap-3">
+<button aria-controls="super-sidebar" aria-expanded="false" aria-label="Primary navigation sidebar" type="button" class="btn btn-default btn-md gl-button btn-default-tertiary btn-icon gl-button btn btn-icon btn-md btn-default btn-default-tertiary js-super-sidebar-toggle-expand super-sidebar-toggle -gl-ml-3"><!----> <svg data-testid="sidebar-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#sidebar"></use></svg>  <!----></button>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"IOCLA","item":"https://gitlab.cs.pub.ro/iocla"},{"@type":"ListItem","position":2,"name":"tema-1-2025","item":"https://gitlab.cs.pub.ro/iocla/tema-1-2025"}]}
+
+
+</script>
+<div data-testid="breadcrumb-links" id="js-vue-page-breadcrumbs-wrapper">
+<nav aria-label="Breadcrumb" class="gl-breadcrumbs" style=""><ol class="gl-breadcrumb-list breadcrumb"><!----> <li class="gl-breadcrumb-item gl-breadcrumb-item-sm"><a href="https://gitlab.cs.pub.ro/iocla" class=""><img src="./enunt_files/IMG-20240502-WA0000.jpg" alt="avatar" class="gl-breadcrumb-avatar-tile gl-border gl-mr-2 !gl-rounded-base gl-avatar gl-avatar-s16" aria-hidden="true" data-testid="avatar"><span class="gl-align-middle">IOCLA</span></a></li><li class="gl-breadcrumb-item gl-breadcrumb-item-sm"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025" aria-current="page" class=""><!----><span class="gl-align-middle">tema-1-2025</span></a></li></ol></nav>
+<div id="js-injected-page-breadcrumbs"></div>
+</div>
+
+
+</div>
+<div class="gl-flex-none gl-flex gl-items-center gl-justify-center gl-gap-4">
+<div id="js-work-item-feedback"></div>
+
+<!---->
+
+</div>
+<div class="gl-basis-0 gl-flex gl-items-center gl-justify-end">
+
+</div>
+</div>
+</div>
+
+<div class="container-fluid container-limited project-highlight-puc">
+<main class="content" id="content-body" itemscope="" itemtype="http://schema.org/SoftwareSourceCode">
+<div class="flash-container flash-container-page sticky" data-testid="flash-container">
+<!---->
+</div>
+
+
+
+
+
+
+
+
+
+
+<header class="project-home-panel js-show-on-project-root gl-mt-5">
+<div class="gl-flex gl-justify-between gl-flex-wrap gl-flex-col md:gl-flex-row gl-gap-5">
+<div class="home-panel-title-row gl-flex gl-items-center">
+<div alt="tema-1-2025" class="gl-avatar gl-avatar-s48 gl-self-start gl-shrink-0 gl-mr-4 !gl-rounded-base gl-avatar-identicon gl-avatar-identicon-bg6" itemprop="image">
+T
+</div>
+
+<h1 class="home-panel-title gl-heading-1 gl-flex gl-items-center gl-flex-wrap gl-gap-3 gl-break-anywhere gl-mb-0" data-testid="project-name-content" itemprop="name">
+tema-1-2025
+<button class="has-tooltip gl-border-0 gl-bg-transparent gl-p-0 gl-leading-0 gl-text-inherit visibility-icon gl-inline-flex" data-container="body" data-placement="top" title="Public - The project can be accessed without any authentication." type="button" aria-label="Public - The project can be accessed without any authentication." fdprocessedid="9ewzc"><svg class="s16 gl-fill-icon-subtle" data-testid="earth-icon"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#earth"></use></svg></button>
+
+
+</h1>
+</div>
+<div class="gl-justify-content-md-end project-repo-buttons gl-flex gl-flex-wrap gl-items-center gl-gap-3"><!----> <!----> <div role="group" class="gl-button-group btn-group"><a data-testid="star-button" title="You must sign in to star a project" href="https://gitlab.cs.pub.ro/users/sign_in?redirect_to_referer=yes" class="btn star-btn btn-default btn-md gl-button"><!----> <!---->  <span class="gl-button-text"><svg data-testid="star-o-icon" role="img" aria-hidden="true" class="gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#star-o"></use></svg>
+    Star
+  </span></a> <a data-testid="star-count" title="Starrers" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/starrers" class="btn star-count btn-default btn-md gl-button"><!----> <!---->  <span class="gl-button-text">
+    0
+  </span></a></div> <!----> <span itemprop="identifier" data-testid="project-id-content" class="gl-sr-only">
+      Project ID: 12423
+    </span> <div class="gl-disclosure-dropdown gl-relative gl-w-full sm:gl-w-auto gl-new-dropdown" data-testid="groups-projects-more-actions-dropdown"><div id="dropdown-toggle-btn-14" data-testid="base-dropdown-toggle" class="gl-new-dropdown-custom-toggle"><div class="gl-min-h-7"><button aria-label="More actions" title="More actions" type="button" class="btn gl-new-dropdown-toggle gl-absolute gl-left-0 gl-top-0 gl-w-full sm:gl-w-auto md:!gl-hidden btn-default btn-md gl-button btn-default-secondary"><!----> <!---->  <span class="gl-button-text gl-w-full"><span class="gl-new-dropdown-button-text">More actions</span> <svg data-testid="chevron-down-icon" role="img" aria-hidden="true" class="dropdown-chevron gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#chevron-down"></use></svg></span></button> <button aria-label="More actions" title="More actions" type="button" class="btn gl-new-dropdown-toggle gl-new-dropdown-icon-only gl-new-dropdown-toggle-no-caret gl-hidden md:!gl-flex btn-default btn-md gl-button btn-default-tertiary btn-icon" fdprocessedid="7ic9sc"><!----> <svg data-testid="ellipsis_v-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#ellipsis_v"></use></svg>  <!----></button></div></div> <div id="base-dropdown-16" data-testid="base-dropdown-menu" class="gl-new-dropdown-panel !gl-w-31"><div class="gl-new-dropdown-arrow"></div> <div class="gl-new-dropdown-inner">  <ul id="disclosure-15" aria-labelledby="dropdown-toggle-btn-14" data-testid="disclosure-content" tabindex="-1" class="gl-new-dropdown-contents"> <li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item" data-clipboard-text="12423"><button tabindex="-1" data-testid="copy-project-id" type="button" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Copy project ID: 12423
+        </span></button></li> <!----> <!----></ul> </div></div></div></div>
+</div>
+
+</header>
+
+<div class="project-page-indicator js-show-on-project-root"></div>
+<div class="project-page-layout">
+<div class="project-page-layout-sidebar js-show-on-project-root gl-mt-5">
+<aside class="project-page-sidebar" data-testid="project-page-sidebar">
+<div class="project-page-sidebar-block home-panel-home-desc gl-py-4 gl-border-b gl-border-b-subtle !gl-pt-2">
+<h2 class="gl-text-base gl-font-bold gl-leading-reset gl-text-heading gl-m-0 gl-mb-1">Project information</h2>
+<div class="gl-mb-2 gl-mt-3">
+<div class="progress repository-languages-bar js-show-on-project-root"><div class="progress-bar has-tooltip" style="width: 94.6%; background-color:#0298c3" data-html="true" title="&lt;span class=&quot;repository-language-bar-tooltip-language&quot;&gt;Perl&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;repository-language-bar-tooltip-share&quot;&gt;94.6%&lt;/span&gt;"></div><div class="progress-bar has-tooltip" style="width: 5.03%; background-color:#89e051" data-html="true" title="&lt;span class=&quot;repository-language-bar-tooltip-language&quot;&gt;Shell&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;repository-language-bar-tooltip-share&quot;&gt;5.0%&lt;/span&gt;"></div><div class="progress-bar has-tooltip" style="width: 0.24%; background-color:#427819" data-html="true" title="&lt;span class=&quot;repository-language-bar-tooltip-language&quot;&gt;Makefile&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;repository-language-bar-tooltip-share&quot;&gt;0.2%&lt;/span&gt;"></div><div class="progress-bar has-tooltip" style="width: 0.07%; background-color:#555555" data-html="true" title="&lt;span class=&quot;repository-language-bar-tooltip-language&quot;&gt;C&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;repository-language-bar-tooltip-share&quot;&gt;0.1%&lt;/span&gt;"></div><div class="progress-bar has-tooltip" style="width: 0.07%; background-color:#384d54" data-html="true" title="&lt;span class=&quot;repository-language-bar-tooltip-language&quot;&gt;Dockerfile&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;repository-language-bar-tooltip-share&quot;&gt;0.1%&lt;/span&gt;"></div></div>
+</div>
+</div>
+<div class="project-page-sidebar-block gl-py-4 gl-border-b gl-border-b-subtle">
+<nav class="project-stats">
+<ul class="nav gl-gap-y-2 gl-gap-x-5">
+<li class="nav-item">
+<a class="nav-link stat-link !gl-px-0 !gl-pb-2" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commits/master"><svg class="s16 gl-fill-icon-subtle gl-mr-3" data-testid="commit-icon"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#commit"></use></svg><strong class="project-stat-value">43</strong> Commits</a>
+</li>
+<li class="nav-item">
+<a class="nav-link stat-link !gl-px-0 !gl-pb-2" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/branches"><svg class="s16 gl-fill-icon-subtle gl-mr-3" data-testid="branch-icon"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#branch"></use></svg><strong class="project-stat-value">1</strong> Branch</a>
+</li>
+<li class="nav-item">
+<a class="nav-link stat-link !gl-px-0 !gl-pb-2" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/tags"><svg class="s16 gl-fill-icon-subtle gl-mr-3" data-testid="label-icon"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#label"></use></svg><strong class="project-stat-value">0</strong> Tags</a>
+</li>
+</ul>
+
+</nav>
+</div>
+<div class="project-page-sidebar-block gl-py-4 gl-border-b gl-border-b-subtle">
+<div class="project-buttons gl-mb-2 js-show-on-project-root" data-testid="project-buttons">
+<ul class="nav gl-gap-y-2 gl-gap-x-5">
+<li class="nav-item">
+<a class="nav-link stat-link !gl-px-0 !gl-pb-2 btn-default" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/README.md"><svg class="s16 gl-fill-icon-subtle gl-mr-3" data-testid="doc-text-icon"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#doc-text"></use></svg>README</a>
+</li>
+</ul>
+
+</div>
+</div>
+
+<div class="project-page-sidebar-block gl-py-4">
+<p class="gl-font-bold gl-text-strong gl-m-0 gl-mb-1">Created on</p>
+<span>March 18, 2025</span>
+</div>
+</aside>
+
+</div>
+<div class="project-page-layout-content">
+<div class="project-show-files">
+<div class="tree-holder clearfix js-per-page gl-mt-5" data-blame-per-page="1000" id="tree-holder">
+<div class="nav-block gl-flex gl-flex-col sm:gl-flex-row gl-items-stretch">
+<div class="tree-ref-container gl-flex gl-flex-wrap gl-gap-2 mb-2 mb-md-0">
+<div class="tree-ref-holder gl-max-w-26" data-testid="ref-dropdown-container">
+<div><div class="ref-selector gl-w-full gl-new-dropdown !gl-block"><button id="dropdown-toggle-btn-42" data-testid="base-dropdown-toggle" aria-haspopup="listbox" aria-expanded="false" aria-controls="base-dropdown-44" aria-labelledby="dropdown-toggle-btn-42" type="button" class="btn btn-default btn-md btn-block gl-button gl-font-monospace gl-mb-0 gl-new-dropdown-toggle" fdprocessedid="ckxnmb"><!----> <svg data-testid="branch-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#branch"></use></svg>  <span class="gl-button-text gl-w-full"><span class="gl-new-dropdown-button-text">
+        master
+      </span> <svg data-testid="chevron-down-icon" role="img" aria-hidden="true" class="gl-button-icon gl-new-dropdown-chevron gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#chevron-down"></use></svg></span></button> <div id="base-dropdown-44" data-testid="base-dropdown-menu" class="gl-new-dropdown-panel !gl-w-31"><div class="gl-new-dropdown-arrow"></div> <div class="gl-new-dropdown-inner"> <div class="gl-flex gl-min-h-8 gl-items-center !gl-p-4 gl-border-b-1 gl-border-b-solid gl-border-b-dropdown-divider"><div id="listbox-header-43" data-testid="listbox-header-text" class="gl-grow gl-pr-2 gl-text-sm gl-font-bold gl-text-strong">
+      Select Git revision
+    </div> <!----> <!----></div> <div class="gl-border-b-1 gl-border-b-solid gl-border-b-dropdown-divider"><div class="gl-listbox-search" data-testid="listbox-search-input"><svg data-testid="search-sm-icon" role="img" aria-hidden="true" class="gl-listbox-search-icon gl-icon s12 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#search-sm"></use></svg> <input type="search" aria-label="Search by Git revision" placeholder="Search by Git revision" class="gl-listbox-search-input"> <!----></div> <!----></div> <div id="listbox-41" aria-labelledby="listbox-header-43" role="listbox" tabindex="0" class="gl-new-dropdown-contents gl-new-dropdown-contents-with-scrim-overlay gl-new-dropdown-contents"><div aria-hidden="true" data-testid="top-scrim" class="top-scrim-wrapper"><div class="top-scrim top-scrim-dark"></div></div> <div aria-hidden="true"></div> <ul role="group" aria-labelledby="gl-listbox-group-48" class="gl-mb-0 gl-pl-0"><li id="gl-listbox-group-48" role="presentation" class="gl-pb-2 gl-pl-4 gl-pt-3 gl-text-sm gl-font-bold gl-text-strong">
+      Branches <span class="gl-badge badge badge-pill badge-muted"><!----> <span class="gl-badge-content">1</span></span></li>  <li role="option" tabindex="-1" aria-selected="true" class="gl-new-dropdown-item" data-testid="listbox-item-refs/heads/master"><span class="gl-new-dropdown-item-content"><svg data-testid="dropdown-item-checkbox" role="img" aria-hidden="true" class="gl-icon s16 gl-fill-current gl-new-dropdown-item-check-icon gl-mt-3 gl-self-start"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#mobile-issue-close"></use></svg> <span class="gl-new-dropdown-item-text-wrapper">
+      master
+      <span class="gl-badge badge badge-pill badge-info"><!----> <span class="gl-badge-content">default</span></span> <span class="gl-badge badge badge-pill badge-neutral" title="" size="sm"><!----> <span class="gl-badge-content">
+  protected
+</span></span></span></span></li></ul> <!----> <!----> <div aria-hidden="true"></div> <div aria-hidden="true" data-testid="bottom-scrim" class="bottom-scrim-wrapper"><div class="bottom-scrim !gl-rounded-none"></div></div></div> <span data-testid="listbox-number-of-results" aria-live="assertive" class="gl-sr-only">
+      1 result
+    </span>  </div></div></div> <!----></div>
+</div>
+<nav aria-label="Files breadcrumb" data-current-path="" class="js-repo-breadcrumbs gl-flex"><ol class="breadcrumb repo-breadcrumb"><li class="breadcrumb-item"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/tree/master" class="gl-link"><strong>tema-1-2025</strong></a></li> <!----></ol> <!----> <!----></nav>
+</div>
+<!---->
+<div class="tree-controls">
+<div class="gl-flex gl-flex-wrap gl-gap-3 gl-mb-3 sm:gl-mb-0">
+
+
+
+<button class="gl-button btn btn-md btn-default has-tooltip shortcuts-find-file" title="Go to file, press &lt;kbd class=&#39;flat ml-1&#39; aria-hidden=true&gt;/~&lt;/kbd&gt; or &lt;kbd class=&#39;flat ml-1&#39; aria-hidden=true&gt;t&lt;/kbd&gt;" aria-keyshortcuts="/+~ t" data-html="true" data-event-tracking="click_find_file_button_on_repository_pages" type="button" fdprocessedid="aoqpl"><span class="gl-button-text">
+Find file
+
+</span>
+
+</button>
+
+<div class="project-code-holder gl-hidden sm:gl-inline-block">
+<div class="git-clone-holder js-git-clone-holder">
+<div class="gl-disclosure-dropdown code-dropdown gl-text-left gl-new-dropdown" data-testid="code-dropdown"><button id="dropdown-toggle-btn-26" data-testid="base-dropdown-toggle" aria-expanded="false" aria-controls="base-dropdown-28" aria-labelledby="dropdown-toggle-btn-26" type="button" class="btn btn-confirm btn-md gl-button gl-new-dropdown-toggle" fdprocessedid="cyatvk"><!----> <!---->  <span class="gl-button-text"><span class="gl-new-dropdown-button-text">
+        Code
+      </span> <svg data-testid="chevron-down-icon" role="img" aria-hidden="true" class="gl-button-icon gl-new-dropdown-chevron gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#chevron-down"></use></svg></span></button> <div id="base-dropdown-28" data-testid="base-dropdown-menu" class="gl-new-dropdown-panel"><div class="gl-new-dropdown-arrow"></div> <div class="gl-new-dropdown-inner">  <ul id="disclosure-27" aria-labelledby="dropdown-toggle-btn-26" data-testid="disclosure-content" tabindex="-1" class="gl-new-dropdown-contents"><li><!----> <ul class="gl-mb-0 gl-list-none gl-pl-0"><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><div role="group" class="form-group gl-form-group gl-mb-3 gl-px-3 gl-text-left" id="__BVID__230"><label for="copy-ssh-url-input" class="!gl-block !gl-text-sm !gl-pt-2 col-form-label" id="__BVID__230__BV_label_">
+      Clone with SSH
+      <!----> <!----></label><div><div role="group" class="input-group"><!----> <input id="copy-ssh-url-input" name="ssh_project_clone" type="text" readonly="readonly" class="gl-form-input form-control" aria-label="Clone with SSH" data-testid="copy-ssh-url-input"> <div class="input-group-append"><button title="Copy URL" aria-label="Copy URL" data-clipboard-text="git@gitlab.cs.pub.ro:iocla/tema-1-2025.git" data-testid="copy-ssh-url-button" type="button" class="btn gl-inline-flex btn-default btn-md gl-button btn-icon"><!----> <svg data-testid="copy-to-clipboard-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#copy-to-clipboard"></use></svg>  <!----></button></div></div><!----><!----><!----></div></div></li></ul></li> <li><!----> <ul class="gl-mb-0 gl-list-none gl-pl-0"><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><div role="group" class="form-group gl-form-group gl-mb-3 gl-px-3 gl-text-left" id="__BVID__240"><label for="copy-http-url-input" class="!gl-block !gl-text-sm !gl-pt-2 col-form-label" id="__BVID__240__BV_label_">
+      Clone with HTTPS
+      <!----> <!----></label><div><div role="group" class="input-group"><!----> <input id="copy-http-url-input" name="http_project_clone" type="text" readonly="readonly" class="gl-form-input form-control" aria-label="Clone with HTTPS" data-testid="copy-http-url-input"> <div class="input-group-append"><button title="Copy URL" aria-label="Copy URL" data-clipboard-text="https://gitlab.cs.pub.ro/iocla/tema-1-2025.git" data-testid="copy-http-url-button" type="button" class="btn gl-inline-flex btn-default btn-md gl-button btn-icon"><!----> <svg data-testid="copy-to-clipboard-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#copy-to-clipboard"></use></svg>  <!----></button></div></div><!----><!----><!----></div></div></li></ul></li> <!----> <li class="gl-border-t gl-border-t-dropdown-divider gl-pt-2 gl-mt-2"><div id="gl-disclosure-dropdown-group-31" class="gl-py-2 gl-pl-4 gl-text-sm gl-font-bold gl-text-strong">Open in your IDE</div> <ul aria-labelledby="gl-disclosure-dropdown-group-31" class="gl-mb-0 gl-list-none gl-pl-0"><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" href="vscode://vscode.git/clone?url=git%40gitlab.cs.pub.ro%3Aiocla%2Ftema-1-2025.git" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Visual Studio Code (SSH)
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" href="vscode://vscode.git/clone?url=https%3A%2F%2Fgitlab.cs.pub.ro%2Fiocla%2Ftema-1-2025.git" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          Visual Studio Code (HTTPS)
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" href="jetbrains://idea/checkout/git?idea.required.plugins.id=Git4Idea&amp;checkout.repo=git%40gitlab.cs.pub.ro%3Aiocla%2Ftema-1-2025.git" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          IntelliJ IDEA (SSH)
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" href="jetbrains://idea/checkout/git?idea.required.plugins.id=Git4Idea&amp;checkout.repo=https%3A%2F%2Fgitlab.cs.pub.ro%2Fiocla%2Ftema-1-2025.git" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          IntelliJ IDEA (HTTPS)
+        </span></a></li></ul></li> <li class="gl-border-t gl-border-t-dropdown-divider gl-pt-2 gl-mt-2"><div id="gl-disclosure-dropdown-group-36" class="gl-py-2 gl-pl-4 gl-text-sm gl-font-bold gl-text-strong">Download source code</div> <ul aria-labelledby="gl-disclosure-dropdown-group-36" class="gl-mb-0 gl-list-none gl-pl-0"><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" download="" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/archive/master/tema-1-2025-master.zip" rel="nofollow" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          zip
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" download="" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/archive/master/tema-1-2025-master.tar.gz" rel="nofollow" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          tar.gz
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" download="" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/archive/master/tema-1-2025-master.tar.bz2" rel="nofollow" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          tar.bz2
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" download="" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/archive/master/tema-1-2025-master.tar" rel="nofollow" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          tar
+        </span></a></li></ul></li> <!----></ul> </div></div></div>
+</div>
+
+</div>
+</div>
+<div class="project-code-holder gl-flex gl-gap-3 sm:!gl-hidden">
+<div class="gl-disclosure-dropdown gl-new-dropdown" title="Download" data-testid="download-source-code-button"><button id="dropdown-toggle-btn-17" data-testid="base-dropdown-toggle" aria-expanded="false" aria-controls="base-dropdown-19" aria-labelledby="dropdown-toggle-btn-17" type="button" class="btn btn-default btn-md gl-button btn-default-secondary gl-new-dropdown-toggle gl-new-dropdown-icon-only btn-icon"><!----> <svg data-testid="download-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#download"></use></svg>  <span class="gl-button-text"><span class="gl-new-dropdown-button-text gl-sr-only">
+        Download
+      </span> <svg data-testid="chevron-down-icon" role="img" aria-hidden="true" class="gl-button-icon gl-new-dropdown-chevron gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#chevron-down"></use></svg></span></button> <div id="base-dropdown-19" data-testid="base-dropdown-menu" class="gl-new-dropdown-panel"><div class="gl-new-dropdown-arrow"></div> <div class="gl-new-dropdown-inner">  <ul id="disclosure-18" aria-labelledby="dropdown-toggle-btn-17" data-testid="disclosure-content" tabindex="-1" class="gl-new-dropdown-contents"><li data-testid="source-code-group"><div id="gl-disclosure-dropdown-group-20" class="gl-py-2 gl-pl-4 gl-text-sm gl-font-bold gl-text-strong">Download source code</div> <ul aria-labelledby="gl-disclosure-dropdown-group-20" class="gl-mb-0 gl-list-none gl-pl-0"><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" download="" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/archive/master/tema-1-2025-master.zip" rel="nofollow" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          zip
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" download="" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/archive/master/tema-1-2025-master.tar.gz" rel="nofollow" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          tar.gz
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" download="" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/archive/master/tema-1-2025-master.tar.bz2" rel="nofollow" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          tar.bz2
+        </span></a></li><li tabindex="0" data-testid="disclosure-dropdown-item" class="gl-new-dropdown-item"><a tabindex="-1" download="" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/archive/master/tema-1-2025-master.tar" rel="nofollow" target="_self" class="gl-new-dropdown-item-content"><span class="gl-new-dropdown-item-text-wrapper">
+          tar
+        </span></a></li></ul></li> <!----></ul> </div></div></div>
+
+<div class="btn-group mobile-git-clone js-mobile-git-clone btn-block">
+<button class="gl-button btn btn-md btn-confirm hover:gl-no-underline js-clone-dropdown-label" title="Copy" aria-label="Copy" aria-live="polite" data-toggle="tooltip" data-placement="bottom" data-container="body" data-html="true" data-button-text="Copy HTTPS clone URL" data-size="medium" data-category="primary" data-variant="confirm" data-hide-button-icon="true" data-clipboard-text="https://gitlab.cs.pub.ro/iocla/tema-1-2025.git" type="button"><span class="gl-button-text">
+Copy HTTPS clone URL
+</span>
+
+</button>
+<button class="btn gl-button btn-confirm dropdown-toggle js-dropdown-toggle flex-grow-0 gl-flex gl-items-center gl-justify-center w-auto ml-0" data-toggle="dropdown" type="button">
+<svg class="s16 dropdown-btn-icon icon" data-testid="chevron-down-icon"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#chevron-down"></use></svg>
+</button>
+<ul class="dropdown-menu dropdown-menu-selectable dropdown-menu-right clone-options-dropdown" data-dropdown="">
+<li class="js-clone-links">
+<a class="copy ssh clone url-selector is-active" href="https://gitlab.cs.pub.ro/iocla/git@gitlab.cs.pub.ro:iocla/tema-1-2025.git" data-clone-type="ssh"><strong class="dropdown-menu-inner-title">Copy SSH clone URL</strong><span class="dropdown-menu-inner-content">git@gitlab.cs.pub.ro:iocla/tema-1-2025.git</span></a>
+</li>
+<li class="js-clone-links">
+<a class="copy https clone url-selector " href="https://gitlab.cs.pub.ro/iocla/tema-1-2025.git" data-clone-type="http"><strong class="dropdown-menu-inner-title">Copy HTTPS clone URL</strong><span class="dropdown-menu-inner-content">https://gitlab.cs.pub.ro/iocla/tema-1-2025.git</span></a>
+</li>
+
+</ul>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="info-well project-last-commit gl-flex-col gl-mt-5">
+<div><div class="well-segment commit gl-flex gl-w-full !gl-px-5 !gl-py-4 gl-hidden sm:gl-flex"><span class="gl-my-2 gl-mr-3"><img src="./enunt_files/15285404c0d39425e687ff3701c73c1d129c81e1f5623a0407b7204eb881d7ea" alt="user avatar" class="gl-bg-cover gl-avatar gl-avatar-circle gl-avatar-s32" data-src="https://secure.gravatar.com/avatar/15285404c0d39425e687ff3701c73c1d129c81e1f5623a0407b7204eb881d7ea?s=80&amp;d=identicon" data-testid="user-avatar-image"> <!----></span> <div class="commit-detail flex-list gl-flex gl-min-w-0 gl-grow"><div data-testid="commit-content" class="commit-content gl-inline-flex gl-w-full gl-flex-wrap gl-items-baseline"><div class="gl-inline-flex gl-basis-full gl-items-center gl-gap-x-3"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/b8b8cec1ba22f5cc23bea02b0a253a8eb67628a9" class="commit-row-message item-title gl-line-clamp-1 gl-whitespace-normal !gl-break-all gl-link">Added last changes</a> <button title="Toggle commit description" aria-label="Toggle commit description" type="button" class="btn !gl-ml-0 btn-default btn-md gl-button btn-icon button-ellipsis-horizontal" fdprocessedid="8tx025"><!----> <svg data-testid="ellipsis_h-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#ellipsis_h"></use></svg>  <!----></button></div> <div data-testid="committer" class="committer gl-basis-full gl-truncate gl-text-sm">
+          Robert Grancsa
+        
+        authored
+        <time title="March 23, 2025 at 10:41:51 PM GMT+2" datetime="2025-03-23T22:41:51+02:00" class="">3 months ago</time></div> <pre class="commit-row-description gl-mb-3 gl-whitespace-pre-wrap">Signed-off-by: <span data-trailer="Signed-off-by:"><a title="robert.grancsa2002@gmail.com" href="mailto:robert.grancsa2002@gmail.com"><img class="avatar s16 avatar-inline" src="./enunt_files/15285404c0d39425e687ff3701c73c1d129c81e1f5623a0407b7204eb881d7ea(1)" alt="default avatar"></a><a title="robert.grancsa2002@gmail.com" href="mailto:robert.grancsa2002@gmail.com">Robert Grancsa</a> &lt;<a title="robert.grancsa2002@gmail.com" href="mailto:robert.grancsa2002@gmail.com">robert.grancsa2002@gmail.com</a>&gt;</span></pre></div> <div class="gl-grow"></div> <div class="commit-actions gl-my-2 gl-flex gl-items-start gl-gap-3"><!----> <div class="gl-ml-5 gl-flex gl-h-7 gl-items-center"><a variant="success" title="Passed" aria-label="Status: Passed" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/pipelines/108789" data-testid="ci-icon" class="ci-icon gl-inline-flex gl-items-center gl-text-sm gl-mr-2 ci-icon-variant-success"><span class="ci-icon-gl-icon-wrapper"><svg data-testid="status_success_borderless-icon" role="img" aria-hidden="true" class="gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#status_success_borderless"></use></svg></span><!----></a></div> <div role="group" class="js-commit-sha-group gl-ml-4 gl-flex gl-items-center gl-button-group btn-group"><span variant="default" size="md" data-testid="last-commit-id-label" class="gl-font-monospace dark:!gl-bg-strong gl-button btn btn-label btn-md"><!----> <!---->  <span class="gl-button-text">b8b8cec1</span></span> <button id="clipboard-button-47" title="Copy commit SHA" data-clipboard-text="b8b8cec1ba22f5cc23bea02b0a253a8eb67628a9" data-clipboard-handle-tooltip="false" aria-label="Copy commit SHA" aria-live="polite" type="button" class="btn input-group-text dark:!gl-border-l-section btn-default btn-md gl-button btn-default-secondary btn-icon" fdprocessedid="50l7np"><!----> <svg data-testid="copy-to-clipboard-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#copy-to-clipboard"></use></svg>  <!----></button></div> <a data-testid="last-commit-history" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commits/master?ref_type=HEADS" class="btn !gl-ml-0 btn-default btn-md gl-button btn-default-secondary"><!----> <!---->  <span class="gl-button-text">
+        History
+      </span></a></div></div> <!----></div> <div class="well-segment !gl-px-4 !gl-py-3 gl-block !gl-border-t-0 sm:gl-hidden"><div class="gl-flex gl-flex-wrap gl-items-center gl-justify-between"><div class="gl-flex gl-items-center gl-gap-3 gl-text-sm"><span><img src="./enunt_files/15285404c0d39425e687ff3701c73c1d129c81e1f5623a0407b7204eb881d7ea" alt="user avatar" class="gl-bg-cover gl-avatar gl-avatar-circle gl-avatar-s32" data-src="https://secure.gravatar.com/avatar/15285404c0d39425e687ff3701c73c1d129c81e1f5623a0407b7204eb881d7ea?s=80&amp;d=identicon" data-testid="user-avatar-image"> <!----></span> <a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/b8b8cec1ba22f5cc23bea02b0a253a8eb67628a9" class="commit-row-message item-title gl-line-clamp-1 gl-whitespace-normal !gl-break-all gl-link"><svg data-testid="commit-icon" role="img" aria-hidden="true" class="gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#commit"></use></svg>
+        b8b8cec1
+      </a> <time title="March 23, 2025 at 10:41:51 PM GMT+2" datetime="2025-03-23T22:41:51+02:00" class="gl-text-subtle">3 months ago</time></div> <div class="gl-flex gl-items-center gl-gap-3"><button title="Toggle commit description" aria-label="Toggle commit description" data-testid="text-expander" type="button" class="btn text-expander btn-default btn-md gl-button btn-icon button-ellipsis-horizontal"><!----> <svg data-testid="ellipsis_h-icon" role="img" aria-hidden="true" class="gl-button-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#ellipsis_h"></use></svg>  <!----></button> <a data-testid="collapsible-commit-history" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commits/master?ref_type=HEADS" class="btn btn-default btn-sm gl-button"><!----> <!---->  <span class="gl-button-text">
+        History
+      </span></a></div></div> <!----></div></div>
+<!---->
+</div>
+<div><div class="tree-content-holder"><div class="table-holder gl-border gl-rounded-base gl-border-section"><table aria-label="Files, directories, and submodules in the path / for commit reference master" aria-live="polite" data-testid="file-tree-table" class="table tree-table gl-table-fixed"><thead><tr><th id="name" scope="col">Name</th> <th id="last-commit" scope="col" class="gl-hidden sm:gl-table-cell">
+      Last commit
+    </th> <th id="last-update" scope="col" class="text-right">Last update</th></tr></thead> <tbody><!----> <tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/tree/master/checker?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="checker" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg data-testid="folder-icon" role="img" aria-hidden="true" class="folder-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#folder"></use></svg></span><span data-testid="truncate-end-container" title="checker" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">checker</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/b8b8cec1ba22f5cc23bea02b0a253a8eb67628a9" title="Added last changes
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Added last changes</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 23, 2025 at 10:41:51 PM GMT+2" datetime="2025-03-23T22:41:51.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/tree/master/src?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="src" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg data-testid="folder-icon" role="img" aria-hidden="true" class="folder-icon gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#folder"></use></svg></span><span data-testid="truncate-end-container" title="src" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">src</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/3750ea4b90c73e9b4ff6a257bf3cee924e8274cb" title="Finalized readme
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Finalized readme</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 22, 2025 at 11:32:28 PM GMT+2" datetime="2025-03-22T23:32:28.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/.gitignore?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title=".gitignore" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#git"></use></svg></span><span data-testid="truncate-end-container" title=".gitignore" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">.gitignore</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/3750ea4b90c73e9b4ff6a257bf3cee924e8274cb" title="Finalized readme
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Finalized readme</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 22, 2025 at 11:32:28 PM GMT+2" datetime="2025-03-22T23:32:28.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/.gitlab-ci.yml?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title=".gitlab-ci.yml" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#gitlab"></use></svg></span><span data-testid="truncate-end-container" title=".gitlab-ci.yml" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">.gitlab-ci.yml</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/8432d2f19a7e2c45be544802b2d922d6c247c58c" title="Added skel and checker
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Added skel and checker</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 17, 2025 at 11:33:57 AM GMT+2" datetime="2025-03-17T11:33:57.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/Dockerfile?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="Dockerfile" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#docker"></use></svg></span><span data-testid="truncate-end-container" title="Dockerfile" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">Dockerfile</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/f38f706b72b12fbc1e14b6395511e32538510dbc" title="Added docker config
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Added docker config</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 21, 2025 at 3:33:49 PM GMT+2" datetime="2025-03-21T15:33:49.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/Makefile?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="Makefile" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#file"></use></svg></span><span data-testid="truncate-end-container" title="Makefile" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">Makefile</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/3750ea4b90c73e9b4ff6a257bf3cee924e8274cb" title="Finalized readme
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Finalized readme</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 22, 2025 at 11:32:28 PM GMT+2" datetime="2025-03-22T23:32:28.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/README.md?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="README.md" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#markdown"></use></svg></span><span data-testid="truncate-end-container" title="README.md" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">README.md</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/b8b8cec1ba22f5cc23bea02b0a253a8eb67628a9" title="Added last changes
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Added last changes</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 23, 2025 at 10:41:51 PM GMT+2" datetime="2025-03-23T22:41:51.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/banner.webp?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="banner.webp" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#image"></use></svg></span><span data-testid="truncate-end-container" title="banner.webp" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">banner.webp</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/3750ea4b90c73e9b4ff6a257bf3cee924e8274cb" title="Finalized readme
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Finalized readme</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 22, 2025 at 11:32:28 PM GMT+2" datetime="2025-03-22T23:32:28.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/data.json?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="data.json" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#json"></use></svg></span><span data-testid="truncate-end-container" title="data.json" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">data.json</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/e1a92ba7898006b23d5f9516a370d3fe50c7ec87" title="Added all tests
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Added all tests</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 21, 2025 at 10:48:40 PM GMT+2" datetime="2025-03-21T22:48:40.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/install.sh?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="install.sh" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#console"></use></svg></span><span data-testid="truncate-end-container" title="install.sh" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">install.sh</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/8432d2f19a7e2c45be544802b2d922d6c247c58c" title="Added skel and checker
+
+Signed-off-by: Robert Grancsa &lt;robert.grancsa2002@gmail.com&gt;
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Added skel and checker</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="March 17, 2025 at 11:33:57 AM GMT+2" datetime="2025-03-17T11:33:57.000+02:00" class="">3 months ago</time></div> <!----></td></tr><tr class="tree-item"><th scope="row" class="tree-item-file-name gl-relative gl-cursor-default gl-font-normal"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/local.sh?ref_type=heads" class="tree-item-link gl-inline-flex gl-min-w-0 gl-max-w-full" title="local.sh" data-testid="file-name-link"><span class="gl-relative gl-mr-2 gl-text-secondary"><svg class="s16 gl-relative file-icon"><use href="/assets/file_icons/file_icons-88a95467170997d6a4052c781684c8250847147987090747773c1ee27c513c5f.svg#console"></use></svg></span><span data-testid="truncate-end-container" title="local.sh" class="gl-truncate-component gl-min-w-0 gl-grow hover:gl-underline"><span class="gl-truncate-end">local.sh</span></span></a> <!----> <!----> <!----></th> <td class="tree-commit cursor-default gl-hidden sm:gl-table-cell"><a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/commit/487b10060df1f48202742c0486d9871bdfe5b795" title="Add runner like behavior for script
+" class="str-truncated-100 tree-commit-link gl-text-subtle gl-link">Add runner like behavior for script</a> <div></div></td> <td class="tree-time-ago cursor-default gl-text-right gl-text-subtle"><div><time title="November 13, 2024 at 11:26:18 PM GMT+2" datetime="2024-11-13T23:26:18.000+02:00" class="">7 months ago</time></div> <!----></td></tr> <!----> <!----></tbody></table></div></div> <article class="file-holder limited-width-container readme-holder"><div class="js-file-title file-title-flex-parent"><div class="file-header-content"><svg data-testid="doc-text-icon" role="img" aria-hidden="true" class="gl-icon s16 gl-fill-current"><use href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#doc-text"></use></svg> <a href="https://gitlab.cs.pub.ro/iocla/tema-1-2025/-/blob/master/README.md?ref_type=heads" class="gl-link"><strong>README.md</strong></a></div></div> <div data-testid="blob-viewer-content" itemprop="about" class="blob-viewer"><div><div data-rich-type="markup" data-path="README.md" class="blob-viewer">
+<div class="file-content js-markup-content md">
+<h1 dir="auto" data-sourcepos="1:1-1:12">
+<a id="user-content-homework-1" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#homework-1"></a>Homework 1</h1>
+<h2 dir="auto" data-sourcepos="3:1-3:44">
+<a id="user-content-assignment-simple-c-to-assembly-compiler" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#assignment-simple-c-to-assembly-compiler"></a>Assignment: Simple C-to-Assembly Compiler</h2>
+<p dir="auto" data-sourcepos="5:1-5:42"><strong data-sourcepos="5:1-5:17">Deadline soft</strong>: 6 aprilie 2025, 11:55PM</p>
+<p dir="auto" data-sourcepos="7:1-7:43"><strong data-sourcepos="7:1-7:17">Deadline hard</strong>: 11 aprilie 2025, 11:55PM</p>
+<p dir="auto" data-sourcepos="9:1-9:11"><strong data-sourcepos="9:1-9:11">Authors</strong></p>
+<ul dir="auto" data-sourcepos="11:1-13:0">
+<li data-sourcepos="11:1-11:16">Robert Grancsa</li>
+<li data-sourcepos="12:1-13:0">Adelina Alexe</li>
+</ul>
+<h2 dir="auto" data-sourcepos="14:1-14:15">
+<a id="user-content-introduction" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#introduction"></a>Introduction</h2>
+<p dir="auto" data-sourcepos="15:1-15:16"><a rel="noopener noreferrer" href="./enunt_files/banner.webp" class="no-attachment-icon gfm" target="_blank"><img class="gfm js-lazy-loaded" decoding="async" alt="" src="./enunt_files/banner.webp" data-sourcepos="15:1-15:16" loading="lazy" data-testid="js-lazy-loaded-content"></a></p>
+<p dir="auto" data-sourcepos="17:1-17:609">In a neon-lit room filled with vintage circuit boards and digital memes, Alex—a modern TikTok brain rot specialist—devised a daring plan to escape Instagram’s endless scroll. Determined to reclaim his mind, he crafted a groundbreaking compiler that transformed addictive algorithms into streams of artful data. With every line of code, toxic noise became immersive stories, intricate music, and thought-provoking visuals, forging a digital sanctuary where creativity reigned. As the algorithmic chains broke, Alex emerged as a quiet revolutionary—a cyber alchemist turning the toxic into transcendent.</p>
+<h3 dir="auto" data-sourcepos="19:1-19:13">
+<a id="user-content-objective" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#objective"></a>Objective</h3>
+<p dir="auto" data-sourcepos="21:1-21:512">Develop a small compiler or translator that converts simple C-like code snippets into basic assembly instructions. The primary goal is to familiarize yourself with assembly language mnemonics and to understand how high-level constructs map to low-level operations. This assignment is intentionally minimalistic to ease you into both assembly language and compiler design. If we actually want to be pedantic, this is actually a <a rel="nofollow noreferrer noopener" href="https://en.wikipedia.org/wiki/Source-to-source_compiler" data-sourcepos="21:428-21:496" target="_blank">transpiler</a> implementation.</p>
+<h3 dir="auto" data-sourcepos="23:1-23:9">
+<a id="user-content-theme" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#theme"></a>Theme</h3>
+<p dir="auto" data-sourcepos="25:1-26:444"><em data-sourcepos="25:1-25:39">Simple C Statements → Real Assembly</em>
+The translation should be as simple as possible while covering basic arithmetic operations, register usage, data movement, and control flow constructs. On an lower level, this is what happens in the background when compiling a C program, but it is simplified for easier implementations. If you are really intersted about how a compiler works in reality, we recommend you the 4th year course of <a href="https://gitlab.cs.pub.ro/Compilatoare" data-sourcepos="26:395-26:444">Compilers</a></p>
+<h2 dir="auto" data-sourcepos="28:1-28:29">
+<a id="user-content-conventions-and-guidelines" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#conventions-and-guidelines"></a>Conventions and Guidelines</h2>
+<p dir="auto" data-sourcepos="30:1-30:103">Because we want to prevent you from having to juggle with registers, we'll use some simple conventions.</p>
+<ul dir="auto" data-sourcepos="32:1-41:0">
+<li data-sourcepos="32:1-36:17">
+<strong data-sourcepos="32:3-32:29">Basic Register Mapping:</strong>
+<ul data-sourcepos="33:3-36:17">
+<li data-sourcepos="33:3-33:17">
+<code data-sourcepos="33:5-33:7">A</code> → <code data-sourcepos="33:13-33:17">eax</code>
+</li>
+<li data-sourcepos="34:3-34:17">
+<code data-sourcepos="34:5-34:7">B</code> → <code data-sourcepos="34:13-34:17">ebx</code>
+</li>
+<li data-sourcepos="35:3-35:17">
+<code data-sourcepos="35:5-35:7">C</code> → <code data-sourcepos="35:13-35:17">ecx</code>
+</li>
+<li data-sourcepos="36:3-36:17">
+<code data-sourcepos="36:5-36:7">D</code> → <code data-sourcepos="36:13-36:17">edx</code>
+</li>
+</ul>
+</li>
+<li data-sourcepos="37:1-41:0">
+<strong data-sourcepos="37:3-37:16">Data types</strong>
+<ul data-sourcepos="38:3-41:0">
+<li data-sourcepos="38:3-38:54">We'll assume all of the data types are <strong data-sourcepos="38:44-38:54">4 bytes</strong>
+</li>
+<li data-sourcepos="39:3-39:62">When you see a number, we will treat it as a int (4 bytes)</li>
+<li data-sourcepos="40:3-41:0">When handling pointers, those will also be stored as 4 bytes</li>
+</ul>
+</li>
+</ul>
+<h2 dir="auto" data-sourcepos="42:1-42:15">
+<a id="user-content-instructions" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#instructions"></a>Instructions</h2>
+<h3 dir="auto" data-sourcepos="44:1-44:7">
+<a id="user-content-mov" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#mov"></a>MOV</h3>
+<p dir="auto" data-sourcepos="46:1-46:129">The mov instructions is the simplest of all, and as the name says, it moves the data from one place to another. More details here</p>
+<h4 dir="auto" data-sourcepos="48:1-48:10">
+<a id="user-content-usage" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#usage"></a>Usage</h4>
+<p dir="auto" data-sourcepos="50:1-50:25"><code data-sourcepos="50:1-50:25">MOV destination, source</code></p>
+<h4 dir="auto" data-sourcepos="52:1-52:24">
+<a id="user-content-c---asm-translation" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#c---asm-translation"></a>C - ASM translation</h4>
+<table dir="auto" data-sourcepos="54:1-57:33">
+<thead>
+<tr data-sourcepos="54:1-54:33">
+<th data-sourcepos="54:2-54:14"><strong data-sourcepos="54:3-54:12">C Code</strong></th>
+<th data-sourcepos="54:16-54:32"><strong data-sourcepos="54:17-54:28">ASM Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr data-sourcepos="56:1-56:33">
+<td data-sourcepos="56:2-56:14"><code data-sourcepos="56:3-56:10">a = 1;</code></td>
+<td data-sourcepos="56:16-56:32"><code data-sourcepos="56:17-56:28">MOV eax, 1</code></td>
+</tr>
+<tr data-sourcepos="57:1-57:33">
+<td data-sourcepos="57:2-57:14"><code data-sourcepos="57:3-57:10">b = a;</code></td>
+<td data-sourcepos="57:16-57:32"><code data-sourcepos="57:17-57:30">MOV ebx, eax</code></td>
+</tr>
+</tbody>
+</table>
+<p dir="auto" data-sourcepos="59:1-59:71"><strong data-sourcepos="59:1-59:8">Note</strong>: There will be no <code data-sourcepos="59:28-59:39">MOV 2, eax</code> as that is an invalid operation</p>
+<h3 dir="auto" data-sourcepos="61:1-61:22">
+<a id="user-content-logical-operations" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#logical-operations"></a>Logical operations</h3>
+<h4 dir="auto" data-sourcepos="63:1-63:10">
+<a id="user-content-usage-1" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#usage-1"></a>Usage</h4>
+<p dir="auto" data-sourcepos="65:1-67:25"><code data-sourcepos="65:1-65:25">AND destination, source</code>
+<code data-sourcepos="66:1-66:24">OR destination, source</code>
+<code data-sourcepos="67:1-67:25">XOR destination, source</code></p>
+<h4 dir="auto" data-sourcepos="69:1-69:24">
+<a id="user-content-c---asm-translation-1" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#c---asm-translation-1"></a>C - ASM translation</h4>
+<table dir="auto" data-sourcepos="71:1-75:39">
+<thead>
+<tr data-sourcepos="71:1-71:37">
+<th data-sourcepos="71:2-71:18"><strong data-sourcepos="71:3-71:12">C Code</strong></th>
+<th data-sourcepos="71:20-71:36"><strong data-sourcepos="71:21-71:32">ASM Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr data-sourcepos="73:1-73:39">
+<td data-sourcepos="73:2-73:20"><code data-sourcepos="73:3-73:17">a = a &amp; 0xFF;</code></td>
+<td data-sourcepos="73:22-73:38"><code data-sourcepos="73:23-73:37">AND eax, 0xFF</code></td>
+</tr>
+<tr data-sourcepos="74:1-74:39">
+<td data-sourcepos="74:2-74:20"><code data-sourcepos="74:3-74:13">b = b | a</code></td>
+<td data-sourcepos="74:22-74:38"><code data-sourcepos="74:23-74:35">OR ebx, eax</code></td>
+</tr>
+<tr data-sourcepos="75:1-75:39">
+<td data-sourcepos="75:2-75:20"><code data-sourcepos="75:3-75:14">c = a ^ c;</code></td>
+<td data-sourcepos="75:22-75:38"><code data-sourcepos="75:23-75:36">XOR ecx, eax</code></td>
+</tr>
+</tbody>
+</table>
+<h3 dir="auto" data-sourcepos="77:1-77:25">
+<a id="user-content-arithmetic-operations" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#arithmetic-operations"></a>Arithmetic operations</h3>
+<p dir="auto" data-sourcepos="79:1-79:209">There are 4 aritmetic operations, but we will take them 2 by two, as there are differences between them. The first two, add and sub, are for + and - operations. These work the same way as the MOV instructions.</p>
+<h4 dir="auto" data-sourcepos="81:1-81:21">
+<a id="user-content-usage---add-sub" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#usage---add-sub"></a>Usage - add, sub</h4>
+<p dir="auto" data-sourcepos="83:1-83:25"><code data-sourcepos="83:1-83:25">SUB destination, source</code></p>
+<h4 dir="auto" data-sourcepos="85:1-85:24">
+<a id="user-content-c---asm-translation-2" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#c---asm-translation-2"></a>C - ASM translation</h4>
+<table dir="auto" data-sourcepos="87:1-90:37">
+<thead>
+<tr data-sourcepos="87:1-87:37">
+<th data-sourcepos="87:2-87:18"><strong data-sourcepos="87:3-87:12">C Code</strong></th>
+<th data-sourcepos="87:20-87:36"><strong data-sourcepos="87:21-87:32">ASM Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr data-sourcepos="89:1-89:37">
+<td data-sourcepos="89:2-89:18"><code data-sourcepos="89:3-89:14">a = a + 5;</code></td>
+<td data-sourcepos="89:20-89:36"><code data-sourcepos="89:21-89:32">ADD eax, 5</code></td>
+</tr>
+<tr data-sourcepos="90:1-90:37">
+<td data-sourcepos="90:2-90:18"><code data-sourcepos="90:3-90:14">b = b - a;</code></td>
+<td data-sourcepos="90:20-90:36"><code data-sourcepos="90:21-90:34">SUB ebx, eax</code></td>
+</tr>
+</tbody>
+</table>
+<h4 dir="auto" data-sourcepos="92:1-92:21">
+<a id="user-content-usage---mul-div" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#usage---mul-div"></a>Usage - mul, div</h4>
+<p dir="auto" data-sourcepos="94:1-95:13"><code data-sourcepos="94:1-94:13">MUL source2</code>
+<code data-sourcepos="95:1-95:13">DIV divisor</code></p>
+<p dir="auto" data-sourcepos="97:1-97:104">You might be wondering, why only one operand? Here we have a special rule, and goes something like this:</p>
+<p dir="auto" data-sourcepos="99:1-99:365">When multiplying with MUL, the multiplication will actually take EAX and source2 as the multiplication values, and set them in 2 registers -&gt; EDX and EAX. EDX will store the higher values, and EAX the lower one, acting as a big 8 byte register, because after multiplying two 32 bit number, we might have an overflow. Looking at the table will make it a bit clearer.</p>
+<p dir="auto" data-sourcepos="101:1-101:274">Similar to MUL, DIV works with EAX as the primary operand, but it also considers EDX as part of the dividend. This means the division is performed using a 64-bit value (EDX:EAX) divided by the given divisor. The result is stored in EAX, while the remainder is placed in EDX.</p>
+<table dir="auto" data-sourcepos="103:1-114:37">
+<thead>
+<tr data-sourcepos="103:1-103:37">
+<th data-sourcepos="103:2-103:18"><strong data-sourcepos="103:3-103:12">C Code</strong></th>
+<th data-sourcepos="103:20-103:36"><strong data-sourcepos="103:21-103:32">ASM Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr data-sourcepos="105:1-105:36">
+<td data-sourcepos="105:2-105:18"><code data-sourcepos="105:3-105:14">a = a * 3;</code></td>
+<td data-sourcepos="105:20-105:35"><code data-sourcepos="105:21-105:27">MUL 3</code></td>
+</tr>
+<tr data-sourcepos="106:1-106:37">
+<td data-sourcepos="106:2-106:18"><code data-sourcepos="106:3-106:14">b = b * c;</code></td>
+<td data-sourcepos="106:20-106:36"><code data-sourcepos="106:21-106:34">MOV eax, ebx</code></td>
+</tr>
+<tr data-sourcepos="107:1-107:37">
+<td data-sourcepos="107:2-107:18"></td>
+<td data-sourcepos="107:20-107:36"><code data-sourcepos="107:21-107:29">MUL ecx</code></td>
+</tr>
+<tr data-sourcepos="108:1-108:37">
+<td data-sourcepos="108:2-108:18"></td>
+<td data-sourcepos="108:20-108:36"><code data-sourcepos="108:21-108:34">MOV ebx, eax</code></td>
+</tr>
+<tr data-sourcepos="109:1-109:37">
+<td data-sourcepos="109:2-109:18"><code data-sourcepos="109:3-109:14">a = a / 3;</code></td>
+<td data-sourcepos="109:20-109:36"><code data-sourcepos="109:21-109:32">MOV eax, a</code></td>
+</tr>
+<tr data-sourcepos="110:1-110:37">
+<td data-sourcepos="110:2-110:18"></td>
+<td data-sourcepos="110:20-110:36"><code data-sourcepos="110:21-110:27">DIV 3</code></td>
+</tr>
+<tr data-sourcepos="111:1-111:37">
+<td data-sourcepos="111:2-111:18"></td>
+<td data-sourcepos="111:20-111:36"><code data-sourcepos="111:21-111:32">MOV a, eax</code></td>
+</tr>
+<tr data-sourcepos="112:1-112:37">
+<td data-sourcepos="112:2-112:18"><code data-sourcepos="112:3-112:14">b = b / c;</code></td>
+<td data-sourcepos="112:20-112:36"><code data-sourcepos="112:21-112:34">MOV eax, ebx</code></td>
+</tr>
+<tr data-sourcepos="113:1-113:37">
+<td data-sourcepos="113:2-113:18"></td>
+<td data-sourcepos="113:20-113:36"><code data-sourcepos="113:21-113:29">DIV ecx</code></td>
+</tr>
+<tr data-sourcepos="114:1-114:37">
+<td data-sourcepos="114:2-114:18"></td>
+<td data-sourcepos="114:20-114:36"><code data-sourcepos="114:21-114:35">	MOV ebx, eax</code></td>
+</tr>
+</tbody>
+</table>
+<p dir="auto" data-sourcepos="116:1-116:107"><strong data-sourcepos="116:1-116:8">Note</strong>: For simplicity, we will never use eax as source2, and we will never never use the value from EDX.</p>
+<p dir="auto" data-sourcepos="118:1-118:165">If you use the <em data-sourcepos="118:16-118:20">DIV</em> instruction with a <strong data-sourcepos="118:41-118:56">divisor of 0</strong>, the processor will generate a <strong data-sourcepos="118:89-118:116">"Divide Error" exception</strong>, and the program will stop if it is not handled.</p>
+<p dir="auto" data-sourcepos="120:1-120:145">Since division requires <strong data-sourcepos="120:25-120:31">EDX</strong> to be set up properly, we should always <strong data-sourcepos="120:73-120:80">zero</strong> it before performing DIV if we are working with unsigned values.</p>
+<h3 dir="auto" data-sourcepos="122:1-122:20">
+<a id="user-content-shift-operations" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#shift-operations"></a>Shift operations</h3>
+<p dir="auto" data-sourcepos="124:1-124:70">SHL (Shift left) and SHR (Shift right) are bitwise shift instructions.</p>
+<h4 dir="auto" data-sourcepos="126:1-126:21">
+<a id="user-content-usage---shl-shr" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#usage---shl-shr"></a>Usage - shl, shr</h4>
+<p dir="auto" data-sourcepos="128:1-128:34"><code data-sourcepos="128:1-128:34">SHL destination, no_bits_shifted</code></p>
+<p dir="auto" data-sourcepos="130:1-130:34"><code data-sourcepos="130:1-130:34">SHR destination, no_bits_shifted</code></p>
+<ul dir="auto" data-sourcepos="132:1-137:0">
+<li data-sourcepos="132:1-134:0">
+<p data-sourcepos="132:3-132:124">SHL:  Moves bits to the left, filling the rightmost bits with zeros. Each shift effectively <strong data-sourcepos="132:95-132:108">multiplies</strong> the value by 2.</p>
+<ul data-sourcepos="133:3-134:0">
+<li data-sourcepos="133:3-134:0">Example: <code data-sourcepos="133:14-133:23">00001100</code> (<code data-sourcepos="133:26-133:29">12</code> in decimal) shifted left by 1 becomes <code data-sourcepos="133:69-133:78">00011000</code> (<code data-sourcepos="133:81-133:84">24</code> in decimal).</li>
+</ul>
+</li>
+<li data-sourcepos="135:1-137:0">
+<p data-sourcepos="135:3-135:120">SHR: Moves bits to the right, filling the leftmost bits with zeros. Each shift effectively <strong data-sourcepos="135:94-135:104">divides</strong> the value by 2.</p>
+<ul data-sourcepos="136:3-137:0">
+<li data-sourcepos="136:3-137:0">Example: <code data-sourcepos="136:14-136:23">00001100</code> (<code data-sourcepos="136:26-136:29">12</code> in decimal) shifted left by 1 becomes <code data-sourcepos="136:69-136:78">00000110</code> (<code data-sourcepos="136:81-136:83">6</code> in decimal).</li>
+</ul>
+</li>
+</ul>
+<table dir="auto" data-sourcepos="138:1-141:38">
+<thead>
+<tr data-sourcepos="138:1-138:38">
+<th data-sourcepos="138:2-138:19"><strong data-sourcepos="138:3-138:12">C Code</strong></th>
+<th data-sourcepos="138:21-138:37"><strong data-sourcepos="138:22-138:33">ASM Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr data-sourcepos="140:1-140:38">
+<td data-sourcepos="140:2-140:19"><code data-sourcepos="140:3-140:14">a = a &lt;&lt; 1</code></td>
+<td data-sourcepos="140:21-140:37"><code data-sourcepos="140:22-140:33">SHL eax, 1</code></td>
+</tr>
+<tr data-sourcepos="141:1-141:38">
+<td data-sourcepos="141:2-141:19"><code data-sourcepos="141:3-141:14">b = b &gt;&gt; 2</code></td>
+<td data-sourcepos="141:21-141:37"><code data-sourcepos="141:22-141:33">SHR ebx, 2</code></td>
+</tr>
+</tbody>
+</table>
+<h3 dir="auto" data-sourcepos="143:1-143:26">
+<a id="user-content-conditional-statements" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#conditional-statements"></a>Conditional Statements</h3>
+<h4 dir="auto" data-sourcepos="145:1-145:21">
+<a id="user-content-cmp-instrunction" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#cmp-instrunction"></a>CMP Instrunction</h4>
+<p dir="auto" data-sourcepos="147:1-147:141"><code data-sourcepos="147:1-147:5">CMP</code> instruction compares two values by substracting the second operand from the first. It updates CPU flags, but does not store the result.</p>
+<h4 dir="auto" data-sourcepos="149:1-149:16">
+<a id="user-content-usage---cmp" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#usage---cmp"></a>Usage - cmp</h4>
+<p dir="auto" data-sourcepos="151:1-151:24"><code data-sourcepos="151:1-151:24">CMP operand1, operand2</code></p>
+<ul dir="auto" data-sourcepos="153:1-161:0">
+<li data-sourcepos="153:1-161:0">
+<p data-sourcepos="153:3-153:10">Example:</p>
+<p data-sourcepos="155:3-155:14"><code data-sourcepos="155:3-155:14">MOV eax, 3</code></p>
+<p data-sourcepos="157:3-157:36"><code data-sourcepos="157:3-157:14">CMP eax, 3</code> ; Compares eax with 3</p>
+<p data-sourcepos="159:3-159:80"><code data-sourcepos="159:3-159:18">JE equal_label</code> ; Jumps to label "equal_label" if eax == 3 (Zero flag is set)</p>
+</li>
+</ul>
+<h3 dir="auto" data-sourcepos="162:1-162:9">
+<a id="user-content-jumps" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#jumps"></a>Jumps</h3>
+<p dir="auto" data-sourcepos="164:1-164:52">Here's a short description of each conditional jump:</p>
+<ul dir="auto" data-sourcepos="166:1-173:0">
+<li data-sourcepos="166:1-166:43">
+<strong data-sourcepos="166:3-166:9">JMP</strong> (Jump): Jumps to the given label.</li>
+<li data-sourcepos="167:1-167:121">
+<strong data-sourcepos="167:3-167:8">JE</strong> (Jump if Equal): Jumps to the given label if the two compared values are equal (e.g.: <code data-sourcepos="167:96-167:100">CMP</code> sets the Zero Flag).</li>
+<li data-sourcepos="168:1-168:92">
+<strong data-sourcepos="168:3-168:9">JNE</strong> (Jump if Not Equal): Jumps if the two values are not equal (Zero Flag is not set).</li>
+<li data-sourcepos="169:1-169:100">
+<strong data-sourcepos="169:3-169:8">JG</strong> (Jump if Greater): Jumps if the first value is greater than the second (Signed comparison).</li>
+<li data-sourcepos="170:1-170:102">
+<strong data-sourcepos="170:3-170:9">JGE</strong> (Jump if Greater or Equal): Jumps if the first value is greater than or equal to the second.</li>
+<li data-sourcepos="171:1-171:74">
+<strong data-sourcepos="171:3-171:8">JL</strong> (Jump if Less): Jumps if the first value is less than the second.</li>
+<li data-sourcepos="172:1-173:0">
+<strong data-sourcepos="172:3-172:9">JLE</strong> (Jump if Less or Equal): Jumps if the first value is less than or equal to the second.</li>
+</ul>
+<h4 dir="auto" data-sourcepos="174:1-174:10">
+<a id="user-content-usage-2" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#usage-2"></a>Usage</h4>
+<p dir="auto" data-sourcepos="176:1-176:11"><code data-sourcepos="176:1-176:11">JMP label</code></p>
+<p dir="auto" data-sourcepos="178:1-178:10"><code data-sourcepos="178:1-178:10">JE label</code></p>
+<p dir="auto" data-sourcepos="180:1-180:11"><code data-sourcepos="180:1-180:11">JNE label</code></p>
+<p dir="auto" data-sourcepos="182:1-182:10"><code data-sourcepos="182:1-182:10">JG label</code></p>
+<p dir="auto" data-sourcepos="184:1-184:10"><code data-sourcepos="184:1-184:10">JL label</code></p>
+<h4 dir="auto" data-sourcepos="186:1-186:24">
+<a id="user-content-c---asm-translation-3" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#c---asm-translation-3"></a>C - ASM translation</h4>
+<table dir="auto" data-sourcepos="188:1-196:57">
+<thead>
+<tr data-sourcepos="188:1-188:57">
+<th data-sourcepos="188:2-188:30"><strong data-sourcepos="188:3-188:12">C Code</strong></th>
+<th data-sourcepos="188:32-188:56"><strong data-sourcepos="188:33-188:44">ASM Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr data-sourcepos="190:1-190:57">
+<td data-sourcepos="190:2-190:30"><code data-sourcepos="190:3-190:17">if (a == b) {</code></td>
+<td data-sourcepos="190:32-190:56"><code data-sourcepos="190:33-190:46">CMP eax, ebx</code></td>
+</tr>
+<tr data-sourcepos="191:1-191:57">
+<td data-sourcepos="191:2-191:30"></td>
+<td data-sourcepos="191:32-191:56"><code data-sourcepos="191:33-191:48">JNE else_label</code></td>
+</tr>
+<tr data-sourcepos="192:1-192:57">
+<td data-sourcepos="192:2-192:30"><code data-sourcepos="192:7-192:25">// some code here</code></td>
+<td data-sourcepos="192:32-192:56"><code data-sourcepos="192:33-192:50">; some code here</code></td>
+</tr>
+<tr data-sourcepos="193:1-193:57">
+<td data-sourcepos="193:2-193:30"></td>
+<td data-sourcepos="193:32-193:56"><code data-sourcepos="193:33-193:44">JMP end_if</code></td>
+</tr>
+<tr data-sourcepos="194:1-194:57">
+<td data-sourcepos="194:2-194:30"><code data-sourcepos="194:3-194:12">} else {</code></td>
+<td data-sourcepos="194:32-194:56"><code data-sourcepos="194:33-194:45">else_label:</code></td>
+</tr>
+<tr data-sourcepos="195:1-195:57">
+<td data-sourcepos="195:2-195:30"><code data-sourcepos="195:7-195:28">some other code here</code></td>
+<td data-sourcepos="195:32-195:56"><code data-sourcepos="195:33-195:56">; some other code here</code></td>
+</tr>
+<tr data-sourcepos="196:1-196:57">
+<td data-sourcepos="196:2-196:30"><code data-sourcepos="196:3-196:5">}</code></td>
+<td data-sourcepos="196:32-196:56"><code data-sourcepos="196:33-196:41">end_if:</code></td>
+</tr>
+</tbody>
+</table>
+<h3 dir="auto" data-sourcepos="198:1-198:22">
+<a id="user-content-loops---for-while" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#loops---for-while"></a>Loops - for, while</h3>
+<h4 dir="auto" data-sourcepos="200:1-200:15">
+<a id="user-content-for-loop" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#for-loop"></a><code data-sourcepos="200:6-200:10">for</code> loop</h4>
+<table dir="auto" data-sourcepos="202:1-211:57">
+<thead>
+<tr data-sourcepos="202:1-202:57">
+<th data-sourcepos="202:2-202:32"><strong data-sourcepos="202:3-202:12">C Code</strong></th>
+<th data-sourcepos="202:34-202:56"><strong data-sourcepos="202:35-202:46">ASM Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr data-sourcepos="204:1-204:57">
+<td data-sourcepos="204:2-204:32"><code data-sourcepos="204:3-204:30">for (a = 0; a &lt; 10; a++) {</code></td>
+<td data-sourcepos="204:34-204:56"><code data-sourcepos="204:35-204:46">MOV eax, 0</code></td>
+</tr>
+<tr data-sourcepos="205:1-205:57">
+<td data-sourcepos="205:2-205:32"></td>
+<td data-sourcepos="205:34-205:56"><code data-sourcepos="205:35-205:47">start_loop:</code></td>
+</tr>
+<tr data-sourcepos="206:1-206:57">
+<td data-sourcepos="206:2-206:32"></td>
+<td data-sourcepos="206:34-206:56"><code data-sourcepos="206:35-206:47">CMP eax, 10</code></td>
+</tr>
+<tr data-sourcepos="207:1-207:57">
+<td data-sourcepos="207:2-207:32"></td>
+<td data-sourcepos="207:34-207:56"><code data-sourcepos="207:35-207:48">JGE end_loop</code></td>
+</tr>
+<tr data-sourcepos="208:1-208:57">
+<td data-sourcepos="208:2-208:32"><code data-sourcepos="208:3-208:21">// some code here</code></td>
+<td data-sourcepos="208:34-208:56"><code data-sourcepos="208:35-208:52">; some code here</code></td>
+</tr>
+<tr data-sourcepos="209:1-209:57">
+<td data-sourcepos="209:2-209:32"></td>
+<td data-sourcepos="209:34-209:56"><code data-sourcepos="209:35-209:46">ADD eax, 1</code></td>
+</tr>
+<tr data-sourcepos="210:1-210:57">
+<td data-sourcepos="210:2-210:32"></td>
+<td data-sourcepos="210:34-210:56"><code data-sourcepos="210:35-210:50">JMP start_loop</code></td>
+</tr>
+<tr data-sourcepos="211:1-211:57">
+<td data-sourcepos="211:2-211:32"><code data-sourcepos="211:3-211:5">}</code></td>
+<td data-sourcepos="211:34-211:56"><code data-sourcepos="211:35-211:45">end_loop:</code></td>
+</tr>
+</tbody>
+</table>
+<h4 dir="auto" data-sourcepos="213:1-213:17">
+<a id="user-content-while-loop" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#while-loop"></a><code data-sourcepos="213:6-213:12">while</code> loop</h4>
+<table dir="auto" data-sourcepos="215:1-222:87">
+<thead>
+<tr data-sourcepos="215:1-215:79">
+<th data-sourcepos="215:2-215:22"><strong data-sourcepos="215:3-215:12">C Code</strong></th>
+<th data-sourcepos="215:24-215:78"><strong data-sourcepos="215:25-215:36">ASM Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr data-sourcepos="217:1-217:79">
+<td data-sourcepos="217:2-217:22"><code data-sourcepos="217:3-217:19">while (b &lt; 5) {</code></td>
+<td data-sourcepos="217:24-217:78"><code data-sourcepos="217:25-217:37">start_loop:</code></td>
+</tr>
+<tr data-sourcepos="218:1-218:79">
+<td data-sourcepos="218:2-218:22"></td>
+<td data-sourcepos="218:24-218:78"><code data-sourcepos="218:25-218:36">CMP ebx, 5</code></td>
+</tr>
+<tr data-sourcepos="219:1-219:79">
+<td data-sourcepos="219:2-219:22"></td>
+<td data-sourcepos="219:24-219:78"><code data-sourcepos="219:25-219:38">JGE end_loop</code></td>
+</tr>
+<tr data-sourcepos="220:1-220:79">
+<td data-sourcepos="220:2-220:22"><code data-sourcepos="220:3-220:21">// some code here</code></td>
+<td data-sourcepos="220:24-220:78"><code data-sourcepos="220:25-220:77">; some code that makes b greater than or equal to 5</code></td>
+</tr>
+<tr data-sourcepos="221:1-221:79">
+<td data-sourcepos="221:2-221:22"></td>
+<td data-sourcepos="221:24-221:78"><code data-sourcepos="221:25-221:40">JMP start_loop</code></td>
+</tr>
+<tr data-sourcepos="222:1-222:87">
+<td data-sourcepos="222:2-222:22"><code data-sourcepos="222:3-222:5">}</code></td>
+<td data-sourcepos="222:24-222:78"><code data-sourcepos="222:25-222:35">end_loop:</code></td>
+</tr>
+</tbody>
+</table>
+<h3 dir="auto" data-sourcepos="224:1-224:16">
+<a id="user-content-coding-style" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#coding-style"></a>Coding style</h3>
+<p dir="auto" data-sourcepos="226:1-227:66">Coding style can be run directly in the checker, by pressing <code data-sourcepos="226:62-226:64">C</code>, or by using the
+<code data-sourcepos="227:1-227:7">cs.sh</code> executable from <code data-sourcepos="227:25-227:36">checker/cs</code>. The points are the folowing:</p>
+<ul dir="auto" data-sourcepos="229:1-232:0">
+<li data-sourcepos="229:1-229:32">&gt;= 10 of <code data-sourcepos="229:13-229:19">CHECK</code> =&gt; -5 points</li>
+<li data-sourcepos="230:1-230:33">&gt;= 5 of <code data-sourcepos="230:12-230:20">WARNING</code> =&gt; -5 points</li>
+<li data-sourcepos="231:1-232:0">&gt;= 1 of <code data-sourcepos="231:12-231:18">ERROR</code> =&gt; -10 points</li>
+</ul>
+<h2 dir="auto" data-sourcepos="233:1-233:8">
+<a id="user-content-notes" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#notes"></a>Notes</h2>
+<ul dir="auto" data-sourcepos="235:1-239:0">
+<li data-sourcepos="235:1-236:85">The implementation can be done in any file, and the executable must be named
+<code data-sourcepos="236:3-236:14">transpiler</code>, situated in the root of the folder, same as the initial makefile does</li>
+<li data-sourcepos="237:1-239:0">For sending the homework, you can use the <code data-sourcepos="237:45-237:55">make pack</code> rule, which automatically creates
+a zip file with the necesarry content already in it. Don't forget to change your name first</li>
+</ul>
+<h2 dir="auto" data-sourcepos="240:1-240:10">
+<a id="user-content-checker" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#checker"></a>Checker</h2>
+<blockquote dir="auto" data-sourcepos="242:1-244:69">
+<p data-sourcepos="242:3-244:69">! Atention, the checker doesn't run valgrind by default, but you must pass all the test
+with valgrind in order to get the score. To activate valgrind on your checker, press
+<code data-sourcepos="244:1-244:3">v</code>, making sure there is a red border which will show that it is on.</p>
+</blockquote>
+<h3 dir="auto" data-sourcepos="246:1-246:21">
+<a id="user-content-instalation-steps" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#instalation-steps"></a>Instalation steps</h3>
+<p dir="auto" data-sourcepos="248:1-249:73">You can use the <code data-sourcepos="248:17-248:30">./install.sh</code> to install all the dependencies and the checker.
+If you find any errors along this process, try to follow the steps below:</p>
+<ol dir="auto" data-sourcepos="251:1-255:51">
+<li data-sourcepos="251:1-254:0">
+<p data-sourcepos="251:4-253:82">Download rustup using
+<code data-sourcepos="252:1-252:46">curl https://sh.rustup.rs -sSf | sh -s -- -y</code>. If you get any errors
+after this step, add cargo to the PATH variable using <code data-sourcepos="253:55-253:81">source "$HOME/.cargo/env"</code>.</p>
+</li>
+<li data-sourcepos="255:1-255:51">
+<p data-sourcepos="255:4-255:51">Run the following command to install the checker</p>
+</li>
+</ol>
+<div class="gl-relative markdown-code-block js-markdown-code">
+<pre class="code highlight js-syntax-highlight language-shell white" data-canonical-lang="bash" data-sourcepos="256:1-258:3" id="code-49"><code><span lang="shell" class="line" id="LC1"><span class="nv">$ </span>cargo <span class="nb">install </span>hw_checker</span></code></pre>
+<copy-code><button type="button" class="btn btn-default btn-md gl-button btn-icon has-tooltip" data-title="Copy to clipboard" aria-label="Copy to clipboard" data-clipboard-target="pre#code-49" fdprocessedid="xibn3"><svg><use xlink:href="/assets/icons-aa2c8ddf99d22b77153ca2bb092a23889c12c597fc8b8de94b0f730eb53513f6.svg#copy-to-clipboard"></use></svg></button></copy-code>
+</div>
+<p dir="auto" data-sourcepos="260:1-260:71">After install, you can use the <code data-sourcepos="260:32-260:43">hw_checker</code> command to run the checker.</p>
+<h3 dir="auto" data-sourcepos="262:1-262:24">
+<a id="user-content-instructiuni-checker" class="anchor" aria-hidden="true" href="https://gitlab.cs.pub.ro/iocla/tema-1-2025#instructiuni-checker"></a>Instructiuni checker</h3>
+<p dir="auto" data-sourcepos="264:1-266:60">For a list of commands and guides for the checker, please read the README from the
+<code data-sourcepos="265:1-265:6">src/</code> directory. If you have any problems running the GUI, you can use the
+<code data-sourcepos="266:1-266:21">hw_checker --legacy</code> command to run them in text only mode.</p>
+</div>
+
+</div>
+</div></div></article></div>
+</div>
+
+</div>
+</div>
+</div>
+
+</main>
+</div>
+
+
+</div>
+</div>
+
+
+<script>
+//<![CDATA[
+if ('loading' in HTMLImageElement.prototype) {
+  document.querySelectorAll('img.lazy').forEach(img => {
+    img.loading = 'lazy';
+    let imgUrl = img.dataset.src;
+    // Only adding width + height for avatars for now
+    if (imgUrl.indexOf('/avatar/') > -1 && imgUrl.indexOf('?') === -1) {
+      const targetWidth = img.getAttribute('width') || img.width;
+      imgUrl += `?width=${targetWidth}`;
+    }
+    img.src = imgUrl;
+    img.removeAttribute('data-src');
+    img.classList.remove('lazy');
+    img.classList.add('js-lazy-loaded');
+    img.dataset.testid = 'js-lazy-loaded-content';
+  });
+}
+
+//]]>
+</script>
+<script>
+//<![CDATA[
+gl = window.gl || {};
+gl.experiments = {};
+
+
+//]]>
+</script>
+
+
+
+
+<div></div><div></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
