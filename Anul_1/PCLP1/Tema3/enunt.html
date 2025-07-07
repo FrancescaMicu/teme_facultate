@@ -1,0 +1,1350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0065)https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>
+    Tema 3 – ACSQL    [CS Open CourseWare]
+  </title>
+
+  <meta name="generator" content="DokuWiki">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2025-01-19T13:16:02+0200">
+<meta name="keywords" content="programare,teme_2024,tema3_2024_cbd">
+<link rel="search" type="application/opensearchdescription+xml" href="https://ocw.cs.pub.ro/courses/lib/exe/opensearch.php" title="CS Open CourseWare">
+<link rel="start" href="https://ocw.cs.pub.ro/courses/">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://ocw.cs.pub.ro/courses/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="https://ocw.cs.pub.ro/courses/feed.php?mode=list&amp;ns=programare:teme_2024">
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://ocw.cs.pub.ro/courses/_export/xhtml/programare/teme_2024/tema3_2024_cbd">
+<link rel="canonical" href="http://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd">
+<link rel="stylesheet" type="text/css" href="./enunt_files/css.php">
+<script type="text/javascript">/*<![CDATA[*/var NS='programare:teme_2024';var JSINFO = {"id":"programare:teme_2024:tema3_2024_cbd","namespace":"programare:teme_2024","isadmin":0,"isauth":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="./enunt_files/js.php"></script>
+<script type="text/x-mathjax-config;executed=true">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script src="./enunt_files/MathJax.js.download" id=""></script>
+<script type="text/javascript">/*<![CDATA[*/
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		  
+/*!]]>*/</script><script src="./enunt_files/ga.js.download" type="text/javascript"></script>
+<script type="text/javascript">/*<![CDATA[*/
+var pageTracker = _gat._getTracker("UA-38383934-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+		  
+/*!]]>*/</script>
+
+  <link rel="shortcut icon" href="https://ocw.cs.pub.ro/courses/lib/tpl/arctic/images/favicon.ico">
+
+  
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+<div id="wrapper" class="show">
+  <div class="dokuwiki">
+
+    
+    <div class="stylehead">
+      <div class="header">
+        <div class="pagename">
+          <a href="https://ocw.cs.pub.ro/courses/programare/"><img height="70" src="./enunt_files/sigla_programare.png"> </a>        </div>
+        <div class="logo">
+          <a style="color: #AAA !important;" href="https://ocw.cs.pub.ro/courses/">Open CourseWare</a>        </div>
+      </div>
+    
+       
+      <div class="breadcrumbs">
+              </div>
+      
+            </div>
+
+                  <div class="bar" id="bar__top">
+        <div class="bar-left">
+                  </div>
+        <div class="bar-right">
+          <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd?do=recent" class="action recent" accesskey="r" rel="nofollow" title="Recent changes [R]">Recent changes</a><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd?do=login&amp;sectok=99727c3ccecc3adb7fb8d06294ffcdda" class="action login" rel="nofollow" title="Login">Login</a>        </div>
+    </div>
+        
+    
+    
+    
+              <div class="left_page">
+          
+<h1 class="sectionedit1" id="tema_3_acsql">Tema 3 – ACSQL</h1>
+<div class="level1">
+
+<p>
+</p><p></p><div class="noteimportant">
+<strong>Termen de predare</strong>
+<p></p>
+<ul>
+<li class="level1"><div class="li"> Deadline <strong>soft</strong> : <strong><del>19 Ianuarie 2025, ora 23:55</del></strong> <strong>21 Ianuarie 2025, ora 23:55</strong></div>
+</li>
+<li class="level1"><div class="li"> Deadline <strong>hard</strong> : <strong>21 Ianuarie 2025, ora 23:55</strong></div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+<p>
+</p><p></p><div class="noteclassic">
+<strong>Responsabili</strong>
+<p></p>
+<ul>
+<li class="level1"><div class="li"> Dabelea Ioana-Viviana</div>
+</li>
+<li class="level1"><div class="li"> Chira Vlad-Andrei</div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+<p>
+</p><p></p><div class="noteclassic">
+<strong>Changelog</strong>
+<p></p>
+<ul>
+<li class="level1"><div class="li"> <strong>19.01.2025</strong>: Actualizare deadline soft.</div>
+</li>
+<li class="level1"><div class="li"> <strong>16.01.2025</strong>: Actualizare calcul in checker local</div>
+</li>
+<li class="level1"><div class="li"> <strong>03.01.2025</strong>: Actualizare teste task3 - calcul medie generala</div>
+</li>
+<li class="level1"><div class="li"> <strong>27.12.2024</strong>: Modificare checker coding style.</div>
+</li>
+<li class="level1"><div class="li"> <strong>23.12.2024</strong>: Stergere trailing whitespace la finalul testelor.</div>
+</li>
+<li class="level1"><div class="li"> <strong>22.12.2024</strong>: Actualizare teste 3, 4, 6, 8, 9 pentru big.db.</div>
+</li>
+<li class="level1"><div class="li"> <strong>22.12.2024</strong>: Adăugat fișiere de checker pt arm64. </div>
+</li>
+<li class="level1"><div class="li"> <strong>21.12.2024, 22:00</strong>: Corectat test 5.</div>
+</li>
+<li class="level1"><div class="li"> <strong>21.12.2024, 14:15</strong>: Corectat teste privind calculul mediei generale.</div>
+</li>
+<li class="level1"><div class="li"> <strong>21.12.2024, 14:00</strong>: Clarificare enunț privind rotunjirea mediei generale.</div>
+</li>
+<li class="level1"><div class="li"> <strong>19.12.2024</strong>: Publicare temă.</div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h3 class="sectionedit2" id="intrebari">Întrebări</h3>
+<div class="level3">
+
+<p>
+Dacă aveți nelămuriri, puteți să ne contactați pe <a href="https://curs.upb.ro/2024/mod/forum/view.php?id=87692" class="urlextern" title="https://curs.upb.ro/2024/mod/forum/view.php?id=87692" rel="nofollow">forumul dedicat temei 3</a>.
+Nu se acceptă întrebări în ultimele 24 de ore înainte de deadline.
+</p>
+
+<p>
+</p><p></p><div class="notewarning">
+Citiți cu atenție tot enunțul temei.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h2 class="sectionedit3" id="enunt">Enunt</h2>
+<div class="level2">
+
+<p>
+Secretariatul a decis să implementeze o nouă bază de date pentru a gestiona informațiile despre studenți, materiile predate și relațiile dintre acestea. Noua bază de date va fi gestionată printr-un sistem de interogare și actualizare denumit <strong>ACSQL</strong>. 
+</p>
+
+<p>
+În acest scop, s-a apelat la ajutorul vostru pentru a proiecta și implementa funcționalitățile esențiale ale sistemului.
+</p>
+
+</div>
+
+<h3 class="sectionedit4" id="structuri_de_date">Structuri de Date</h3>
+<div class="level3">
+
+<p>
+Sistemul propus va fi modelat cu ajutorul următoarelor structuri:
+</p>
+
+</div>
+
+<h4 id="secretariat">1. Secretariat</h4>
+<div class="level4">
+
+<p>
+Această structură reprezintă baza de date principală și centralizează:
+</p>
+<ul>
+<li class="level1"><div class="li"> Lista tuturor studenților înscriși la facultate.</div>
+</li>
+<li class="level1"><div class="li"> Lista tuturor materiilor predate la facultate.</div>
+</li>
+<li class="level1"><div class="li"> Detalii despre înscrierea studenților la materii.</div>
+</li>
+</ul>
+<pre class="code c"><span class="kw4">typedef</span> <span class="kw4">struct</span> secretariat <span class="br0">{</span>
+    student <span class="sy0">*</span>studenti<span class="sy0">;</span>     <span class="co1">// Vector de studenti</span>
+    <span class="kw4">int</span> nr_studenti<span class="sy0">;</span>       <span class="co1">// Numarul total de studenti</span>
+&nbsp;
+    materie <span class="sy0">*</span>materii<span class="sy0">;</span>      <span class="co1">// Vector de materii</span>
+    <span class="kw4">int</span> nr_materii<span class="sy0">;</span>        <span class="co1">// Numarul total de materii</span>
+&nbsp;
+    inrolare <span class="sy0">*</span>inrolari<span class="sy0">;</span>    <span class="co1">// Vector de inscrieri (relatii student-materie)</span>
+    <span class="kw4">int</span> nr_inrolari<span class="sy0">;</span>       <span class="co1">// Numarul total de inscrieri</span>
+<span class="br0">}</span> secretariat<span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="student">2. Student</h4>
+<div class="level4">
+
+<p>
+Structura student descrie fiecare student înscris la facultate și are următoarele câmpuri:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>id</em>: Un identificator unic pentru fiecare student.</div>
+</li>
+<li class="level1"><div class="li"> <em>nume</em>: Numele complet al studentului.</div>
+</li>
+<li class="level1"><div class="li"> <em>an_studiu</em>: Anul de studiu al studentului (1, 2, 3 sau 4).</div>
+</li>
+<li class="level1"><div class="li"> <em>statut</em>: Tipul programului de studiu:</div>
+<ul>
+<li class="level3"><div class="li"> 'b' pentru buget.</div>
+</li>
+<li class="level3"><div class="li"> 't' pentru taxă.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <em>medie_generala</em>: Media generală a studentului, calculată pe baza notelor de la toate materiile.</div>
+</li>
+</ul>
+
+<p>
+Definiția structurii:
+</p>
+<pre class="code c"><span class="kw4">typedef</span> <span class="kw4">struct</span> student <span class="br0">{</span>
+    <span class="kw4">int</span> id<span class="sy0">;</span>                <span class="co1">// ID unic al studentului</span>
+    <span class="kw4">char</span> nume<span class="br0">[</span><span class="nu0">40</span><span class="br0">]</span><span class="sy0">;</span>         <span class="co1">// Nume complet</span>
+    <span class="kw4">int</span> an_studiu<span class="sy0">;</span>         <span class="co1">// Anul de studiu</span>
+    <span class="kw4">char</span> statut<span class="sy0">;</span>           <span class="co1">// 'b' (buget) sau 't' (taxă)</span>
+    <span class="kw4">float</span> medie_generala<span class="sy0">;</span>  <span class="co1">// Media generală</span>
+<span class="br0">}</span> student<span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="materie">3. Materie</h4>
+<div class="level4">
+
+<p>
+Structura materie descrie detalii despre fiecare curs predat la facultate:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>id</em>: Un identificator unic al cursului.</div>
+</li>
+<li class="level1"><div class="li"> <em>nume</em>: Numele cursului.</div>
+</li>
+<li class="level1"><div class="li"> <em>nume_titular</em>: Numele profesorului titular.</div>
+</li>
+</ul>
+
+<p>
+Definiția structurii:
+</p>
+<pre class="code c"><span class="kw4">typedef</span> <span class="kw4">struct</span> materie <span class="br0">{</span>
+    <span class="kw4">int</span> id<span class="sy0">;</span>                <span class="co1">// ID unic al materiei</span>
+    <span class="kw4">char</span> <span class="sy0">*</span>nume<span class="sy0">;</span>            <span class="co1">// Nume materie</span>
+    <span class="kw4">char</span> <span class="sy0">*</span>nume_titular<span class="sy0">;</span>    <span class="co1">// Profesor titular</span>
+<span class="br0">}</span> materie<span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="inrolare">4. Înrolare</h4>
+<div class="level4">
+
+<p>
+Structura <em>inrolare</em> descrie relația <em>many-to-many</em> dintre studenți și materii. Fiecare înrolare conține:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>id_student</em>: ID-ul studentului înscris la materie.</div>
+</li>
+<li class="level1"><div class="li"> <em>id_materie</em>: ID-ul materiei la care este înscris studentul.</div>
+</li>
+<li class="level1"><div class="li"> <em>note</em>: Un vector cu trei note:</div>
+<ul>
+<li class="level2"><div class="li"> Nota pentru laborator și teme.</div>
+</li>
+<li class="level2"><div class="li"> Nota pentru examenul parțial.</div>
+</li>
+<li class="level2"><div class="li"> Nota pentru examenul final.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+</p><p></p><div class="noteclassic">
+<strong>Suma</strong> acestor note reprezintă nota studentului la materia respectivă. De exemplu, un student cu notele 2.40, 2.00, respectiv 3.70 la o materie va avea nota 8.10/10 la materia respectivă.
+
+</div><p></p>
+<p></p>
+
+<p>
+Definiția structurii:
+</p>
+<pre class="code c"><span class="kw4">typedef</span> <span class="kw4">struct</span> inrolare <span class="br0">{</span>
+    <span class="kw4">int</span> id_student<span class="sy0">;</span>        <span class="co1">// ID-ul studentului</span>
+    <span class="kw4">int</span> id_materie<span class="sy0">;</span>        <span class="co1">// ID-ul materiei</span>
+    <span class="kw4">float</span> note<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy0">;</span>         <span class="co1">// Notele studentului (laborator, parțial, final)</span>
+<span class="br0">}</span> inrolare<span class="sy0">;</span></pre>
+
+</div>
+
+<h3 class="sectionedit5" id="organizarea_datelor_in_fisier">Organizarea Datelor în Fișier</h3>
+<div class="level3">
+
+<p>
+Pentru a asigura o structură clară și ușor de procesat, baza de date este stocată într-un fișier text organizat în secțiuni, fiecare dintre acestea delimitată de un antet.
+</p>
+<ul>
+<li class="level1"><div class="li"> Un antet este un șir de caractere înconjurat de paranteze pătrate, de exemplu: [STUDENTI], [MATERII], [INROLARI].</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> În continuarea antetului, datele sunt stocate pe linii separate, fiecare linie reprezentând un element (student, materie sau înrolare). Datele pe fiecare linie sunt separate prin virgule și urmează ordinea din structura aferentă.</div>
+</li>
+</ul>
+
+<p>
+</p><p></p><div class="noteimportant">
+Câmpul <em>medie_generala</em> nu este prezent în fișier. Acesta trebuie calculat pe baza notelor de la materiile la care este înscris studentul respectiv.
+<p></p>
+
+<p>
+Media se va rotunji la două zecimale. Un student cu notele [0.51, 1.94, 2.71] la o materie, respectiv [2.80, 2.00, 0.85] la alta, va avea o medie de 5.405 ce se va rotunji la 5.41 în cadrul bazei de date.
+
+</p></div><p></p>
+Exemplu complet de fișier:
+<p></p>
+<pre class="code">[STUDENTI]
+0, Andrei Popescu, 2, b
+1, Ioana Ionescu, 1, t
+
+[MATERII]
+0, PCLP, Radu Bran
+1, USO, Maria Sandu
+
+[INROLARI]
+1, 1, 3.10 3.80 2.10
+2, 2, 2.65 1.20 3.00</pre>
+
+</div>
+
+<h3 class="sectionedit6" id="task_1gestionarea_bazei_de_date_10_puncte">Task 1: Gestionarea bazei de date (10 puncte)</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="incarcarea_bazei_de_date_dintr-un_fisier_5_puncte">1.1. Incărcarea bazei de date dintr-un fișier (5 puncte)</h4>
+<div class="level4">
+
+<p>
+Scrieți o funcție care citește datele dintr-un fișier organizat conform structurii descrise și le încarcă într-o structură de tip <em>secretariat</em> alocata dinamic.
+</p>
+<pre class="code c">secretariat <span class="sy0">*</span>citeste_secretariat<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>nume_fisier<span class="br0">)</span><span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="adaugarea_unui_student_3_puncte">1.2. Adăugarea unui student (3 puncte)</h4>
+<div class="level4">
+
+<p>
+Scrieți o funcție care adaugă un student în baza de date transmisă ca parametru.
+</p>
+<pre class="code c"><span class="kw4">void</span> adauga_student<span class="br0">(</span>secretariat <span class="sy0">*</span>s<span class="sy0">,</span> <span class="kw4">int</span> id<span class="sy0">,</span> <span class="kw4">char</span> <span class="sy0">*</span>nume<span class="sy0">,</span> <span class="kw4">int</span> an_studiu<span class="sy0">,</span> <span class="kw4">char</span> statut<span class="sy0">,</span> <span class="kw4">float</span> medie_generala<span class="br0">)</span><span class="sy0">;</span></pre>
+
+</div>
+
+<h4 id="eliberarea_memoriei_2_puncte">1.3 Eliberarea memoriei (2 puncte)</h4>
+<div class="level4">
+
+<p>
+Pentru a preveni scurgerile de memorie, este necesar să implementăm o funcție care să elibereze memoria alocată dinamic pentru structura <em>secretariat</em> și elementele sale.
+</p>
+<pre class="code c"><span class="kw4">void</span> elibereaza_secretariat<span class="br0">(</span>secretariat <span class="sy0">**</span>s<span class="br0">)</span><span class="sy0">;</span></pre>
+
+</div>
+
+<h3 class="sectionedit7" id="task_2interogari_actualizari_stergeri_70_de_puncte">Task 2: Interogări, actualizări, ștergeri (70 de puncte)</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="interogari_28_de_puncte">2.1. Interogări (28 de puncte)</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="interogari_simple_14_puncte">2.1.1 Interogări Simple (14 puncte)</h5>
+<div class="level5">
+
+<p>
+Structura unei interogari este următoarea:
+</p>
+<pre class="code sql"><span class="kw1">SELECT</span> <span class="sy0">&lt;</span>campuri<span class="sy0">&gt;</span> <span class="kw1">FROM</span> <span class="sy0">&lt;</span>tabel<span class="sy0">&gt;</span>;</pre>
+<ol>
+<li class="level1"><div class="li"> <em>&lt;campuri&gt;</em> reprezintă lista de câmpuri pe care dorim să le afișăm, separate prin virgulă.</div>
+</li>
+<li class="level1"><div class="li"> <em>&lt;tabel&gt;</em> reprezintă numele tabelei din care dorim să extragem informații (<em>studenti</em>, <em>materii</em>, <em>inrolari</em>).</div>
+</li>
+</ol>
+
+<p>
+Funcția de interogare va afișa, rând cu rând, valorile câmpurilor selectate din tabelul interogat.
+</p>
+
+<p>
+Exemplu:
+</p>
+<pre class="code sql"><span class="kw1">SELECT</span> nume<span class="sy0">,</span> an_studiu <span class="kw1">FROM</span> studenti;</pre>
+
+<p>
+Pentru exemplul de bază de date de mai sus, programul va afișa:
+</p>
+<pre class="code">Andrei Popescu 2
+Ioana Ionescu 1</pre>
+
+<p>
+Operatorul <em>*</em> va putea fi folosit pentru a selecta toate câmpurile din tabel.
+</p>
+
+<p>
+Exemplu:
+</p>
+<pre class="code sql"><span class="kw1">SELECT</span> <span class="sy0">*</span> <span class="kw1">FROM</span> materii;</pre>
+
+<p>
+Pentru exemplul de bază de date de mai sus, programul va afisa:
+</p>
+<pre class="code">0 PCLP Radu Bran
+1 USO Maria Sandu</pre>
+
+<p>
+</p><p></p><div class="noteimportant">
+Interogarea corespunzătoare vectorului <em>note</em> din structura <em>inrolare</em> va afișa toate cele 3 note, separate prin spațiu. Exemplu:   
+<p></p>
+<pre class="code sql"><span class="kw1">SELECT</span> id_student<span class="sy0">,</span> note <span class="kw1">FROM</span> inrolari;</pre>
+
+<p>
+Pentru exemplul de mai sus se va afișa:
+</p>
+<pre class="code">1 3.1 3.8 2.1
+2 2.65 1.20 3.0</pre>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h5 id="interogari_cu_filtrare_7_puncte">2.1.2 Interogări cu filtrare (7 puncte)</h5>
+<div class="level5">
+
+<p>
+Structura unei interogări cu filtrare este următoarea:
+</p>
+<pre class="code sql"><span class="kw1">SELECT</span> <span class="sy0">&lt;</span>campuri<span class="sy0">&gt;</span> <span class="kw1">FROM</span> <span class="sy0">&lt;</span>tabel<span class="sy0">&gt;</span> <span class="kw1">WHERE</span> <span class="sy0">&lt;</span>camp<span class="sy0">&gt;</span> <span class="sy0">&lt;</span>operator<span class="sy0">&gt;</span> <span class="sy0">&lt;</span>valoare<span class="sy0">&gt;</span>;</pre>
+<ul>
+<li class="level1"><div class="li"> <em>&lt;camp&gt;</em> reprezintă numele câmpului după care se face filtrarea.</div>
+</li>
+<li class="level1"><div class="li"> <em>&lt;operator&gt;</em> reprezintă operatorul de comparație (<strong>=</strong>, <strong>&lt;</strong>, <strong>&gt;</strong>,  <strong>&lt;=</strong> , <strong>&gt;=</strong>, <strong>!=</strong>).</div>
+</li>
+<li class="level1"><div class="li"> <em>&lt;valoare&gt;</em> reprezintă valoarea cu care se compară câmpul.</div>
+</li>
+</ul>
+
+<p>
+Exemplu:
+</p>
+<pre class="code sql"><span class="kw1">SELECT</span> nume<span class="sy0">,</span> medie_generala <span class="kw1">FROM</span> studenti <span class="kw1">WHERE</span> an_studiu <span class="sy0">&gt;</span> <span class="nu0">2</span>;</pre>
+
+<p>
+Pentru exemplul de bază de date de mai sus, programul va afișa:
+</p>
+<pre class="code">Andrei Popescu 8.72</pre>
+
+</div>
+
+<h5 id="interogari_cu_filtrare_complexa_7_puncte">2.1.3. Interogări cu filtrare complexă (7 puncte)</h5>
+<div class="level5">
+
+<p>
+Structura unei interogări cu filtrare complexă este următoarea:
+</p>
+<pre class="code sql"><span class="kw1">SELECT</span> <span class="sy0">&lt;</span>campuri<span class="sy0">&gt;</span> <span class="kw1">FROM</span> <span class="sy0">&lt;</span>tabel<span class="sy0">&gt;</span> <span class="kw1">WHERE</span> <span class="sy0">&lt;</span>conditie1<span class="sy0">&gt;</span> <span class="kw1">AND</span> <span class="sy0">&lt;</span>conditie2<span class="sy0">&gt;</span>;</pre>
+<ol>
+<li class="level1"><div class="li"> <em>&lt;conditie1&gt;</em> și <em>&lt;conditie2&gt;</em> reprezintă două condiții care trebuie îndeplinite simultan pentru a selecta rândurile.</div>
+</li>
+</ol>
+
+<p>
+Exemplu:
+</p>
+<pre class="code sql"><span class="kw1">SELECT</span> nume<span class="sy0">,</span> medie_generala <span class="kw1">FROM</span> studenti <span class="kw1">WHERE</span> an_studiu <span class="sy0">&gt;</span> <span class="nu0">1</span> <span class="kw1">AND</span> statut <span class="sy0">=</span> b;</pre>
+
+<p>
+Pentru exemplul de bază de date de mai sus, programul va afișa:
+</p>
+<pre class="code">Andrei Popescu 8.72</pre>
+
+<p>
+</p><p></p><div class="noteimportant">
+Pentru a putea rezolva task-ul 2.2 este necesar să implementaţi toate interogările de la task-ul 2.1.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h4 id="actualizari_si_stergeri_42_de_puncte">2.2. Actualizări și Ștergeri (42 de puncte)</h4>
+<div class="level4">
+
+</div>
+
+<h5 id="update_21_de_puncte">2.2.1. Update (21 de puncte)</h5>
+<div class="level5">
+
+<p>
+Operația de tip UPDATE are următoarea structură:
+</p>
+<pre class="code sql"><span class="kw1">UPDATE</span> <span class="sy0">&lt;</span>tabel<span class="sy0">&gt;</span> <span class="kw1">SET</span> <span class="sy0">&lt;</span>camp<span class="sy0">&gt;</span> <span class="sy0">=</span> <span class="sy0">&lt;</span>valoare<span class="sy0">&gt;</span> <span class="kw1">WHERE</span> <span class="sy0">&lt;</span>conditie<span class="sy0">&gt;</span>;</pre>
+
+<p>
+unde:
+</p>
+<ul>
+<li class="level1"><div class="li"> <em>&lt;tabel&gt;</em> reprezintă numele tabelei care va fi actualizată (<em>studenti</em>, <em>materii</em>, <em>inrolari</em>).</div>
+</li>
+<li class="level1"><div class="li"> <em>&lt;camp&gt;</em> reprezintă numele câmpului care va fi actualizat.</div>
+</li>
+<li class="level1"><div class="li"> <em>&lt;valoare&gt;</em> reprezintă noua valoare a câmpului.</div>
+</li>
+<li class="level1"><div class="li"> <em>&lt;conditie&gt;</em> reprezintă condiția care trebuie îndeplinită pentru a actualiza rândurile.</div>
+</li>
+</ul>
+
+<p>
+</p><p></p><div class="noteclassic">Nu se vor face actualizari asupra campurilor de tip ID.
+</div><p></p>
+<p></p>
+
+<p>
+Exemplu:
+</p>
+<pre class="code sql"><span class="kw1">UPDATE</span> studenti <span class="kw1">SET</span> medie_generala <span class="sy0">=</span> <span class="nu0">9.0</span> <span class="kw1">WHERE</span> id <span class="sy0">=</span> <span class="nu0">0</span>;
+<span class="kw1">SELECT</span> nume<span class="sy0">,</span> medie_generala <span class="kw1">FROM</span> studenti <span class="kw1">WHERE</span> id <span class="sy0">=</span> <span class="nu0">0</span>;</pre>
+
+<p>
+Pentru exemplul de bază de date de mai sus, programul va afișa:
+</p>
+<pre class="code">Andrei Popescu 9.0</pre>
+
+<p>
+</p><p></p><div class="notetip">
+Pentru a face update la câmpul note din tabelul inrolari comanda o să arate în felul următor:
+<p></p>
+<pre class="code sql"><span class="kw1">UPDATE</span> inrolari <span class="kw1">SET</span> note <span class="sy0">=</span> <span class="nu0">4.0</span> <span class="nu0">4.0</span> <span class="nu0">1.0</span> <span class="kw1">WHERE</span> id_student <span class="sy0">=</span> <span class="nu0">2</span></pre>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h5 id="delete_14_puncte">2.2.2. Delete (14 puncte)</h5>
+<div class="level5">
+
+<p>
+Operația de tip DELETE are următoarea structură:
+</p>
+<pre class="code sql"><span class="kw1">DELETE</span> <span class="kw1">FROM</span> <span class="sy0">&lt;</span>tabel<span class="sy0">&gt;</span> <span class="kw1">WHERE</span> <span class="sy0">&lt;</span>conditie<span class="sy0">&gt;</span>;</pre>
+<ul>
+<li class="level1"><div class="li"><em>&lt;tabel&gt;</em> reprezintă numele tabelei care va fi actualizată (<em>studenti</em>, <em>materii</em>, <em>inrolari</em>).</div>
+</li>
+<li class="level1"><div class="li"><em>&lt;conditie&gt;</em> reprezintă condiția care trebuie îndeplinită pentru a șterge intrarea din tabel.</div>
+</li>
+</ul>
+
+<p>
+Exemplu:
+</p>
+<pre class="code sql"><span class="kw1">DELETE</span> <span class="kw1">FROM</span> studenti <span class="kw1">WHERE</span> id <span class="sy0">=</span> <span class="nu0">0</span>;
+<span class="kw1">SELECT</span> nume<span class="sy0">,</span> medie_generala <span class="kw1">FROM</span> studenti;</pre>
+
+<p>
+Pentru exemplul de bază de date de mai sus, programul va afișa:
+</p>
+<pre class="code">Ioana Ionescu 7.98</pre>
+
+<p>
+</p><p></p><div class="noteclassic">
+ Dacă toate comenzile au fost implementate, mai există un test mixt care valoreaza <strong>7</strong> puncte.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h3 class="sectionedit8" id="task_3criptarea_bazei_de_date_20_de_puncte">Task 3: Criptarea Bazei de Date (20 de puncte)</h3>
+<div class="level3">
+
+<p>
+Pentru a proteja datele din baza de date a secretariatului, este necesar ca vectorul care conține studenții să fie criptat atunci când este stocat. Metoda de criptare folosită va fi o variantă simplificată de Cipher Block Chaining (CBC).
+</p>
+
+<p>
+Concret, putem privi vectorul <em>studenti</em> ca fiind un vector de octeți oarecare pe care dorim sa îi criptăm. Impărțim acest vector de octeți în 4 blocuri de dimensiune egală; fiecare bloc va fi criptat pe rând, procesându-se de la primul bloc către ultimul. Criptarea fiecărui bloc se face folosind o rețea simplă de substituție și permutare (S-box și P-box).
+</p>
+
+</div>
+
+<h4 id="cipher_block_chaining_cbc">Cipher Block Chaining (CBC)</h4>
+<div class="level4">
+
+<p>
+Algoritmii de criptare lucrează în mod obișnuit cu blocuri de date de dimensiuni fixe. Din acest motiv, mesajul (în cazul de față, vectorul <em>studenti</em>) este împărțit în blocuri asupra cărora se aplică algoritmul de criptare.
+</p>
+
+<p>
+Un mod de lucru simplu, numit <strong>Electronic Codebook (ECB)</strong>, criptează independent fiecare bloc, fără să țină cont de blocurile anterioare. Acest lucru prezintă însă un dezavantaj: blocuri identice de plaintext vor produce blocuri identice de text criptat, ceea ce poate oferi indicii nedorite privind structura datelor.
+</p>
+
+<p>
+Pentru a evita acest neajuns, se folosește metoda <strong>Cipher Block Chaining (CBC)</strong>. În CBC, criptarea fiecărui bloc depinde de blocul criptat anterior. Primul bloc este “inițializat” folosind un vector special numit <strong>Initialization Vector (IV)</strong>, în timp ce fiecare bloc ulterior este procesat astfel încât conținutul său înainte de criptare să fie combinat (prin XOR) cu rezultatul criptat al blocului anterior. Astfel, două blocuri identice de plaintext nu vor mai produce aceeași ieșire criptată, deoarece criptarea lor depinde de blocul precedent.
+</p>
+
+<p>
+Observatii:
+</p>
+<ul>
+<li class="level1"><div class="li"> Dacă lungimea lui IV este mai mică decât dimensiunea unui bloc, atunci IV-ul se repetă până când atinge dimensiunea blocului.</div>
+</li>
+<li class="level1"><div class="li"> De asemenea, dacă mesajul nu se împarte perfect în 4 blocuri, se va adăuga padding (octeți 0x00) la final, astfel încât blocul final să aibă dimensiunea necesară.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="substitution_and_permutation_networks">Substitution and permutation networks</h4>
+<div class="level4">
+
+<p>
+Rețelele de substituție și permutare (SPN) sunt structuri criptografice care aplică mai multe runde de substituții și permutări asupra datelor, pentru a obține o mai bună difuzie și confuzie. În cazul nostru, vom aplica doar două operații:
+</p>
+
+<p>
+1. S-box (Substituție):   
+Aceasta constă în aplicarea operației XOR, octet cu octet, între bloc și o cheie criptografică (<em>key</em>). Dacă <em>key</em> nu are lungimea necesară pentru a acoperi întreg blocul, se va repeta secvența de octeți din <em>key</em> până la atingerea dimensiunii blocului. Această etapă introduce confuzie, în sensul că datele rezultate sunt amestecate cu cheia criptografică.
+</p>
+
+<p>
+2. P-box (Permutare):   
+Aceasta constă într-o rearanjare a octeților din bloc pe baza unei funcții bijective. Funcția de permutare pe care o vom folosi este definită ca:
+</p>
+<pre class="code">f(i) = (i * (n - 1) + 2)  mod  n</pre>
+
+<p>
+unde <em>i</em> este indicele octetului original, iar <em>n</em> este dimensiunea blocului. Octetul de la poziția <em>j</em> din blocul rezultat va fi acela aflat inițial la o poziție <em>i</em> pentru care <em>f(i) = j</em>.
+Cu alte cuvinte, permutarea schimbă poziția fiecărui octet, contribuind la difuzia datelor în moduri care fac criptanaliza mai dificilă.
+</p>
+
+</div>
+
+<h4 id="pseudocod">Pseudocod</h4>
+<div class="level4">
+<pre class="code c">functie cripteaza_studenti<span class="br0">(</span>studenti<span class="sy0">,</span> IV<span class="sy0">,</span> key<span class="sy0">,</span> cale_fisier_output<span class="br0">)</span>
+    <span class="co1">// Separarea datelor in 4 blocuri de dimensiune fixa</span>
+    <span class="co1">// si adaugare padding cu 0x00 unde este necesar</span>
+    blocks <span class="sy0">=</span> split_into_blocks_and_pad<span class="br0">(</span>studenti<span class="br0">)</span>
+&nbsp;
+    <span class="co1">// Criptarea primului bloc folosind IV-ul</span>
+    <span class="co1">// XOR intre primul bloc si Initialization Vector (extins la dimensiunea blocului)</span>
+    blocks<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>_enc <span class="sy0">=</span> XOR<span class="br0">(</span>blocks<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="sy0">,</span> IV<span class="br0">)</span>
+&nbsp;
+    <span class="co1">// Aplicare S-box</span>
+    blocks<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>_enc <span class="sy0">=</span> S_BOX<span class="br0">(</span>blocks<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>_enc<span class="sy0">,</span> key<span class="br0">)</span>
+&nbsp;
+    <span class="co1">// Aplicare P-box</span>
+    blocks<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>_enc <span class="sy0">=</span> P_BOX<span class="br0">(</span>blocks<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>_enc<span class="br0">)</span>
+&nbsp;
+    <span class="co1">// Criptarea celor 3 blocuri ramase</span>
+    <span class="kw1">for</span> i in <span class="br0">[</span><span class="nu0">1</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">]</span>
+        <span class="co1">// XOR intre blocul curent si blocul precedent deja criptat</span>
+        blocks<span class="br0">[</span>i<span class="br0">]</span>_enc <span class="sy0">=</span> XOR<span class="br0">(</span>blocks<span class="br0">[</span>i<span class="br0">]</span><span class="sy0">,</span> blocks<span class="br0">[</span>i <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">]</span>_enc<span class="br0">)</span>
+&nbsp;
+        <span class="co1">// S-box</span>
+        blocks<span class="br0">[</span>i<span class="br0">]</span>_enc <span class="sy0">=</span> S_BOX<span class="br0">(</span>blocks<span class="br0">[</span>i<span class="br0">]</span>_enc<span class="sy0">,</span> key<span class="br0">)</span>
+&nbsp;
+        <span class="co1">// P-box</span>
+        blocks<span class="br0">[</span>i<span class="br0">]</span>_enc <span class="sy0">=</span> P_BOX<span class="br0">(</span>blocks<span class="br0">[</span>i<span class="br0">]</span>_enc<span class="br0">)</span>
+&nbsp;
+    <span class="co1">// Scrierea blocurilor criptate in fisier_output</span>
+    <span class="co1">// ...</span></pre>
+
+</div>
+
+<h4 id="diagrama_procesului_de_criptare">Diagrama procesului de criptare</h4>
+<div class="level4">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_detail/programare/teme_2024/flowchart.png?id=programare%3Ateme_2024%3Atema3_2024_cbd" class="media" title="programare:teme_2024:flowchart.png"><img src="./enunt_files/flowchart.png" class="medialeft" alt="" width="800"></a>
+</p>
+
+</div>
+
+<h4 id="exemplu">Exemplu</h4>
+<div class="level4">
+
+<p>
+Să presupunem ca avem de criptat mesajul <em>Ana are mere!</em> folosind cheia <em>pclp1</em> si IV <em>ab</em>.   
+</p>
+
+<p>
+Începem prin a converti mesajul in octeți:   
+</p>
+<pre class="code"> 0x41 0x6E 0x61 0x20 0x61 0x72 0x65 0x20 0x6D 0x65 0x72 0x65 0x21</pre>
+
+<p>
+Împărțim mesajul în 4 blocuri și adaugăm padding la ultimul bloc:
+</p>
+<ul>
+<li class="level1"><div class="li"> Blocul 1: <em>0x41 0x6E 0x61 0x20</em>   </div>
+</li>
+<li class="level2"><div class="li"> Blocul 2: <em>0x61 0x72 0x65 0x20</em>   </div>
+</li>
+<li class="level2"><div class="li"> Blocul 3: <em>0x6D 0x65 0x72 0x65</em>   </div>
+</li>
+<li class="level2"><div class="li"> Blocul 4: <em>0x21 0x00 0x00 0x00</em>   </div>
+</li>
+</ul>
+
+<p>
+Transformăm IV-ul în octeți:   
+<em>“ab” –&gt; 0x61 0x62</em>
+</p>
+
+<p>
+Transformăm cheia în octeți:   
+<em>“pclp1” –&gt; 0x70 0x63 0x6C 0x70 0x31</em>
+</p>
+
+</div>
+
+<h5 id="blocul_1">Blocul 1</h5>
+<div class="level5">
+
+<p>
+Aplicăm XOR între blocul 1 și IV: 
+</p>
+<pre class="code">0x41 0x6E 0x61 0x20   ^
+0x61 0x62 0x61 0x62
+-------------------
+0x20 0x0C 0x00 0x42</pre>
+
+<p>
+Aplicăm S-box:
+</p>
+<pre class="code">0x20 0x0C 0x00 0x42  ^
+0x70 0x63 0x6C 0x70
+-------------------
+0x50 0x6F 0x6C 0x32 </pre>
+
+<p>
+Aplicăm P-box: 
+</p>
+
+<p>
+Octetul de pe poziția 0 se duce pe poziția <em>(0 * 3 + 2) mod 4 = 2</em>
+</p>
+
+<p>
+Octetul de pe poziția 1 se duce pe poziția <em>(1 * 3 + 2) mod 4 = 1</em>
+…
+</p>
+
+<p>
+Obținem:  <em>0x6C 0x6F 0x50 0x32</em>
+</p>
+
+</div>
+
+<h5 id="blocul_2">Blocul 2</h5>
+<div class="level5">
+
+<p>
+Aplicăm XOR între blocul 1 criptat și blocul 2:
+</p>
+<pre class="code">0x6C 0x6F 0x50 0x32   ^
+0x61 0x72 0x65 0x20
+-------------------
+0x0D 0x1D 0x35 0x12</pre>
+
+<p>
+Aplicăm S-box   
+…
+</p>
+
+<p>
+Aplicăm P-box   
+…
+</p>
+
+<p>
+Se repetă acealași procedeu pentru celelalte 2 blocuri rămase, iar rezultatul se obține prin concatenarea celor 4 blocuri criptate.
+</p>
+
+</div>
+
+<h2 class="sectionedit9" id="schelet_de_cod">Schelet de cod</h2>
+<div class="level2">
+
+<p>
+Pentru această temă trebuie să porniți de la scheletul de cod de aici: <a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema3_v9.zip" class="media mediafile mf_zip" title="programare:teme_2024:tema3_v9.zip (55.3 KB)"> tema3.zip</a>.
+</p>
+
+<p>
+Pentru task-urile 1 și 3, este suficient să implementați funcțiile din fișierele corespunzătoare.
+</p>
+
+<p>
+Pentru task-ul 2, baza de date va fi citită dintr-un fișier primit ca argument în linia de comandă, iar comenzile vor fi introduse de la tastatură în următorul format:
+</p>
+<pre class="code">numărul_de_comenzi
+comanda1
+comanda2
+...</pre>
+
+<p>
+Rezultatele comenzilor vor fi afișate la tastatura.
+</p>
+
+<p>
+Scheletul include instrumente utile pentru a compila și valida tema. În fișierul <code>USAGE.md</code> regăsiți instrucțiunile de utilizare a instrumentelor.
+</p>
+
+<p>
+Task-urile se rezolvă în fişierele corespunzătoare din schelet. Este recomandat să vă mai faceţi si alte fişiere cu funcţii auxiliare.
+</p>
+
+<p>
+</p><p></p><div class="noteimportant">
+Atenție! Nu aveți voie să:
+<p></p>
+<ul>
+<li class="level1"><div class="li"> redenumiți fișierele temei</div>
+</li>
+<li class="level1"><div class="li"> modificați parametrii funcțiilor din schelet</div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h3 class="sectionedit10" id="notare">Notare</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="valgrind">Valgrind</h4>
+<div class="level4">
+
+<p>
+Există o depunctare de până la <strong>-10p</strong> pentru scurgeri de memorie, verificarea făcându-se cu <a href="https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks" class="urlextern" title="https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks" rel="nofollow">valgrind</a>.
+</p>
+
+</div>
+
+<h4 id="coding_style">Coding Style</h4>
+<div class="level4">
+
+<p>
+Există o depunctare de până la <strong>-20p</strong> pentru coding style inadecvat. Checkerul verifică automat coding style-ul.
+</p>
+
+</div>
+
+<h4 id="validare_locala">Validare Locală</h4>
+<div class="level4">
+
+<p>
+Checkerul local se regăsește în scheletul temei. Consultați fișierul <strong>USAGE.md</strong> pentru instrucțiunile de utilizare.
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="trimitere">Trimitere</h3>
+<div class="level3">
+
+<p>
+Tema va fi trimisă prin Moodle, cursul <strong>Programarea Calculatoarelor (CB &amp; CD)</strong>, activitatea <strong>Tema 3</strong>.
+</p>
+
+<p>
+Toate temele sunt testate în mod automat pe Moodle.
+</p>
+
+<p>
+Arhiva temei se va încărca prin formularul de submisie (butonul <strong>Add submission</strong>).
+</p>
+
+<p>
+Rezultatele vor fi disponibile în secțiunea <strong>Feedback</strong> – nota apare la linia <strong>Grade</strong>, iar outputul checkerului și erorile apar la sectiunea <strong>Feedback comments</strong>. Dacă apare un buton albastru în formă de plus, trebuie să dați click pe el pentru a afișa întregul output al checkerului.
+</p>
+
+<p>
+<strong>Citiți cu atenție</strong> informațiile afișate în <strong>Feedback</strong> pentru a vă asigura că tema a fost rulată cu succes. Asigurați-vă că conținutul arhivei respectă structura dorită (ex. fișierele sunt în directorul corect).
+</p>
+
+<p>
+Arhiva se obtine in urma rulari scriptului <strong>archive.sh</strong>.
+</p>
+
+<p>
+</p><p></p><div class="noteimportant">
+Arhiva trebuie să fie în format ZIP.
+<p></p>
+
+<p>
+Nu includeți fișierele checkerului în arhivă.
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h3 class="sectionedit12" id="depunctari">Depunctări</h3>
+<div class="level3">
+
+<p>
+Lista nu este exhaustivă.
+</p>
+<ul>
+<li class="level1"><div class="li"> O temă care nu compilează și nu a rulat pe Moodle nu va fi luată în considerare.</div>
+</li>
+<li class="level1"><div class="li"> O temă care nu rezolvă cerința și trece testele prin alte mijloace nu va fi luată în considerare.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Nu acceptăm teme copiate.</strong> În cazul unei teme copiate se scade punctajul aferent temei din punctajul total.</div>
+</li>
+<li class="level1"><div class="li"> <strong>(-20p)</strong> Nerezolvarea tuturor erorilor și warningurilor de coding style.</div>
+</li>
+<li class="level1"><div class="li"> <strong>(-10p)</strong> Nerezolvarea tuturor erorilor de la valgrind.</div>
+</li>
+<li class="level1"><div class="li"> <strong>(-5p)</strong> Lipsa README.md</div>
+</li>
+</ul>
+
+</div>
+
+        </div>
+        <div class="right_sidebar">
+          <form action="https://ocw.cs.pub.ro/courses/start" accept-charset="utf-8" class="search" id="dw__search" method="get"><div class="no"><input type="hidden" name="do" value="search"><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]"><input type="submit" value="Search" class="button" title="Search"><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>          <div class="namespace_sidebar sidebar_box">
+
+<h2 class="sectionedit1" id="resurse_generale">Resurse generale</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/anunturi-cb-cd" class="wikilink1" title="programare:anunturi-cb-cd">Anunțuri CB/CD</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/regulament-ca" class="wikilink1" title="programare:regulament-ca">Regulament: seria CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/regulament-cb-cd" class="wikilink1" title="programare:regulament-cb-cd">Regulament: seria CB/CD</a> <br>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQu6eiMzWYRiPxhHEDl885S3SZ4-JiyD1yH__ubExG3lF4BiYw6ZZJH-v2LxDsU7Y2TDxLLnEP82e0c/pubhtml?gid=1970433104&amp;single=true" class="urlextern" title="https://docs.google.com/spreadsheets/d/e/2PACX-1vQu6eiMzWYRiPxhHEDl885S3SZ4-JiyD1yH__ubExG3lF4BiYw6ZZJH-v2LxDsU7Y2TDxLLnEP82e0c/pubhtml?gid=1970433104&amp;single=true" rel="nofollow">Catalog 2024-2025 CB/CD</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/calendar" class="wikilink1" title="programare:calendar">Calendar</a> <br>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Resurse generale" [1-438] -->
+<h2 class="sectionedit2" id="tutoriale">Tutoriale</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/good_practices" class="wikilink1" title="programare:tutoriale:good_practices">Good Practices</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/coding-style" class="wikilink1" title="programare:coding-style">Coding style example</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/debugging" class="wikilink1" title="programare:tutoriale:debugging">Debugging</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/read_docs" class="wikilink1" title="programare:tutoriale:read_docs">Read documentation</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/code_understanding" class="wikilink1" title="programare:tutoriale:code_understanding">Code understanding</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/logging" class="wikilink1" title="programare:tutoriale:logging">Logging</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/unittests" class="wikilink1" title="programare:tutoriale:unittests">Unit tests</a> </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Tutoriale" [439-863] -->
+<h2 class="sectionedit3" id="resurse_laborator">Resurse laborator</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/vmchecker_conf" class="wikilink1" title="programare:vmchecker_conf">Setup Linux/VM - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/pc-ca-test-practic" class="wikilink1" title="programare:pc-ca-test-practic">Test practic - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/pc-ca-exercitii-laborator" class="wikilink1" title="programare:pc-ca-exercitii-laborator">Exerciții laborator - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/checker" class="wikilink1" title="programare:checker">Checker laborator CB/CD</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/wsl-setup" class="wikilink1" title="programare:wsl-setup">WSL Setup</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://cppc.hpc.pub.ro/" class="urlextern" title="https://cppc.hpc.pub.ro" rel="nofollow">Culegere de Probleme</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Resurse laborator" [864-1335] -->
+<h2 class="sectionedit4" id="cursuri">Cursuri</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT5 PLUGIN_INCLUDE_START "programare:cursuri" [0-] --><div class="plugin_include_content plugin_include__programare:cursuri">
+<div class="level2">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/programare/cursuri/sylabus" class="wikilink1" title="programare:cursuri:sylabus">Continutul Tematic</a> <br>
+
+</p>
+
+</div>
+<!-- EDIT7 PLUGIN_INCLUDE_EDITBTN "programare:cursuri" [0-] --><!-- EDIT6 PLUGIN_INCLUDE_END "programare:cursuri" [0-] --></div>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Cursuri" [1336-1404] -->
+<h2 class="sectionedit8" id="laboratoare">Laboratoare</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT9 PLUGIN_INCLUDE_START "programare:laboratoare" [0-] --><div class="plugin_include_content plugin_include__programare:laboratoare">
+<div class="level2">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab01" class="wikilink1" title="programare:laboratoare:lab01">01. Unelte de programare</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab02" class="wikilink1" title="programare:laboratoare:lab02">02. Tipuri de date. Operatori.</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab03" class="wikilink1" title="programare:laboratoare:lab03">03. Instrucțiunile limbajului C</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab04" class="wikilink1" title="programare:laboratoare:lab04">04. Funcții</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab05" class="wikilink1" title="programare:laboratoare:lab05">05. Tablouri. Particularizare - vectori</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab06" class="wikilink1" title="programare:laboratoare:lab06">06. Matrice. Operații cu matrice</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab07" class="wikilink1" title="programare:laboratoare:lab07">07. Optimizarea programelor folosind operaţii pe biţi</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab08" class="wikilink1" title="programare:laboratoare:lab08">08. Pointeri. Abordarea lucrului cu tablouri folosind pointeri</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab09" class="wikilink1" title="programare:laboratoare:lab09">09. Alocarea dinamică a memoriei. Aplicaţii folosind tablouri şi matrice</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab10" class="wikilink1" title="programare:laboratoare:lab10">10. Prelucrarea şirurilor de caractere. Funcţii. Aplicaţii</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab11" class="wikilink1" title="programare:laboratoare:lab11">11. Structuri. Uniuni. Aplicație: Matrice rare</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab12" class="wikilink1" title="programare:laboratoare:lab12">12. Operaţii cu fişiere. Aplicaţii folosind fişiere.</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab13" class="wikilink1" title="programare:laboratoare:lab13">13. Parametrii liniei de comandă. Preprocesorul. Funcţii cu număr variabil de parametri</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab14" class="wikilink1" title="programare:laboratoare:lab14">14. Recapitulare</a> <br>
+
+</p>
+
+</div>
+<!-- EDIT11 PLUGIN_INCLUDE_EDITBTN "programare:laboratoare" [0-] --><!-- EDIT10 PLUGIN_INCLUDE_END "programare:laboratoare" [0-] --></div>
+<div class="level2">
+
+</div>
+<!-- EDIT8 SECTION "Laboratoare" [1405-1482] -->
+<h2 class="sectionedit12" id="teme_de_casa_general">Teme de casă (general)</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme/general" class="wikilink1" title="programare:teme:general"> Indicații generale</a> <br>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT12 SECTION "Teme de casă (general)" [1483-1713] -->
+<h2 class="sectionedit13" id="teme_de_casaseria_ca">Teme de casă: seria CA</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT13 SECTION "Teme de casă: seria CA" [1714-3358] -->
+<h2 class="sectionedit14" id="teme_de_casaseria_cbcd">Teme de casă: seria CB/CD</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema0_2024_cbd" class="wikilink1" title="programare:teme_2024:tema0_2024_cbd">Tema 0</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd" class="wikilink1" title="programare:teme_2024:tema1_2024_cbd">Tema 1</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd" class="wikilink1" title="programare:teme_2024:tema2_2024_cbd">Tema 2</a></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd" class="wikilink1" title="programare:teme_2024:tema3_2024_cbd">Tema 3</a></span></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT14 SECTION "Teme de casă: seria CB/CD" [3359-] -->
+</div>
+<div class="toc_sidebar sidebar_box">
+<!-- TOC START -->
+<div id="sb__right__dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#tema_3_acsql">Tema 3 – ACSQL</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#intrebari">Întrebări</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#enunt">Enunt</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#structuri_de_date">Structuri de Date</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#secretariat">1. Secretariat</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#student">2. Student</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#materie">3. Materie</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#inrolare">4. Înrolare</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#organizarea_datelor_in_fisier">Organizarea Datelor în Fișier</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#task_1gestionarea_bazei_de_date_10_puncte">Task 1: Gestionarea bazei de date (10 puncte)</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#incarcarea_bazei_de_date_dintr-un_fisier_5_puncte">1.1. Incărcarea bazei de date dintr-un fișier (5 puncte)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#adaugarea_unui_student_3_puncte">1.2. Adăugarea unui student (3 puncte)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#eliberarea_memoriei_2_puncte">1.3 Eliberarea memoriei (2 puncte)</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#task_2interogari_actualizari_stergeri_70_de_puncte">Task 2: Interogări, actualizări, ștergeri (70 de puncte)</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#interogari_28_de_puncte">2.1. Interogări (28 de puncte)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#actualizari_si_stergeri_42_de_puncte">2.2. Actualizări și Ștergeri (42 de puncte)</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#task_3criptarea_bazei_de_date_20_de_puncte">Task 3: Criptarea Bazei de Date (20 de puncte)</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#cipher_block_chaining_cbc">Cipher Block Chaining (CBC)</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#substitution_and_permutation_networks">Substitution and permutation networks</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#pseudocod">Pseudocod</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#diagrama_procesului_de_criptare">Diagrama procesului de criptare</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#exemplu">Exemplu</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#schelet_de_cod">Schelet de cod</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#notare">Notare</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#valgrind">Valgrind</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#coding_style">Coding Style</a></div></li>
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#validare_locala">Validare Locală</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#trimitere">Trimitere</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#depunctari">Depunctări</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div>
+        </div>
+      
+    
+      <div class="stylefoot">
+        <div class="meta">
+          <div class="user">
+                    </div>
+          <div class="doc">
+          programare/teme_2024/tema3_2024_cbd.txt · Last modified: 2025/01/19 13:16 by ioana.dabelea          </div>
+        </div>
+      </div>
+
+    <div class="clearer"></div>
+
+    
+                <div class="bar" id="bar__bottom">
+      <div class="bar-left">
+        <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd?do=revisions" class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]">Old revisions</a>      </div>
+      <div class="bar-right">
+        <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd?do=media&amp;ns=programare%3Ateme_2024" class="action media" rel="nofollow" title="Media Manager">Media Manager</a><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd#dokuwiki__top" class="action top" accesskey="t" rel="nofollow" title="Back to top [T]">Back to top</a>      </div>
+    </div>
+    <div class="clearer"></div>
+            
+    <div align="center" class="footerinc">
+  <div class="license"><a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="./enunt_files/cc-by-sa.png" alt="CC Attribution-Share Alike 3.0 Unported"></a></div>
+  <a target="_blank" href="http://www.chimeric.de/" title="www.chimeric.de"><img src="./enunt_files/button-chimeric-de.png" width="80" height="15" alt="www.chimeric.de" border="0"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="./enunt_files/button-css.png" width="80" height="15" alt="Valid CSS" border="0"></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="./enunt_files/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" border="0"></a>
+
+  <a target="_blank" href="http://www.firefox-browser.de/" title="do yourself a favour and use a real browser - get firefox"><img src="./enunt_files/button-firefox.png" width="80" height="15" alt="do yourself a favour and use a real browser - get firefox!!" border="0"></a>
+  
+  <a target="_blank" href="https://ocw.cs.pub.ro/courses/feed.php" title="Recent changes RSS feed"><img src="./enunt_files/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" border="0"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="./enunt_files/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" border="0"></a>
+</div>
+
+  </div>
+</div>
+
+<div class="no"><img src="./enunt_files/indexer.php" width="2" height="1" alt=""></div>
+
+
+</body></html>
