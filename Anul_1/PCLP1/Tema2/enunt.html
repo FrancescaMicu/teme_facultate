@@ -1,0 +1,1176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0065)https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>
+    Tema 2 – Pointers in 3D    [CS Open CourseWare]
+  </title>
+
+  <meta name="generator" content="DokuWiki">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2024-12-12T23:02:35+0200">
+<meta name="keywords" content="programare,teme_2024,tema2_2024_cbd">
+<link rel="search" type="application/opensearchdescription+xml" href="https://ocw.cs.pub.ro/courses/lib/exe/opensearch.php" title="CS Open CourseWare">
+<link rel="start" href="https://ocw.cs.pub.ro/courses/">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://ocw.cs.pub.ro/courses/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="https://ocw.cs.pub.ro/courses/feed.php?mode=list&amp;ns=programare:teme_2024">
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://ocw.cs.pub.ro/courses/_export/xhtml/programare/teme_2024/tema2_2024_cbd">
+<link rel="canonical" href="http://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd">
+<link rel="stylesheet" type="text/css" href="./enunt_files/css.php">
+<script type="text/javascript">/*<![CDATA[*/var NS='programare:teme_2024';var JSINFO = {"id":"programare:teme_2024:tema2_2024_cbd","namespace":"programare:teme_2024","isadmin":0,"isauth":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="./enunt_files/js.php"></script>
+<script type="text/x-mathjax-config;executed=true">/*<![CDATA[*/MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+        displayMath: [ ["$$","$$"], ["\\[","\\]"] ],
+        processEscapes: true
+    }
+});
+/*!]]>*/</script>
+<script src="./enunt_files/MathJax.js.download" id=""></script>
+<script type="text/javascript">/*<![CDATA[*/
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		  
+/*!]]>*/</script><script src="./enunt_files/ga.js.download" type="text/javascript"></script>
+<script type="text/javascript">/*<![CDATA[*/
+var pageTracker = _gat._getTracker("UA-38383934-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+		  
+/*!]]>*/</script>
+
+  <link rel="shortcut icon" href="https://ocw.cs.pub.ro/courses/lib/tpl/arctic/images/favicon.ico">
+
+  
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+<div id="wrapper" class="show">
+  <div class="dokuwiki">
+
+    
+    <div class="stylehead">
+      <div class="header">
+        <div class="pagename">
+          <a href="https://ocw.cs.pub.ro/courses/programare/"><img height="70" src="./enunt_files/sigla_programare.png"> </a>        </div>
+        <div class="logo">
+          <a style="color: #AAA !important;" href="https://ocw.cs.pub.ro/courses/">Open CourseWare</a>        </div>
+      </div>
+    
+       
+      <div class="breadcrumbs">
+              </div>
+      
+            </div>
+
+                  <div class="bar" id="bar__top">
+        <div class="bar-left">
+                  </div>
+        <div class="bar-right">
+          <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd?do=recent" class="action recent" accesskey="r" rel="nofollow" title="Recent changes [R]">Recent changes</a><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd?do=login&amp;sectok=99727c3ccecc3adb7fb8d06294ffcdda" class="action login" rel="nofollow" title="Login">Login</a>        </div>
+    </div>
+        
+    
+    
+    
+              <div class="left_page">
+          
+<h1 class="sectionedit1" id="tema_2_pointers_in_3d">Tema 2 – Pointers in 3D</h1>
+<div class="level1">
+
+<p>
+</p><p></p><div class="noteimportant">
+<strong>Termen de predare</strong>
+<p></p>
+<ul>
+<li class="level1"><div class="li"> Deadline <strong>hard</strong> : <strong>Duminica 22 decembrie 2024, ora 23:55</strong></div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+<p>
+</p><p></p><div class="noteclassic">
+<strong>Responsabili</strong>
+<p></p>
+<ul>
+<li class="level1"><div class="li"> Bogdan Butnariu</div>
+</li>
+<li class="level1"><div class="li"> Cosmin-Ștefan Popa</div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+<p>
+</p><p></p><div class="noteclassic">
+<strong>Changelog</strong>
+<p></p>
+<ul>
+<li class="level1"><div class="li"> <strong>12 decembrie 2024, 23:00</strong> – Înlăturat warningul de folosit enum în loc de macro</div>
+</li>
+<li class="level1"><div class="li"> <strong>10 decembrie 2024, 15:35</strong> – Mutat deadline <strong>soft</strong> și <strong>hard</strong> pe 22 decembrie 2024.</div>
+</li>
+<li class="level1"><div class="li"> <strong>3 decembrie 2024, 15:44</strong> – Menționat în cerință despre fișierul README</div>
+</li>
+<li class="level1"><div class="li"> <strong>3 decembrie 2024, 15:28</strong> – Adăugat flagul de linker <strong>-lm</strong> în Makefile</div>
+</li>
+<li class="level1"><div class="li"> <strong>1 decembrie 2024, 18:20</strong> – Reparat instalarea modulelor de python din scriptul de setup</div>
+</li>
+<li class="level1"><div class="li"> <strong>1 decembrie 2024</strong> – Reparat instalarea modulului venv din scriptul de setup</div>
+</li>
+<li class="level1"><div class="li"> <strong>1 decembrie 2024</strong> – Întregit scriptul de setup din schelet</div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h3 class="sectionedit2" id="intrebari">Întrebări</h3>
+<div class="level3">
+
+<p>
+Dacă aveți nelămuriri, puteți să ne contactați pe <a href="https://curs.upb.ro/2024/mod/forum/view.php?id=74981" class="urlextern" title="https://curs.upb.ro/2024/mod/forum/view.php?id=74981" rel="nofollow">forumul dedicat temei 2</a>.
+Nu se acceptă întrebări în ultimele 24 de ore înainte de deadline.
+</p>
+
+<p>
+</p><p></p><div class="notewarning">
+Citiți cu atenție tot enunțul temei.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h2 class="sectionedit3" id="intro">Intro</h2>
+<div class="level2">
+
+<p>
+<strong>Minecraft</strong> e un joc video open-world în care jucătorii pot ridica construcții într-o lume formată din <strong>blocuri</strong> (cuburi) fixate într-o grilă tridimensională.
+</p>
+
+<p>
+Fiindcă <strong>Minecraft</strong> este din nou în vogă, un arhitect și-a propus să construiască în joc clădirile pe care le proiectează și vă solicită ajutorul: are nevoie de un program care generează automat structuri arhitectonice grandioase.
+</p>
+
+<p>
+Numim <strong>chunk</strong> o matrice tridimensională de blocuri (reprezentate de tipul <code>char</code>), fiecare bloc având trei coordonate:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>x</strong> (de la 0 la <strong><code>width-1</code></strong>)</div>
+</li>
+<li class="level1"><div class="li"> <strong>y</strong> (de la 0 la <strong><code>height-1</code></strong>)</div>
+</li>
+<li class="level1"><div class="li"> <strong>z</strong> (de la 0 la <strong><code>depth-1</code></strong>)</div>
+</li>
+</ul>
+
+<p>
+Un exemplu de chunk este ilustrat în imagine:
+</p>
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/intro-1.png" class="media" title="programare:teme_2024:tema2:intro-1.png"><img src="./enunt_files/intro-1.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+<p>
+Un chunk este reprezentat printr-un vector cu <code>width</code> elemente. Fiecare element <code>chunk[x]</code> reprezintă un <strong>plan</strong> paralel cu planul <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 2.201em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.712em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.71em, 2.262em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mi" id="MathJax-Span-4" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-5" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.312em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">yOz</script>, și este pointer la un vector cu <code>height</code> elemente. Mai departe, <code>chunk[x][y]</code> reprezintă un <strong>rând</strong> – din planul <code>chunk[x]</code> – paralel cu axa <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-6" style="width: 1.59em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.224em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.22em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-7"><span class="mi" id="MathJax-Span-8" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-9" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">Oz</script>, și este pointer la un vector cu <code>depth</code> elemente. În sfârșit, <code>chunk[x][y][z]</code> descrie <strong>blocul</strong> aflat la coordonatele <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-10" style="width: 4.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.12em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-11"><span class="mo" id="MathJax-Span-12" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-13" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-14" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-15" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-16" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-17" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-18" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-3">(x, y, z)</script>, conform următoarei encodări pentru care avem constante simbolice:
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>0</code> = aer (<code>BLOCK_AIR</code>)</div>
+</li>
+<li class="level1"><div class="li"> <code>1</code> = iarbă (<code>BLOCK_GRASS</code>)</div>
+</li>
+<li class="level1"><div class="li"> <code>2</code> = lemn (<code>BLOCK_WOOD</code>)</div>
+</li>
+<li class="level1"><div class="li"> <code>3</code> = piatră (<code>BLOCK_STONE</code>)</div>
+</li>
+</ul>
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/intro-2.png" class="media" title="programare:teme_2024:tema2:intro-2.png"><img src="./enunt_files/intro-2.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+<p>
+Toate funcțiile din fișierele <code>chunk_gen.c</code>, <code>chunk_transform.c</code> și <code>chunk_process.c</code> primesc ca parametru un chunk care se presupune că a fost deja alocat (dinamic) și returnează chunkul modificat. Dacă aplicați procesările direct pe chunkul primit ca parametru, este suficient să îl returnați tot pe el. Însă dacă alocați un nou chunk și aplicați procesările pe chunkul nou creat, chunkul original primit ca parametru trebuie dezalocat în aceeași funcție!
+</p>
+
+<p>
+Atenție: pentru funcțiile care necesită schimbarea dimensiunii chunkului (e.g. <code>rotate</code>), este obligatoriu ca la finalul funcției să obținem un chunk cu exact atâta memorie alocată cât este necesar.
+</p>
+
+</div>
+
+<h2 class="sectionedit4" id="schelet_de_cod">Schelet de cod</h2>
+<div class="level2">
+
+<p>
+Pentru această temă trebuie să porniți de la scheletul de cod de aici: <a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/tema2-schelet-v7.zip" class="media mediafile mf_zip" title="programare:teme_2024:tema2:tema2-schelet-v7.zip (46.5 KB)">tema2-schelet-v7.zip</a>.
+</p>
+
+<p>
+Scheletul include instrumente utile pentru a compila și valida tema. În fișierul <code>USAGE.md</code> regăsiți instrucțiunile de utilizare a instrumentelor.
+</p>
+
+<p>
+Pentru a rezolva tema, trebuie să completați funcțiile definite în fișierele din directorul <code>libchunk</code>.
+</p>
+
+<p>
+</p><p></p><div class="noteimportant">
+Atenție! Nu aveți voie să:
+<p></p>
+<ul>
+<li class="level1"><div class="li"> redenumiți fișierele temei</div>
+</li>
+<li class="level1"><div class="li"> modificați parametrii funcțiilor din schelet</div>
+</li>
+<li class="level1"><div class="li"> modificați regulile din fișierul Makefile</div>
+</li>
+</ul>
+
+<p>
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h2 class="sectionedit5" id="partea_a_-_generare_de_structuri">Partea A - Generare de structuri</h2>
+<div class="level2">
+
+<p>
+Pentru <strong>Partea A</strong>, veți implementa funcțiile definite în fișierul <code>libchunk/chunk_gen.c</code>.
+</p>
+
+</div>
+
+<h3 class="sectionedit6" id="task_1_4p_-_adaugare_bloc">Task 1 (4p) - Adăugare Bloc</h3>
+<div class="level3">
+
+<p>
+Implementați funcția <code>chunk_place_block</code> care primește ca parametri un chunk de dimensiuni <code>width</code>, <code>height</code>, și <code>depth</code>, trei coordonate și un tip de bloc.
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_place_block<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="sy0">,</span>
+    <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="sy0">,</span> <span class="kw4">int</span> z<span class="sy0">,</span> <span class="kw4">char</span> block<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+Funcția întoarce chunkul obținut prin amplasarea blocului precizat la coordonatele primite ca parametru.
+</p>
+
+<p>
+<strong>Atenție!</strong> Coordonatele pot depăși chunkul. Spre exemplu, coordonata <code>x</code> poate fi în afara intervalului <code>[0, width-1]</code>. Blocul se introduce numai dacă <code>x</code>, <code>y</code> și <code>z</code> se încadrează în limitele chunkului, altfel chunkul rămâne neschimbat.
+</p>
+
+</div>
+
+<h4 id="exemplu">Exemplu</h4>
+<div class="level4">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/a-1.png" class="media" title="programare:teme_2024:tema2:a-1.png"><img src="./enunt_files/a-1.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit7" id="task_2_6p_-_umplere_paralelipiped">Task 2 (6p) - Umplere Paralelipiped</h3>
+<div class="level3">
+
+<p>
+Implementați funcția <code>chunk_fill_cuboid</code>:
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_fill_cuboid<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="sy0">,</span>
+    <span class="kw4">int</span> x0<span class="sy0">,</span> <span class="kw4">int</span> y0<span class="sy0">,</span> <span class="kw4">int</span> z0<span class="sy0">,</span> <span class="kw4">int</span> x1<span class="sy0">,</span> <span class="kw4">int</span> y1<span class="sy0">,</span> <span class="kw4">int</span> z1<span class="sy0">,</span> <span class="kw4">char</span> block<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+Funcția primește coordonatele a două puncte – <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-19" style="width: 5.742em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.521em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.346em, 1004.4em, 2.689em, -999.997em); top: -2.256em; left: 0em;"><span class="mrow" id="MathJax-Span-20"><span class="mo" id="MathJax-Span-21" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-22"><span style="display: inline-block; position: relative; width: 0.98em; height: 0px;"><span style="position: absolute; clip: rect(3.422em, 1000.55em, 4.216em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-23" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.553em;"><span class="mn" id="MathJax-Span-24" style="font-size: 70.7%; font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-25" style="font-family: MathJax_Main;">,</span><span class="msubsup" id="MathJax-Span-26" style="padding-left: 0.186em;"><span style="display: inline-block; position: relative; width: 0.919em; height: 0px;"><span style="position: absolute; clip: rect(3.422em, 1000.49em, 4.399em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-27" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.491em;"><span class="mn" id="MathJax-Span-28" style="font-size: 70.7%; font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-29" style="font-family: MathJax_Main;">,</span><span class="msubsup" id="MathJax-Span-30" style="padding-left: 0.186em;"><span style="display: inline-block; position: relative; width: 0.919em; height: 0px;"><span style="position: absolute; clip: rect(3.422em, 1000.49em, 4.216em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-31" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.491em;"><span class="mn" id="MathJax-Span-32" style="font-size: 70.7%; font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-33" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.262em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-4">(x_0, y_0, z_0)</script> și <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-34" style="width: 5.742em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.521em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.346em, 1004.4em, 2.689em, -999.997em); top: -2.256em; left: 0em;"><span class="mrow" id="MathJax-Span-35"><span class="mo" id="MathJax-Span-36" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-37"><span style="display: inline-block; position: relative; width: 0.98em; height: 0px;"><span style="position: absolute; clip: rect(3.422em, 1000.55em, 4.216em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-38" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.553em;"><span class="mn" id="MathJax-Span-39" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-40" style="font-family: MathJax_Main;">,</span><span class="msubsup" id="MathJax-Span-41" style="padding-left: 0.186em;"><span style="display: inline-block; position: relative; width: 0.919em; height: 0px;"><span style="position: absolute; clip: rect(3.422em, 1000.49em, 4.399em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-42" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.491em;"><span class="mn" id="MathJax-Span-43" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-44" style="font-family: MathJax_Main;">,</span><span class="msubsup" id="MathJax-Span-45" style="padding-left: 0.186em;"><span style="display: inline-block; position: relative; width: 0.919em; height: 0px;"><span style="position: absolute; clip: rect(3.422em, 1000.49em, 4.216em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-46" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.491em;"><span class="mn" id="MathJax-Span-47" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-48" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.262em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>,</mo><msub><mi>z</mi><mn>1</mn></msub><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-5">(x_1, y_1, z_1)</script> – ce reprezintă colțuri opuse ale unui paralelipiped dreptunghic și un tip de bloc, și întoarce chunkul obținut prin umplerea paralelipipedului cu blocuri de tipul precizat.
+</p>
+
+<p>
+<strong>Atenție!</strong> Și această funcție poate primi coordonate ce depășesc limitele chunkului. Numai partea din paralelipiped <em>care se încadrează în dimensiunile chunkului</em> va fi umplută.
+</p>
+
+<p>
+</p><p></p><div class="notetip">
+În rezolvarea oricărui task, puteți folosi funcțiile pe care le-ați implementat deja.
+
+</div><p></p>
+<p></p>
+
+</div>
+
+<h4 id="exemplu1">Exemplu</h4>
+<div class="level4">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/a-2.png" class="media" title="programare:teme_2024:tema2:a-2.png"><img src="./enunt_files/a-2.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit8" id="task_3_6p_-_umplere_sfera">Task 3 (6p) - Umplere sferă</h3>
+<div class="level3">
+
+<p>
+Implementați funcția <code>chunk_fill_sphere</code> care introduce un bloc de un anumit tip la toate pozițiile aflate <em>strict</em> în interiorul sferei de centru și rază primite ca parametru. Funcția trebuie să întoarcă noul chunk.
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_fill_sphere<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="sy0">,</span>
+    <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="sy0">,</span> <span class="kw4">int</span> z<span class="sy0">,</span> <span class="kw4">double</span> radius<span class="sy0">,</span> <span class="kw4">char</span> block<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+Spre exemplu, dacă sfera are centru <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-49" style="width: 4.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.12em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-50"><span class="mo" id="MathJax-Span-51" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-52" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-53" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-54" style="font-family: MathJax_Main; padding-left: 0.186em;">1</span><span class="mo" id="MathJax-Span-55" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-56" style="font-family: MathJax_Main; padding-left: 0.186em;">2</span><span class="mo" id="MathJax-Span-57" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-6">(1, 1, 2)</script> și rază <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;1.2&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-58" style="width: 1.651em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.285em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1001.22em, 2.323em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-59"><span class="mn" id="MathJax-Span-60" style="font-family: MathJax_Main;">1.2</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1.2</mn></math></span></span><script type="math/tex" id="MathJax-Element-7">1.2</script>, atunci blocul de la <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-61" style="width: 4.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.12em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-62"><span class="mo" id="MathJax-Span-63" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-64" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-65" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-66" style="font-family: MathJax_Main; padding-left: 0.186em;">1</span><span class="mo" id="MathJax-Span-67" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-68" style="font-family: MathJax_Main; padding-left: 0.186em;">3</span><span class="mo" id="MathJax-Span-69" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-8">(1, 1, 3)</script> va fi modificat de funcție, având distanța <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-70" style="width: 0.614em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.491em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1000.43em, 2.323em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-71"><span class="mn" id="MathJax-Span-72" style="font-family: MathJax_Main;">1</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-9">1</script> de centrul sferei. Însă blocul de la <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-10-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-73" style="width: 4.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.12em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-74"><span class="mo" id="MathJax-Span-75" style="font-family: MathJax_Main;">(</span><span class="mn" id="MathJax-Span-76" style="font-family: MathJax_Main;">0</span><span class="mo" id="MathJax-Span-77" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-78" style="font-family: MathJax_Main; padding-left: 0.186em;">0</span><span class="mo" id="MathJax-Span-79" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-80" style="font-family: MathJax_Main; padding-left: 0.186em;">2</span><span class="mo" id="MathJax-Span-81" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-10">(0, 0, 2)</script> va rămâne intact, fiindcă stă la distanța <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-11-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msqrt&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msqrt&gt;&lt;mo&gt;&amp;gt;&lt;/mo&gt;&lt;mn&gt;1.2&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-82" style="width: 5.07em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.032em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.102em, 1003.97em, 2.506em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-83"><span class="msqrt" id="MathJax-Span-84"><span style="display: inline-block; position: relative; width: 1.346em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.43em, 4.216em, -999.997em); top: -4.026em; left: 0.858em;"><span class="mrow" id="MathJax-Span-85"><span class="mn" id="MathJax-Span-86" style="font-family: MathJax_Main;">2</span></span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; clip: rect(3.544em, 1000.49em, 3.971em, -999.997em); top: -4.576em; left: 0.858em;"><span style="font-family: MathJax_Main;">–</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; clip: rect(3.056em, 1000.86em, 4.399em, -999.997em); top: -4.087em; left: 0em;"><span style="font-family: MathJax_Main;">√</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-87" style="font-family: MathJax_Main; padding-left: 0.308em;">&gt;</span><span class="mn" id="MathJax-Span-88" style="font-family: MathJax_Main; padding-left: 0.308em;">1.2</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>2</mn></msqrt><mo>&gt;</mo><mn>1.2</mn></math></span></span><script type="math/tex" id="MathJax-Element-11">\sqrt{2} > 1.2</script> de centrul sferei.
+</p>
+
+<p>
+<strong>Atenție!</strong> La fel ca funcțiile anterioare, această funcție introduce blocuri numai la pozițiile aflate în limitele chunkului. Sfera descrisă de parametri nu se va încadra întotdeauna în dimensiunile chunkului.
+</p>
+
+</div>
+
+<h4 id="exemplu2">Exemplu</h4>
+<div class="level4">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/a-3.png" class="media" title="programare:teme_2024:tema2:a-3.png"><img src="./enunt_files/a-3.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit9" id="partea_b_-_procesare">Partea B - Procesare</h2>
+<div class="level2">
+
+<p>
+Pentru a rezolva <strong>Partea B</strong> veți completa funcțiile din fișierul <code>libchunk/chunk_process.c</code>.
+</p>
+
+</div>
+
+<h3 class="sectionedit10" id="task_4_6p_-_invelis_in_jurul_unui_bloc">Task 4 (6p) - Înveliș în jurul unui bloc</h3>
+<div class="level3">
+
+<p>
+Trebuie implementată funcția <code>chunk_shell</code>:
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_shell<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="sy0">,</span>
+    <span class="kw4">char</span> target_block<span class="sy0">,</span> <span class="kw4">char</span> shell_block<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+În jurul fiecărui bloc de tipul <code>target_block</code>, funcția construiește un înveliș de tipul <code>shell_block</code>. Blocurile de tip <code>target_block</code> nu se înlocuiesc cu <code>shell_block</code>, însă celelalte blocuri se pot înlocui, dacă este cazul.
+</p>
+
+<p>
+Învelișul unui bloc e format din pozițiile vecine directe — spre exemplu, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-12-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-89" style="width: 6.352em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.009em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1004.89em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-90"><span class="mo" id="MathJax-Span-91" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-92" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-93" style="font-family: MathJax_Main; padding-left: 0.247em;">+</span><span class="mn" id="MathJax-Span-94" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-95" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-96" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-97" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-98" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-99" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-12">(x+1, y, z)</script> sau <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-13-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-100" style="width: 6.352em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.009em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1004.89em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-101"><span class="mo" id="MathJax-Span-102" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-103" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-104" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-105" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-106" style="font-family: MathJax_Main; padding-left: 0.247em;">−</span><span class="mn" id="MathJax-Span-107" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-108" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-109" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-110" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-13">(x, y-1, z)</script> — și pozițiile vecine de “muchie”, precum <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-14-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-111" style="width: 8.55em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.78em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1006.66em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-112"><span class="mo" id="MathJax-Span-113" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-114" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-115" style="font-family: MathJax_Main; padding-left: 0.247em;">+</span><span class="mn" id="MathJax-Span-116" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-117" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-118" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-119" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-120" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-121" style="font-family: MathJax_Main; padding-left: 0.247em;">+</span><span class="mn" id="MathJax-Span-122" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-123" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-14">(x+1, y, z+1)</script> sau <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-15-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-124" style="width: 8.55em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.78em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1006.66em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-125"><span class="mo" id="MathJax-Span-126" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-127" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-128" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-129" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-130" style="font-family: MathJax_Main; padding-left: 0.247em;">−</span><span class="mn" id="MathJax-Span-131" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-132" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-133" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-134" style="font-family: MathJax_Main; padding-left: 0.247em;">−</span><span class="mn" id="MathJax-Span-135" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-136" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>z</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-15">(x, y-1, z-1)</script>, dar <strong>nu</strong> și pozițiile vecine de “colț”, precum <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-16-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-137" style="width: 10.809em; display: inline-block;"><span style="display: inline-block; position: relative; width: 8.55em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1008.43em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-138"><span class="mo" id="MathJax-Span-139" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-140" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-141" style="font-family: MathJax_Main; padding-left: 0.247em;">+</span><span class="mn" id="MathJax-Span-142" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-143" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-144" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-145" style="font-family: MathJax_Main; padding-left: 0.247em;">+</span><span class="mn" id="MathJax-Span-146" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-147" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-148" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-149" style="font-family: MathJax_Main; padding-left: 0.247em;">+</span><span class="mn" id="MathJax-Span-150" style="font-family: MathJax_Main; padding-left: 0.247em;">1</span><span class="mo" id="MathJax-Span-151" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>y</mi><mo>+</mo><mn>1</mn><mo>,</mo><mi>z</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-16">(x+1, y+1, z+1)</script>.
+</p>
+
+<p>
+<strong>Atenție!</strong> La fel ca funcțiile anterioare, această funcție introduce blocuri numai la pozițiile aflate în interiorul chunkului.
+</p>
+
+</div>
+
+<h4 id="exemplu3">Exemplu</h4>
+<div class="level4">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/b-4.png" class="media" title="programare:teme_2024:tema2:b-4.png"><img src="./enunt_files/b-4.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit11" id="task_5_8p_-_umplere_in_planul_xoz">Task 5 (8p) - Umplere în planul <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-17-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-152" style="width: 2.291em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.795em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.147em, 1001.79em, 2.101em, -999.998em); top: -1.944em; left: 0em;"><span class="mrow" id="MathJax-Span-153"><span class="mi" id="MathJax-Span-154" style="font-family: MathJax_Math-italic;">x</span><span class="mi" id="MathJax-Span-155" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-156" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.948em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.094em; border-left: 0px solid; width: 0px; height: 1.012em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-17">xOz</script></h3>
+<div class="level3">
+
+<p>
+Veți implementa funcția <code>chunk_fill_xz</code>:
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_fill_xz<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="sy0">,</span>
+    <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="sy0">,</span> <span class="kw4">int</span> z<span class="sy0">,</span> <span class="kw4">char</span> block<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+Dacă la poziția <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-18-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-157" style="width: 4.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.12em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-158"><span class="mo" id="MathJax-Span-159" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-160" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-161" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-162" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-163" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-164" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-165" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-18">(x, y, z)</script> se află un bloc de tip <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-19-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-166" style="width: 0.919em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.736em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.041em, 1000.74em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-167"><span class="mi" id="MathJax-Span-168" style="font-family: MathJax_Math-italic;">B</span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>B</mi></math></span></span><script type="math/tex" id="MathJax-Element-19">B</script>, atunci funcția amplasează <code>block</code> pe toate pozițiile din planul paralel cu <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-20-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-169" style="width: 2.323em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.835em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.84em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-170"><span class="mi" id="MathJax-Span-171" style="font-family: MathJax_Math-italic;">x</span><span class="mi" id="MathJax-Span-172" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-173" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-20">xOz</script> la care se poate ajunge prin deplasare cu câte un bloc, paralel cu axele <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-21-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-174" style="width: 1.712em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.346em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.28em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-175"><span class="mi" id="MathJax-Span-176" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-177" style="font-family: MathJax_Math-italic;">x</span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mi>x</mi></math></span></span><script type="math/tex" id="MathJax-Element-21">Ox</script> și <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-22-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-178" style="width: 1.59em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.224em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.22em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-179"><span class="mi" id="MathJax-Span-180" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-181" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-22">Oz</script>, începând de la poziția <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-23-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-182" style="width: 4.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.12em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-183"><span class="mo" id="MathJax-Span-184" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-185" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-186" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-187" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-188" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-189" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-190" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-23">(x, y, z)</script> și trecând numai prin blocuri de tip <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-24-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-191" style="width: 0.919em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.736em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.041em, 1000.74em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-192"><span class="mi" id="MathJax-Span-193" style="font-family: MathJax_Math-italic;">B</span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>B</mi></math></span></span><script type="math/tex" id="MathJax-Element-24">B</script>.
+</p>
+
+</div>
+
+<h4 id="exemplu4">Exemplu</h4>
+<div class="level4">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/b-5.png" class="media" title="programare:teme_2024:tema2:b-5.png"><img src="./enunt_files/b-5.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit12" id="task_6_10p_-_umplere_in_spatiu">Task 6 (10p) - Umplere în spațiu</h3>
+<div class="level3">
+
+<p>
+Trebuie implementată funcția <code>chunk_fill</code> având același prototip ca <code>chunk_fill_xz</code>:
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_fill<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="sy0">,</span>
+    <span class="kw4">int</span> x<span class="sy0">,</span> <span class="kw4">int</span> y<span class="sy0">,</span> <span class="kw4">int</span> z<span class="sy0">,</span> <span class="kw4">char</span> block<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+Funcția amplasează <code>block</code> pe pozițiile din spațiu la care se poate ajunge prin deplasare cu câte un bloc pe orice axă, pornind de la <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-25-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-194" style="width: 4.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.12em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-195"><span class="mo" id="MathJax-Span-196" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-197" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-198" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-199" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-200" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-201" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-202" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-25">(x, y, z)</script>, trecând numai prin blocuri identice cu cel de pe poziția <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-26-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-203" style="width: 4.093em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.12em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-204"><span class="mo" id="MathJax-Span-205" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-206" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-207" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-208" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-209" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-210" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-211" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-26">(x, y, z)</script>.
+</p>
+
+</div>
+
+<h4 id="exemplu5">Exemplu</h4>
+<div class="level4">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/b-6.png" class="media" title="programare:teme_2024:tema2:b-6.png"><img src="./enunt_files/b-6.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit13" id="partea_c_-_transformari">Partea C - Transformări</h2>
+<div class="level2">
+
+<p>
+Pentru <strong>Partea C</strong>, veți lucra în fișierul <code>libchunk/chunk_transform.c</code>.
+</p>
+
+</div>
+
+<h3 class="sectionedit14" id="task_7_8p_-_rotire_in_jurul_axei_oy">Task 7 (8p) - Rotire în jurul axei <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-27-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-212" style="width: 1.604em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.261em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.147em, 1001.26em, 2.253em, -999.998em); top: -1.944em; left: 0em;"><span class="mrow" id="MathJax-Span-213"><span class="mi" id="MathJax-Span-214" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-215" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.948em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.286em; border-left: 0px solid; width: 0px; height: 1.252em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-27">Oy</script></h3>
+<div class="level3">
+
+<p>
+Veți implementa funcția <code>chunk_rotate_y</code>, care primește un chunk și întoarce chunkul rotit la 90 de grade în jurul axei <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-28-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-216" style="width: 0.614em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.491em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1000.49em, 2.262em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-217"><span class="mi" id="MathJax-Span-218" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-28">y</script> (sau în planul <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-29-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-219" style="width: 2.323em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.835em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.84em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-220"><span class="mi" id="MathJax-Span-221" style="font-family: MathJax_Math-italic;">x</span><span class="mi" id="MathJax-Span-222" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-223" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-29">xOz</script>). Privită de sus, rotația se realizează în sens trigonometric.
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_rotate_y<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+<strong>Atenție!</strong> Rotirea poate produce un chunk cu dimensiuni diferite de cel original. Dimensiunile chunkului returnat de funcție sunt <code>width_nou = depth</code>, <code>height_nou = height</code> și <code>depth_nou = width</code>.
+</p>
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/c-7-intro.png" class="media" title="programare:teme_2024:tema2:c-7-intro.png"><img src="./enunt_files/c-7-intro.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h4 id="exemplu6">Exemplu</h4>
+<div class="level4">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/c-7.png" class="media" title="programare:teme_2024:tema2:c-7.png"><img src="./enunt_files/c-7.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit15" id="task_8_12p_-_gravitatie">Task 8 (12p) - Gravitație</h3>
+<div class="level3">
+
+<p>
+Pentru acest task, aveți de implementat funcția <code>chunk_apply_gravity</code>:
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_apply_gravity<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="sy0">,</span> <span class="kw4">int</span><span class="sy0">*</span> new_height<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+Numim un <strong>corp</strong> o mulțime de blocuri de același fel (dar diferite de aer), conectate, în spațiu. Cu alte cuvinte, dacă aplicăm funcția <code>chunk_fill</code> cu coordonatele unui bloc (diferit de aer), se vor umple exact blocurile corespunzătoare corpului din care face parte blocul.
+</p>
+
+<p>
+Funcția <code>chunk_apply_gravity</code> are ca efect coborârea tuturor corpurilor prezente în chunk, până când niciun corp nu se mai poate deplasa în jos — fie pentru că atinge baza chunkului (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-30-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-224" style="width: 2.995em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.384em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1002.32em, 2.506em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-225"><span class="mi" id="MathJax-Span-226" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-227" style="font-family: MathJax_Main; padding-left: 0.308em;">=</span><span class="mn" id="MathJax-Span-228" style="font-family: MathJax_Main; padding-left: 0.308em;">0</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.235em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>=</mo><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-30">y=0</script>), fie pentru că alt corp se află imediat dedesubt.
+</p>
+
+<p>
+După această transformare, pot rămâne spații goale (aer) de forma unor plane paralele cu <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-31-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-229" style="width: 2.323em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.835em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.84em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-230"><span class="mi" id="MathJax-Span-231" style="font-family: MathJax_Math-italic;">x</span><span class="mi" id="MathJax-Span-232" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-233" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-31">xOz</script> în partea de sus a chunkului. Aceste spații goale vor fi eliminate. Spre exemplu, dacă cele două plane paralele cu <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-32-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-234" style="width: 2.323em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.835em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.84em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-235"><span class="mi" id="MathJax-Span-236" style="font-family: MathJax_Math-italic;">x</span><span class="mi" id="MathJax-Span-237" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-238" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-32">xOz</script> situate cel mai sus pe axa <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-33-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-239" style="width: 0.614em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.491em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1000.49em, 2.262em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-240"><span class="mi" id="MathJax-Span-241" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-33">y</script> sunt alcătuite doar din blocuri de aer, chunkul întors nu le va include, și va avea <code>new_height = height - 2</code> care trebuie transmis apelantului prin parametrul de ieșire <code>new_height</code>.
+</p>
+
+</div>
+
+<h4 id="exemplu7">Exemplu</h4>
+<div class="level4">
+
+<p>
+În exemplul de mai jos există șapte corpuri (patru cuburi, două inele și un baston). După aplicarea gravitației, cele 7 plane superioare paralele cu <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-34-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-242" style="width: 2.323em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.835em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.84em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-243"><span class="mi" id="MathJax-Span-244" style="font-family: MathJax_Math-italic;">x</span><span class="mi" id="MathJax-Span-245" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-246" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-34">xOz</script> se vor elimina fiindcă rămân neocupate cu corpuri.
+</p>
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/c-8.png" class="media" title="programare:teme_2024:tema2:c-8.png"><img src="./enunt_files/c-8.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit16" id="partea_d_-_compression">Partea D - Compression</h2>
+<div class="level2">
+
+<p>
+Pentru <strong>Partea D</strong> veți completa cele două funcții din fișierul <code>libchunk/chunk_compress.c</code>.
+</p>
+
+</div>
+
+<h3 class="sectionedit17" id="task_9_10p_-_stocarea_unui_chunk">Task 9 (10p) - Stocarea unui chunk</h3>
+<div class="level3">
+
+<p>
+În reprezentarea cu matrici tridimensionale, chunkurile largi ocupă cantități mari de memorie. Un chunk de dimensiuni <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-35-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;20&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-247" style="width: 4.948em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.91em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1003.85em, 2.506em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-248"><span class="mn" id="MathJax-Span-249" style="font-family: MathJax_Main;">20</span><span class="mo" id="MathJax-Span-250" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-251" style="font-family: MathJax_Main; padding-left: 0.186em;">20</span><span class="mo" id="MathJax-Span-252" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-253" style="font-family: MathJax_Main; padding-left: 0.186em;">20</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.235em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>20</mn><mo>,</mo><mn>20</mn><mo>,</mo><mn>20</mn></math></span></span><script type="math/tex" id="MathJax-Element-35">20,20,20</script> necesită memorarea tipului de bloc pentru 8000 de blocuri.
+</p>
+
+<p>
+Putem reduce consumul de memorie observând că blocurile alăturate sunt adesea identice. În loc să stocăm același bloc de multe ori, vom păstra tipul de bloc și numărul de apariții consecutive, conform schemei de <em>lossless compression</em> numite <strong>run-length encoding</strong> (<strong>RLE</strong>).
+</p>
+
+<p>
+Pentru început, vom aplatiza (<strong>flatten</strong>) matricea tridimensională numerotând blocurile de la 0 la <code>width*height*depth - 1</code> în funcție de poziția fiecăruia, <strong>în ordinea</strong> <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-36-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-254" style="width: 3.117em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.445em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.529em, 1002.38em, 2.506em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-255"><span class="mi" id="MathJax-Span-256" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-257" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-258" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-259" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-260" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">x</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>,</mo><mi>z</mi><mo>,</mo><mi>x</mi></math></span></span><script type="math/tex" id="MathJax-Element-36">y,z,x</script>. Un exemplu este ilustrat mai jos (am separat straturile pentru claritate).
+</p>
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/d-intro-1.png" class="media" title="programare:teme_2024:tema2:d-intro-1.png"><img src="./enunt_files/d-intro-1.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+<p>
+Parcurgând blocurile în ordinea precizată numărăm aparițiile consecutive (<strong>runs</strong>) ale aceluiași bloc. În exemplul anterior, există 5 runs: <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-37-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;iarba&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-261" style="width: 5.009em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.971em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.85em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-262"><span class="mo" id="MathJax-Span-263" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-264"><span class="mrow" id="MathJax-Span-265"><span class="mtext" id="MathJax-Span-266" style="font-family: MathJax_Main;">iarba</span></span></span><span class="mo" id="MathJax-Span-267" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-268" style="font-family: MathJax_Main; padding-left: 0.186em;">4</span><span class="mo" id="MathJax-Span-269" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>iarba</mtext></mrow><mo>,</mo><mn>4</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-37">(\textrm{iarba}, 4)</script>, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-38-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;piatra&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-270" style="width: 5.498em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.338em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1004.22em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-271"><span class="mo" id="MathJax-Span-272" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-273"><span class="mrow" id="MathJax-Span-274"><span class="mtext" id="MathJax-Span-275" style="font-family: MathJax_Main;">piatra</span></span></span><span class="mo" id="MathJax-Span-276" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-277" style="font-family: MathJax_Main; padding-left: 0.186em;">5</span><span class="mo" id="MathJax-Span-278" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>piatra</mtext></mrow><mo>,</mo><mn>5</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-38">(\textrm{piatra}, 5)</script>, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-39-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;aer&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;8&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-279" style="width: 3.849em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.056em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1002.93em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-280"><span class="mo" id="MathJax-Span-281" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-282"><span class="mrow" id="MathJax-Span-283"><span class="mtext" id="MathJax-Span-284" style="font-family: MathJax_Main;">aer</span></span></span><span class="mo" id="MathJax-Span-285" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-286" style="font-family: MathJax_Main; padding-left: 0.186em;">8</span><span class="mo" id="MathJax-Span-287" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>aer</mtext></mrow><mo>,</mo><mn>8</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-39">(\textrm{aer}, 8)</script>, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-40-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;iarba&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-288" style="width: 5.009em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.971em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.85em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-289"><span class="mo" id="MathJax-Span-290" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-291"><span class="mrow" id="MathJax-Span-292"><span class="mtext" id="MathJax-Span-293" style="font-family: MathJax_Main;">iarba</span></span></span><span class="mo" id="MathJax-Span-294" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-295" style="font-family: MathJax_Main; padding-left: 0.186em;">1</span><span class="mo" id="MathJax-Span-296" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>iarba</mtext></mrow><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-40">(\textrm{iarba}, 1)</script>, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-41-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;aer&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-297" style="width: 3.849em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.056em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1002.93em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-298"><span class="mo" id="MathJax-Span-299" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-300"><span class="mrow" id="MathJax-Span-301"><span class="mtext" id="MathJax-Span-302" style="font-family: MathJax_Main;">aer</span></span></span><span class="mo" id="MathJax-Span-303" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-304" style="font-family: MathJax_Main; padding-left: 0.186em;">9</span><span class="mo" id="MathJax-Span-305" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>aer</mtext></mrow><mo>,</mo><mn>9</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-41">(\textrm{aer}, 9)</script>.
+</p>
+
+<p>
+Dorim să memorăm într-un vector de <code>unsigned char</code> (fiecare <code>unsigned char</code> are 8 biți) informațiile despre aceste runs, una după alta, pentru a putea ulterior să reconstruim chunkul.
+</p>
+
+<p>
+Dacă <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-42-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;bloc&lt;/mtext&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-306" style="width: 2.262em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.774em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1001.77em, 2.323em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-307"><span class="texatom" id="MathJax-Span-308"><span class="mrow" id="MathJax-Span-309"><span class="mtext" id="MathJax-Span-310" style="font-family: MathJax_Main;">bloc</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext>bloc</mtext></mrow></math></span></span><script type="math/tex" id="MathJax-Element-42">\textrm{bloc}</script> e unul dintre cele patru blocuri posibile, atunci îi corespunde un număr de la 0 la 3, deci poate fi reprezentat de doi biți <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-43-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;msub&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-311" style="width: 2.201em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.712em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.125em, 1001.71em, 1.346em, -999.997em); top: -0.974em; left: 0em;"><span class="mrow" id="MathJax-Span-312"><span class="msubsup" id="MathJax-Span-313"><span style="display: inline-block; position: relative; width: 0.858em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.43em, 4.216em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-314" style="font-family: MathJax_Math-italic;">b</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.43em;"><span class="mn" id="MathJax-Span-315" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-316"><span style="display: inline-block; position: relative; width: 0.858em; height: 0px;"><span style="position: absolute; clip: rect(3.178em, 1000.43em, 4.216em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-317" style="font-family: MathJax_Math-italic;">b</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.43em;"><span class="mn" id="MathJax-Span-318" style="font-size: 70.7%; font-family: MathJax_Main;">0</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 0.98em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.235em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>b</mi><mn>1</mn></msub><msub><mi>b</mi><mn>0</mn></msub></math></span></span><script type="math/tex" id="MathJax-Element-43">b_1b_0</script> (cifrele numărului corespunzător în baza doi). De asemenea, numărul de apariții <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-44-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-319" style="width: 0.797em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.614em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1000.61em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-320"><span class="mi" id="MathJax-Span-321" style="font-family: MathJax_Math-italic;">n</span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 0.696em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></span></span><script type="math/tex" id="MathJax-Element-44">n</script> dintr-un run, în baza 2, poate fi reprezentat de <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-45-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-322" style="width: 0.553em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.43em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1000.43em, 2.262em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-323"><span class="mi" id="MathJax-Span-324" style="font-family: MathJax_Math-italic;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 0.927em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>q</mi></math></span></span><script type="math/tex" id="MathJax-Element-45">q</script> biți. Așadar memorăm fiecare run de forma <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-46-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;bloc&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-325" style="width: 4.582em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.605em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.48em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-326"><span class="mo" id="MathJax-Span-327" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-328"><span class="mrow" id="MathJax-Span-329"><span class="mtext" id="MathJax-Span-330" style="font-family: MathJax_Main;">bloc</span></span></span><span class="mo" id="MathJax-Span-331" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-332" style="font-family: MathJax_Math-italic; padding-left: 0.186em;">n</span><span class="mo" id="MathJax-Span-333" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>bloc</mtext></mrow><mo>,</mo><mi>n</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-46">(\textrm{bloc}, n)</script>, individual, în următorul format, unde <code>bb</code> sunt biții ce specifică blocul iar <code>n...nn</code> biții ce specifică numărul de apariții:
+</p>
+<div class="table sectionedit18"><table class="inline">
+	<tbody><tr class="row0">
+		<th class="col0"> Valoare <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-47-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-334" style="width: 0.79em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.609em; height: 0px; font-size: 127%;"><span style="position: absolute; clip: rect(1.336em, 1000.61em, 2.123em, -999.997em); top: -1.935em; left: 0em;"><span class="mrow" id="MathJax-Span-335"><span class="mi" id="MathJax-Span-336" style="font-family: MathJax_Math-italic;">n</span></span><span style="display: inline-block; width: 0px; height: 1.941em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 0.696em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></span></span><script type="math/tex" id="MathJax-Element-47">n</script> </th><th class="col1"> Primul <code>unsigned char</code> </th><th class="col2"> Al doilea <code>unsigned char</code> </th>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-48-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x003C;&lt;/mo&gt;&lt;mn&gt;32&lt;/mn&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x27F9;&lt;/mo&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-337" style="width: 12.701em; display: inline-block;"><span style="display: inline-block; position: relative; width: 10.076em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1010.01em, 2.506em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-338"><span class="mn" id="MathJax-Span-339" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-340" style="font-family: MathJax_Main; padding-left: 0.308em;">≤</span><span class="mi" id="MathJax-Span-341" style="font-family: MathJax_Math-italic; padding-left: 0.308em;">n</span><span class="mo" id="MathJax-Span-342" style="font-family: MathJax_Main; padding-left: 0.308em;">&lt;</span><span class="mn" id="MathJax-Span-343" style="font-family: MathJax_Main; padding-left: 0.308em;">32</span><span class="mspace" id="MathJax-Span-344" style="height: 0em; vertical-align: 0em; width: 0.308em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-345" style="font-family: MathJax_Main; padding-left: 0.308em;">⟹</span><span class="mspace" id="MathJax-Span-346" style="height: 0em; vertical-align: 0em; width: 0.308em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-347" style="font-family: MathJax_Math-italic; padding-left: 0.308em;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-348" style="font-family: MathJax_Main; padding-left: 0.308em;">=</span><span class="mn" id="MathJax-Span-349" style="font-family: MathJax_Main; padding-left: 0.308em;">5</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.235em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mo>≤</mo><mi>n</mi><mo>&lt;</mo><mn>32</mn><mspace width="thickmathspace"></mspace><mo stretchy="false">⟹</mo><mspace width="thickmathspace"></mspace><mi>q</mi><mo>=</mo><mn>5</mn></math></span></span><script type="math/tex" id="MathJax-Element-48">1 \le n \lt 32 \implies q=5</script> </td><td class="col1"> <code>bb0nnnnn</code> </td><td class="col2"> nu există </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-49-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;32&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x003C;&lt;/mo&gt;&lt;mn&gt;4096&lt;/mn&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x27F9;&lt;/mo&gt;&lt;mspace width=&quot;thickmathspace&quot; /&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;12&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-350" style="width: 15.266em; display: inline-block;"><span style="display: inline-block; position: relative; width: 12.091em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1012.03em, 2.506em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-351"><span class="mn" id="MathJax-Span-352" style="font-family: MathJax_Main;">32</span><span class="mo" id="MathJax-Span-353" style="font-family: MathJax_Main; padding-left: 0.308em;">≤</span><span class="mi" id="MathJax-Span-354" style="font-family: MathJax_Math-italic; padding-left: 0.308em;">n</span><span class="mo" id="MathJax-Span-355" style="font-family: MathJax_Main; padding-left: 0.308em;">&lt;</span><span class="mn" id="MathJax-Span-356" style="font-family: MathJax_Main; padding-left: 0.308em;">4096</span><span class="mspace" id="MathJax-Span-357" style="height: 0em; vertical-align: 0em; width: 0.308em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-358" style="font-family: MathJax_Main; padding-left: 0.308em;">⟹</span><span class="mspace" id="MathJax-Span-359" style="height: 0em; vertical-align: 0em; width: 0.308em; display: inline-block; overflow: hidden;"></span><span class="mi" id="MathJax-Span-360" style="font-family: MathJax_Math-italic; padding-left: 0.308em;">q<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-361" style="font-family: MathJax_Main; padding-left: 0.308em;">=</span><span class="mn" id="MathJax-Span-362" style="font-family: MathJax_Main; padding-left: 0.308em;">12</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.235em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>32</mn><mo>≤</mo><mi>n</mi><mo>&lt;</mo><mn>4096</mn><mspace width="thickmathspace"></mspace><mo stretchy="false">⟹</mo><mspace width="thickmathspace"></mspace><mi>q</mi><mo>=</mo><mn>12</mn></math></span></span><script type="math/tex" id="MathJax-Element-49">32 \le n \lt 4096 \implies q=12</script> </td><td class="col1"> <code>bb10nnnn</code> </td><td class="col2"> <code>nnnnnnnn</code> </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+În cazul în care <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-50-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;32&lt;/mn&gt;&lt;mo&gt;&amp;#x2264;&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x003C;&lt;/mo&gt;&lt;mn&gt;4096&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-363" style="width: 8.123em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.413em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1006.35em, 2.445em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-364"><span class="mn" id="MathJax-Span-365" style="font-family: MathJax_Main;">32</span><span class="mo" id="MathJax-Span-366" style="font-family: MathJax_Main; padding-left: 0.308em;">≤</span><span class="mi" id="MathJax-Span-367" style="font-family: MathJax_Math-italic; padding-left: 0.308em;">n</span><span class="mo" id="MathJax-Span-368" style="font-family: MathJax_Main; padding-left: 0.308em;">&lt;</span><span class="mn" id="MathJax-Span-369" style="font-family: MathJax_Main; padding-left: 0.308em;">4096</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.227em; border-left: 0px solid; width: 0px; height: 1.158em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>32</mn><mo>≤</mo><mi>n</mi><mo>&lt;</mo><mn>4096</mn></math></span></span><script type="math/tex" id="MathJax-Element-50">32 \le n \lt 4096</script>, cei mai semnificativi 4 biți din <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-51-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-370" style="width: 0.797em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.614em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1000.61em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-371"><span class="mi" id="MathJax-Span-372" style="font-family: MathJax_Math-italic;">n</span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 0.696em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></span></span><script type="math/tex" id="MathJax-Element-51">n</script> sunt stocați în primul <code>unsigned char</code>, iar ceilalți biți în al doilea. Dacă un run are <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-52-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x2265;&lt;/mo&gt;&lt;mn&gt;4096&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-373" style="width: 5.009em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.971em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1003.91em, 2.445em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-374"><span class="mi" id="MathJax-Span-375" style="font-family: MathJax_Math-italic;">n</span><span class="mo" id="MathJax-Span-376" style="font-family: MathJax_Main; padding-left: 0.308em;">≥</span><span class="mn" id="MathJax-Span-377" style="font-family: MathJax_Main; padding-left: 0.308em;">4096</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.227em; border-left: 0px solid; width: 0px; height: 1.158em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>≥</mo><mn>4096</mn></math></span></span><script type="math/tex" id="MathJax-Element-52">n \ge 4096</script>, se împarte într-un prim run cu <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-53-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;4095&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-378" style="width: 5.62em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.46em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1004.4em, 2.445em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-379"><span class="msubsup" id="MathJax-Span-380"><span style="display: inline-block; position: relative; width: 1.041em; height: 0px;"><span style="position: absolute; clip: rect(3.422em, 1000.61em, 4.216em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-381" style="font-family: MathJax_Math-italic;">n</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.614em;"><span class="mn" id="MathJax-Span-382" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-383" style="font-family: MathJax_Main; padding-left: 0.308em;">=</span><span class="mn" id="MathJax-Span-384" style="font-family: MathJax_Main; padding-left: 0.308em;">4095</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.227em; border-left: 0px solid; width: 0px; height: 1.235em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mn>4095</mn></math></span></span><script type="math/tex" id="MathJax-Element-53">n_1 = 4095</script> și un al doilea run cu <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-54-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;4095&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-385" style="width: 7.94em; display: inline-block;"><span style="display: inline-block; position: relative; width: 6.291em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.285em, 1006.23em, 2.445em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-386"><span class="msubsup" id="MathJax-Span-387"><span style="display: inline-block; position: relative; width: 1.041em; height: 0px;"><span style="position: absolute; clip: rect(3.422em, 1000.61em, 4.216em, -999.997em); top: -4.026em; left: 0em;"><span class="mi" id="MathJax-Span-388" style="font-family: MathJax_Math-italic;">n</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span><span style="position: absolute; top: -3.904em; left: 0.614em;"><span class="mn" id="MathJax-Span-389" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.032em;"></span></span></span></span><span class="mo" id="MathJax-Span-390" style="font-family: MathJax_Main; padding-left: 0.308em;">=</span><span class="mi" id="MathJax-Span-391" style="font-family: MathJax_Math-italic; padding-left: 0.308em;">n</span><span class="mo" id="MathJax-Span-392" style="font-family: MathJax_Main; padding-left: 0.247em;">−</span><span class="mn" id="MathJax-Span-393" style="font-family: MathJax_Main; padding-left: 0.247em;">4095</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.227em; border-left: 0px solid; width: 0px; height: 1.235em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mi>n</mi><mo>−</mo><mn>4095</mn></math></span></span><script type="math/tex" id="MathJax-Element-54">n_2 = n - 4095</script>, iar procesul se repetă.
+</p>
+
+<p>
+Spre exemplu, dacă un chunk este descris de trei runs, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-55-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;piatra&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-394" style="width: 5.498em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.338em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1004.22em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-395"><span class="mo" id="MathJax-Span-396" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-397"><span class="mrow" id="MathJax-Span-398"><span class="mtext" id="MathJax-Span-399" style="font-family: MathJax_Main;">piatra</span></span></span><span class="mo" id="MathJax-Span-400" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-401" style="font-family: MathJax_Main; padding-left: 0.186em;">6</span><span class="mo" id="MathJax-Span-402" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>piatra</mtext></mrow><mo>,</mo><mn>6</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-55">(\textrm{piatra}, 6)</script>, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-56-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;lemn&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;501&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-403" style="width: 6.169em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.887em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1004.76em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-404"><span class="mo" id="MathJax-Span-405" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-406"><span class="mrow" id="MathJax-Span-407"><span class="mtext" id="MathJax-Span-408" style="font-family: MathJax_Main;">lemn</span></span></span><span class="mo" id="MathJax-Span-409" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-410" style="font-family: MathJax_Main; padding-left: 0.186em;">501</span><span class="mo" id="MathJax-Span-411" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>lemn</mtext></mrow><mo>,</mo><mn>501</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-56">(\textrm{lemn}, 501)</script> și <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-57-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;iarba&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-412" style="width: 5.009em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.971em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1003.85em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-413"><span class="mo" id="MathJax-Span-414" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-415"><span class="mrow" id="MathJax-Span-416"><span class="mtext" id="MathJax-Span-417" style="font-family: MathJax_Main;">iarba</span></span></span><span class="mo" id="MathJax-Span-418" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-419" style="font-family: MathJax_Main; padding-left: 0.186em;">5</span><span class="mo" id="MathJax-Span-420" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>iarba</mtext></mrow><mo>,</mo><mn>5</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-57">(\textrm{iarba}, 5)</script>, îl reprezentăm prin vectorul de patru <code>unsigned char</code>:
+</p>
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/d-intro-2.png" class="media" title="programare:teme_2024:tema2:d-intro-2.png"><img src="./enunt_files/d-intro-2.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+<p>
+</p><p></p><div class="noteclassic">
+În loc să memorăm 512 blocuri individual, am descris întregul chunk în 4 octeți!
+
+</div><p></p>
+<p></p>
+
+<p>
+Un chunk descris de un singur run <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-58-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;lemn&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;8192&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-421" style="width: 6.78em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.375em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(1.224em, 1005.25em, 2.567em, -999.997em); top: -2.134em; left: 0em;"><span class="mrow" id="MathJax-Span-422"><span class="mo" id="MathJax-Span-423" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-424"><span class="mrow" id="MathJax-Span-425"><span class="mtext" id="MathJax-Span-426" style="font-family: MathJax_Main;">lemn</span></span></span><span class="mo" id="MathJax-Span-427" style="font-family: MathJax_Main;">,</span><span class="mn" id="MathJax-Span-428" style="font-family: MathJax_Main; padding-left: 0.186em;">8192</span><span class="mo" id="MathJax-Span-429" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.14em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.381em; border-left: 0px solid; width: 0px; height: 1.388em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mtext>lemn</mtext></mrow><mo>,</mo><mn>8192</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-58">(\textrm{lemn}, 8192)</script> îl reprezentăm prin vectorul de cinci <code>unsigned char</code>:
+</p>
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/_media/programare/teme_2024/tema2/d-intro-3.png" class="media" title="programare:teme_2024:tema2:d-intro-3.png"><img src="./enunt_files/d-intro-3.png" class="mediacenter" alt="" width="500"></a>
+</p>
+
+<p>
+Pentru acest task trebuie să implementați funcția <code>chunk_encode</code>:
+</p>
+<pre class="code c"><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy0">*</span> chunk_encode<span class="br0">(</span>
+    <span class="kw4">char</span><span class="sy0">***</span> chunk<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="sy0">,</span>
+    <span class="kw4">int</span><span class="sy0">*</span> length<span class="br0">)</span><span class="sy0">;</span></pre>
+
+<p>
+Funcția primește un chunk și întoarce un vector de <code>unsigned char</code> ce reprezintă un șir de runs conform descrierii de mai sus. Prin <code>length</code> furnizează lungimea vectorului (numărul de <code>unsigned char</code>s).
+</p>
+
+</div>
+
+<h3 class="sectionedit19" id="task_10_10p_-_recuperarea_unui_chunk">Task 10 (10p) - Recuperarea unui chunk</h3>
+<div class="level3">
+
+<p>
+Odată encodate cu RLE, chunkurile ocupă mai puțină memorie, însă dacă vrem să le vizualizăm sau să aplicăm operații asupra lor, trebuie convertite înapoi în forma matricială.
+</p>
+
+<p>
+Funcția de implementat, <code>chunk_decode</code>, primește printr-un un vector de <code>unsigned char</code> un chunk encodat conform schemei de la <strong>Task 9</strong> și dimensiunile chunkului. Funcția întoarce chunkul original sub forma unei matrici tridimensionale alocate dinamic, în formatul din introducerea temei.
+</p>
+<pre class="code c"><span class="kw4">char</span><span class="sy0">***</span> chunk_decode<span class="br0">(</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy0">*</span> code<span class="sy0">,</span> <span class="kw4">int</span> width<span class="sy0">,</span> <span class="kw4">int</span> height<span class="sy0">,</span> <span class="kw4">int</span> depth<span class="br0">)</span><span class="sy0">;</span></pre>
+
+</div>
+
+<h2 class="sectionedit20" id="task_11_10p_-_valgrind">Task 11 (10p) - Valgrind</h2>
+<div class="level2">
+
+<p>
+Pentru acest task, trebuie să aveți punctajul maxim pe taskurile 7, 8, 9 și 10 și să nu aveți scurgeri de memorie la verificarea lor folosind <a href="https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks" class="urlextern" title="https://stackoverflow.com/questions/5134891/how-do-i-use-valgrind-to-find-memory-leaks" rel="nofollow">valgrind</a>.
+</p>
+
+<p>
+Se va rula valgrind folosind următoarea comandă:
+</p>
+<pre class="code bash"><span class="kw2">valgrind</span> <span class="re5">--tool</span>=memcheck <span class="re5">--leak-check</span>=full <span class="re5">--error-exitcode</span>=<span class="nu0">1</span> <span class="sy0">&lt;</span>program<span class="sy0">&gt;</span></pre>
+
+<p>
+Pentru depanarea problemelor de memorie puteți apela în <code>src/main.c</code> funcțiile implementate și executa valgrind cu comanda de mai sus asupra programului <code>build/main</code>.
+</p>
+
+</div>
+
+<h2 class="sectionedit21" id="notare">Notare</h2>
+<div class="level2">
+
+</div>
+
+<h3 class="sectionedit22" id="coding_style">Coding style</h3>
+<div class="level3">
+
+<p>
+Există o depunctare de până la <strong>-20p</strong> pentru coding style inadecvat. Checkerul verifică automat coding style-ul.
+</p>
+
+</div>
+
+<h3 class="sectionedit23" id="validare_locala">Validare locală</h3>
+<div class="level3">
+
+<p>
+Checkerul local se regăsește în scheletul temei. Consultați fișierul <code>USAGE.md</code> pentru instrucțiunile de utilizare.
+</p>
+
+</div>
+
+<h3 class="sectionedit24" id="trimitere">Trimitere</h3>
+<div class="level3">
+
+<p>
+Tema va fi trimisă prin Moodle, cursul <strong>Programarea Calculatoarelor (CB &amp; CD)</strong>, activitatea <strong>Tema 2</strong>.
+</p>
+
+<p>
+Toate temele sunt testate în mod automat pe Moodle.
+</p>
+
+<p>
+Arhiva temei se va încărca prin formularul de submisie (butonul <strong>Add submission</strong>).
+</p>
+
+<p>
+Rezultatele vor fi disponibile în secțiunea <strong>Feedback</strong> – nota apare la linia <strong>Grade</strong>, iar outputul checkerului și erorile apar la sectiunea <strong>Feedback comments</strong>. Dacă apare un buton albastru în formă de plus, trebuie să dați click pe el pentru a afișa întregul output al checkerului.
+</p>
+
+<p>
+<strong>Citiți cu atenție</strong> informațiile afișate în <strong>Feedback</strong> pentru a vă asigura că tema a fost rulată cu succes. Asigurați-vă că conținutul arhivei respectă structura dorită (ex. fișierele sunt în directorul corect).
+</p>
+
+<p>
+Conținutul arhivei trebuie să fie următorul:
+</p>
+<ul>
+<li class="level1"><div class="li"> directorul <code>libchunk/</code></div>
+</li>
+<li class="level1"><div class="li"> fișierul <code>Makefile</code></div>
+</li>
+<li class="level1"><div class="li"> un fișier <a href="https://en.wikipedia.org/wiki/README" class="urlextern" title="https://en.wikipedia.org/wiki/README" rel="nofollow">README</a> în care descrieți rezolvarea temei pe scurt</div>
+</li>
+</ul>
+
+<p>
+</p><p></p><div class="noteimportant">
+Arhiva trebuie să fie în format ZIP.
+<p></p>
+
+<p>
+Nu includeți fișierele checkerului în arhivă.
+
+</p></div><p></p>
+<p></p>
+
+</div>
+
+<h3 class="sectionedit25" id="depunctari">Depunctări</h3>
+<div class="level3">
+
+<p>
+Lista nu este exhaustivă.
+</p>
+<ul>
+<li class="level1"><div class="li"> O temă care nu compilează și nu a rulat pe VMChecker nu va fi luată în considerare.</div>
+</li>
+<li class="level1"><div class="li"> O temă care nu rezolvă cerința și trece testele prin alte mijloace nu va fi luată în considerare.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Nu acceptăm teme copiate.</strong> În cazul unei teme copiate se scade punctajul aferent temei din punctajul total.</div>
+</li>
+<li class="level1"><div class="li"> <strong>(-20p)</strong> Nerezolvarea tuturor erorilor și warningurilor de coding style.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit26" id="copyright_notice">Copyright notice</h2>
+<div class="level2">
+
+<p>
+Minecraft is a trademark of Mojang Studios. This page contains copyrighted materials owned by Mojang Studios. All rights reserved by Mojang Studios. These materials are used under fair use for educational purposes. This assignment is not affiliated with, endorsed by, or associated with Mojang Studios or Microsoft.
+</p>
+
+</div>
+
+        </div>
+        <div class="right_sidebar">
+          <form action="https://ocw.cs.pub.ro/courses/start" accept-charset="utf-8" class="search" id="dw__search" method="get"><div class="no"><input type="hidden" name="do" value="search"><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]"><input type="submit" value="Search" class="button" title="Search"><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>          <div class="namespace_sidebar sidebar_box">
+
+<h2 class="sectionedit1" id="resurse_generale">Resurse generale</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/anunturi-cb-cd" class="wikilink1" title="programare:anunturi-cb-cd">Anunțuri CB/CD</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/regulament-ca" class="wikilink1" title="programare:regulament-ca">Regulament: seria CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/regulament-cb-cd" class="wikilink1" title="programare:regulament-cb-cd">Regulament: seria CB/CD</a> <br>
+</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQu6eiMzWYRiPxhHEDl885S3SZ4-JiyD1yH__ubExG3lF4BiYw6ZZJH-v2LxDsU7Y2TDxLLnEP82e0c/pubhtml?gid=1970433104&amp;single=true" class="urlextern" title="https://docs.google.com/spreadsheets/d/e/2PACX-1vQu6eiMzWYRiPxhHEDl885S3SZ4-JiyD1yH__ubExG3lF4BiYw6ZZJH-v2LxDsU7Y2TDxLLnEP82e0c/pubhtml?gid=1970433104&amp;single=true" rel="nofollow">Catalog 2024-2025 CB/CD</a></div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/calendar" class="wikilink1" title="programare:calendar">Calendar</a> <br>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT1 SECTION "Resurse generale" [1-438] -->
+<h2 class="sectionedit2" id="tutoriale">Tutoriale</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/good_practices" class="wikilink1" title="programare:tutoriale:good_practices">Good Practices</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/coding-style" class="wikilink1" title="programare:coding-style">Coding style example</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/debugging" class="wikilink1" title="programare:tutoriale:debugging">Debugging</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/read_docs" class="wikilink1" title="programare:tutoriale:read_docs">Read documentation</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/code_understanding" class="wikilink1" title="programare:tutoriale:code_understanding">Code understanding</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/logging" class="wikilink1" title="programare:tutoriale:logging">Logging</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/tutoriale/unittests" class="wikilink1" title="programare:tutoriale:unittests">Unit tests</a> </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT2 SECTION "Tutoriale" [439-863] -->
+<h2 class="sectionedit3" id="resurse_laborator">Resurse laborator</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/vmchecker_conf" class="wikilink1" title="programare:vmchecker_conf">Setup Linux/VM - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/pc-ca-test-practic" class="wikilink1" title="programare:pc-ca-test-practic">Test practic - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/pc-ca-exercitii-laborator" class="wikilink1" title="programare:pc-ca-exercitii-laborator">Exerciții laborator - CA</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/checker" class="wikilink1" title="programare:checker">Checker laborator CB/CD</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/wsl-setup" class="wikilink1" title="programare:wsl-setup">WSL Setup</a> <br>
+</div>
+</li>
+<li class="level1"><div class="li"> <a href="https://cppc.hpc.pub.ro/" class="urlextern" title="https://cppc.hpc.pub.ro" rel="nofollow">Culegere de Probleme</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT3 SECTION "Resurse laborator" [864-1335] -->
+<h2 class="sectionedit4" id="cursuri">Cursuri</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT5 PLUGIN_INCLUDE_START "programare:cursuri" [0-] --><div class="plugin_include_content plugin_include__programare:cursuri">
+<div class="level2">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/programare/cursuri/sylabus" class="wikilink1" title="programare:cursuri:sylabus">Continutul Tematic</a> <br>
+
+</p>
+
+</div>
+<!-- EDIT7 PLUGIN_INCLUDE_EDITBTN "programare:cursuri" [0-] --><!-- EDIT6 PLUGIN_INCLUDE_END "programare:cursuri" [0-] --></div>
+<div class="level2">
+
+</div>
+<!-- EDIT4 SECTION "Cursuri" [1336-1404] -->
+<h2 class="sectionedit8" id="laboratoare">Laboratoare</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT9 PLUGIN_INCLUDE_START "programare:laboratoare" [0-] --><div class="plugin_include_content plugin_include__programare:laboratoare">
+<div class="level2">
+
+<p>
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab01" class="wikilink1" title="programare:laboratoare:lab01">01. Unelte de programare</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab02" class="wikilink1" title="programare:laboratoare:lab02">02. Tipuri de date. Operatori.</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab03" class="wikilink1" title="programare:laboratoare:lab03">03. Instrucțiunile limbajului C</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab04" class="wikilink1" title="programare:laboratoare:lab04">04. Funcții</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab05" class="wikilink1" title="programare:laboratoare:lab05">05. Tablouri. Particularizare - vectori</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab06" class="wikilink1" title="programare:laboratoare:lab06">06. Matrice. Operații cu matrice</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab07" class="wikilink1" title="programare:laboratoare:lab07">07. Optimizarea programelor folosind operaţii pe biţi</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab08" class="wikilink1" title="programare:laboratoare:lab08">08. Pointeri. Abordarea lucrului cu tablouri folosind pointeri</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab09" class="wikilink1" title="programare:laboratoare:lab09">09. Alocarea dinamică a memoriei. Aplicaţii folosind tablouri şi matrice</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab10" class="wikilink1" title="programare:laboratoare:lab10">10. Prelucrarea şirurilor de caractere. Funcţii. Aplicaţii</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab11" class="wikilink1" title="programare:laboratoare:lab11">11. Structuri. Uniuni. Aplicație: Matrice rare</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab12" class="wikilink1" title="programare:laboratoare:lab12">12. Operaţii cu fişiere. Aplicaţii folosind fişiere.</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab13" class="wikilink1" title="programare:laboratoare:lab13">13. Parametrii liniei de comandă. Preprocesorul. Funcţii cu număr variabil de parametri</a> <br>
+
+<a href="https://ocw.cs.pub.ro/courses/programare/laboratoare/lab14" class="wikilink1" title="programare:laboratoare:lab14">14. Recapitulare</a> <br>
+
+</p>
+
+</div>
+<!-- EDIT11 PLUGIN_INCLUDE_EDITBTN "programare:laboratoare" [0-] --><!-- EDIT10 PLUGIN_INCLUDE_END "programare:laboratoare" [0-] --></div>
+<div class="level2">
+
+</div>
+<!-- EDIT8 SECTION "Laboratoare" [1405-1482] -->
+<h2 class="sectionedit12" id="teme_de_casa_general">Teme de casă (general)</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme/general" class="wikilink1" title="programare:teme:general"> Indicații generale</a> <br>
+</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT12 SECTION "Teme de casă (general)" [1483-1713] -->
+<h2 class="sectionedit13" id="teme_de_casaseria_ca">Teme de casă: seria CA</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT13 SECTION "Teme de casă: seria CA" [1714-3358] -->
+<h2 class="sectionedit14" id="teme_de_casaseria_cbcd">Teme de casă: seria CB/CD</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema0_2024_cbd" class="wikilink1" title="programare:teme_2024:tema0_2024_cbd">Tema 0</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema1_2024_cbd" class="wikilink1" title="programare:teme_2024:tema1_2024_cbd">Tema 1</a></div>
+</li>
+<li class="level1"><div class="li"> <span class="curid"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd" class="wikilink1" title="programare:teme_2024:tema2_2024_cbd">Tema 2</a></span></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema3_2024_cbd" class="wikilink1" title="programare:teme_2024:tema3_2024_cbd">Tema 3</a></div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT14 SECTION "Teme de casă: seria CB/CD" [3359-] -->
+</div>
+<div class="toc_sidebar sidebar_box">
+<!-- TOC START -->
+<div id="sb__right__dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#tema_2_pointers_in_3d">Tema 2 – Pointers in 3D</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#intrebari">Întrebări</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#intro">Intro</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#schelet_de_cod">Schelet de cod</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#partea_a_-_generare_de_structuri">Partea A - Generare de structuri</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_1_4p_-_adaugare_bloc">Task 1 (4p) - Adăugare Bloc</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#exemplu">Exemplu</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_2_6p_-_umplere_paralelipiped">Task 2 (6p) - Umplere Paralelipiped</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#exemplu1">Exemplu</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_3_6p_-_umplere_sfera">Task 3 (6p) - Umplere sferă</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#exemplu2">Exemplu</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#partea_b_-_procesare">Partea B - Procesare</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_4_6p_-_invelis_in_jurul_unui_bloc">Task 4 (6p) - Înveliș în jurul unui bloc</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#exemplu3">Exemplu</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_5_8p_-_umplere_in_planul_xoz">Task 5 (8p) - Umplere în planul <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-59-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-430" style="width: 2.323em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.835em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.84em, 2.079em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-431"><span class="mi" id="MathJax-Span-432" style="font-family: MathJax_Math-italic;">x</span><span class="mi" id="MathJax-Span-433" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-434" style="font-family: MathJax_Math-italic;">z<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.073em; border-left: 0px solid; width: 0px; height: 1.081em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>O</mi><mi>z</mi></math></span></span><script type="math/tex" id="MathJax-Element-59">xOz</script></a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#exemplu4">Exemplu</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_6_10p_-_umplere_in_spatiu">Task 6 (10p) - Umplere în spațiu</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#exemplu5">Exemplu</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#partea_c_-_transformari">Partea C - Transformări</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_7_8p_-_rotire_in_jurul_axei_oy">Task 7 (8p) - Rotire în jurul axei <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-60-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-435" style="width: 1.651em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.285em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(0.98em, 1001.28em, 2.262em, -999.997em); top: -1.889em; left: 0em;"><span class="mrow" id="MathJax-Span-436"><span class="mi" id="MathJax-Span-437" style="font-family: MathJax_Math-italic;">O</span><span class="mi" id="MathJax-Span-438" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 1.896em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.304em; border-left: 0px solid; width: 0px; height: 1.312em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-60">Oy</script></a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#exemplu6">Exemplu</a></div></li>
+</ul>
+</li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_8_12p_-_gravitatie">Task 8 (12p) - Gravitație</a></div>
+<ul class="toc">
+<li class="level4"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#exemplu7">Exemplu</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#partea_d_-_compression">Partea D - Compression</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_9_10p_-_stocarea_unui_chunk">Task 9 (10p) - Stocarea unui chunk</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_10_10p_-_recuperarea_unui_chunk">Task 10 (10p) - Recuperarea unui chunk</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#task_11_10p_-_valgrind">Task 11 (10p) - Valgrind</a></div></li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#notare">Notare</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#coding_style">Coding style</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#validare_locala">Validare locală</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#trimitere">Trimitere</a></div></li>
+<li class="level3"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#depunctari">Depunctări</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#copyright_notice">Copyright notice</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+</div>
+        </div>
+      
+    
+      <div class="stylefoot">
+        <div class="meta">
+          <div class="user">
+                    </div>
+          <div class="doc">
+          programare/teme_2024/tema2_2024_cbd.txt · Last modified: 2024/12/12 23:02 by cosmin_stefan.popa          </div>
+        </div>
+      </div>
+
+    <div class="clearer"></div>
+
+    
+                <div class="bar" id="bar__bottom">
+      <div class="bar-left">
+        <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd?do=revisions" class="action revs" accesskey="o" rel="nofollow" title="Old revisions [O]">Old revisions</a>      </div>
+      <div class="bar-right">
+        <a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd?do=media&amp;ns=programare%3Ateme_2024" class="action media" rel="nofollow" title="Media Manager">Media Manager</a><a href="https://ocw.cs.pub.ro/courses/programare/teme_2024/tema2_2024_cbd#dokuwiki__top" class="action top" accesskey="t" rel="nofollow" title="Back to top [T]">Back to top</a>      </div>
+    </div>
+    <div class="clearer"></div>
+            
+    <div align="center" class="footerinc">
+  <div class="license"><a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="./enunt_files/cc-by-sa.png" alt="CC Attribution-Share Alike 3.0 Unported"></a></div>
+  <a target="_blank" href="http://www.chimeric.de/" title="www.chimeric.de"><img src="./enunt_files/button-chimeric-de.png" width="80" height="15" alt="www.chimeric.de" border="0"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="./enunt_files/button-css.png" width="80" height="15" alt="Valid CSS" border="0"></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="./enunt_files/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" border="0"></a>
+
+  <a target="_blank" href="http://www.firefox-browser.de/" title="do yourself a favour and use a real browser - get firefox"><img src="./enunt_files/button-firefox.png" width="80" height="15" alt="do yourself a favour and use a real browser - get firefox!!" border="0"></a>
+  
+  <a target="_blank" href="https://ocw.cs.pub.ro/courses/feed.php" title="Recent changes RSS feed"><img src="./enunt_files/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" border="0"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="./enunt_files/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" border="0"></a>
+</div>
+
+  </div>
+</div>
+
+<div class="no"><img src="./enunt_files/indexer.php" width="2" height="1" alt=""></div>
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: MathJax_Main, sans-serif;"></div></div></body></html>
